@@ -1,2 +1,2 @@
 language: java
-before_install: mvn install:install-file -Dfile=/src/main/resources/riot-api-java.jar
+before_install: mvn install:install-file -Dfile=${basedir}/src/main/resources/riot-api-java.jar
