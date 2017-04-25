@@ -21,7 +21,10 @@ import static org.jooq.impl.DSL.*;
 public class Test {
 
     public static void main(String[] args) {
-        String userName = "root";
+ dtest();
+    }
+    public static void dtest(){
+                String userName = "root";
         String password = "starbucks";
         String url = "jdbc:mysql://teamlul.cqtdfz66koiq.eu-west-2.rds.amazonaws.com:3306/library?zeroDateTimeBehavior=convertToNull";
 
@@ -45,5 +48,6 @@ public class Test {
         catch (Exception e) {
             e.printStackTrace();
         }
+        
     }
 }
