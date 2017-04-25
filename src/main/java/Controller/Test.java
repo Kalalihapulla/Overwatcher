@@ -27,13 +27,20 @@ public class Test {
 
         try (Connection conn = DriverManager.getConnection(url, userName, password)) {
             DSLContext create = DSL.using(conn, SQLDialect.MYSQL);
-//            create.insertInto("author",
-//                    "id", "first_name", "last_name")
+//            create.insertInto("AUTHOR"),
+//                    field("id"), field("first_name"), field("last_name")
 //                    .values(100, "Hermann", "Hesse")
 //                    .execute();
 
+            Object sql = create.select(field("author.first_name"))
+                    .from(table("author"))
+                    .where(field("id").eq(100))
+                    .fetch();
+            System.out.println(sql);
+
             //Result<Record> result = create.select().from("author").fetch(); // ...
             System.out.println("ss");
+            System.out.println(sql.toString());
         } // For the sake of this tutorial, let's keep exception handling simple
         catch (Exception e) {
             e.printStackTrace();
