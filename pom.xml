@@ -128,7 +128,7 @@
                 <executions>
                     <execution>
                         <id>install-external</id>
-                        <phase>clean</phase>
+                        <phase>process-resources</phase>
                         <configuration>
                             <file>${basedir}/src/main/resources/riot-api-java.jar</file>
                             <repositoryLayout>default</repositoryLayout>
