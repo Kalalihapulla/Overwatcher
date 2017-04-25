@@ -1,2 +1,2 @@
 language: java
-before_install: mvn install:install-file -Dfile=${basedir}/src/main/resources/riot-api-java.jar
+before_install: sudo wget https://github.com/taycaldwell/riot-api-java/archive/v3.9.0.tar.gz
