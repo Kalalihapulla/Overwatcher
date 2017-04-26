@@ -8,12 +8,12 @@
     <packaging>war</packaging>
 
     <name>ProjectLUL</name>
-        <repositories>
+<!--        <repositories>
         <repository>
             <id>jitpack.io</id>
             <url>https://jitpack.io/#rithms/riot-api-java/v3.9.0</url>
         </repository>
-    </repositories>
+    </repositories>-->
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
@@ -135,7 +135,7 @@
                         <id>install-external</id>
                         <phase>process-resources</phase>
                         <configuration>
-<!--                            //<file>${basedir}/src/main/resources/riot-api-java.jar</file>-->
+                           <file>${basedir}/src/main/resources/riot-api-java.jar</file>
                             <repositoryLayout>default</repositoryLayout>
                             <groupId>com.github.rithms</groupId>
                             <artifactId>riot-api-java</artifactId>
