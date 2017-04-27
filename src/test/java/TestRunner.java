@@ -15,12 +15,12 @@ import org.junit.runner.notification.Failure;
 public class TestRunner {
 
     public static void main(String[] args) {
-        Result result = JUnitCore.runClasses(Apitests.class, QueryTests.class);
+        Result result = JUnitCore.runClasses(Apitests.class, QueryTests.class,JsonTests.class);
 
         for (Failure failure : result.getFailures()) {
-            System.out.println(failure.toString());
+            System.out.println("Tests success: " + failure.toString());
         }
 
-        System.out.println(result.wasSuccessful());
+        System.out.println("Tests success: " + result.wasSuccessful());
     }
 }

@@ -1,5 +1,5 @@
 
-import Controller.UserAccount;
+import Model.UserAccount;
 import Util.HibernateStuff;
 import java.util.Map;
 import net.rithms.riot.api.RiotApi;
@@ -32,7 +32,10 @@ public class Apitests {
         
         Map<String, Summoner> summoners = api.getSummonersByName(Region.NA, "rithms, tryndamere");
         Summoner summoner = summoners.get("rithms");
+        
+        
         long id = summoner.getId();
+        
         assertTrue(id > 0);
     }
     

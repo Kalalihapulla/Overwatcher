@@ -1,6 +1,6 @@
 
 import Controller.QUserAccount;
-import Controller.UserAccount;
+import Model.UserAccount;
 import Util.HibernateStuff;
 import com.mysema.query.hql.HQLQuery;
 import com.mysema.query.hql.hibernate.HibernateQuery;
