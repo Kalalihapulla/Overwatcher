@@ -8,13 +8,20 @@
     <packaging>war</packaging>
 
     <name>ProjectLUL</name>
-    <repositories>
+        <repositories>
         <repository>
             <id>data-local</id>
             <name>data</name>
             <url>file://${basedir}/src/main/resources/riot-api-java.jar</url>
         </repository>
     </repositories>
+<!--    <repositories>
+    <repository>
+        <id>local-maven-repo</id>
+        <url>file:///${basedir}/src/main/resources/riot-api-java.jar</url>
+    </repository>
+    
+</repositories> -->
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
@@ -127,7 +134,7 @@
 
     <build>
         <plugins>
-            <!--            <plugin>
+<!--            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-install-plugin</artifactId>
                 <version>2.5.2</version>
@@ -136,7 +143,7 @@
                         <id>install-external</id>
                         <phase>process-resources</phase>
                         <configuration>
-                            <file>${basedir}/src/main/resources/riot-api-java.jar</file>
+                           <file>${basedir}/src/main/resources/riot-api-java.jar</file>
                             <repositoryLayout>default</repositoryLayout>
                             <groupId>com.github.rithms</groupId>
                             <artifactId>riot-api-java</artifactId>
