@@ -18,7 +18,7 @@ public class TestRunner {
         Result result = JUnitCore.runClasses(Apitests.class, QueryTests.class,JsonTests.class);
 
         for (Failure failure : result.getFailures()) {
-            System.out.println("Tests success: " + failure.toString());
+            System.out.println("Failure: " + failure.toString());
         }
 
         System.out.println("Tests success: " + result.wasSuccessful());
