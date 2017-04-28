@@ -24,13 +24,14 @@ public class QueryTests {
     private SessionFactory sessionFactory;
 
     @Test
-    public void qdsl1() {
+    public void qdsl1() throws InterruptedException {
         QUserAccount userAccount = QUserAccount.userAccount;
         this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
 
         Session session
                 = sessionFactory.openSession();
         HQLQuery query = new HibernateQuery(session);
+        Thread.sleep(4000);
         UserAccount bob = query.from(userAccount).where(userAccount.id.eq(1L)).uniqueResult(userAccount);
 
         assertTrue(bob.getUserid().equals("kapap"));

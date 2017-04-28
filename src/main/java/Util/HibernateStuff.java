@@ -18,6 +18,7 @@ public class HibernateStuff {
     public HibernateStuff() {
         Configuration config = new Configuration();
         config.addAnnotatedClass(Model.UserAccount.class);
+         config.addAnnotatedClass(Model.Player.class);
 
         config = config.configure();
         //new SchemaExport(config).create(true, true);
