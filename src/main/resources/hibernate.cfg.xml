@@ -46,6 +46,7 @@ Contributor(s):
         <property name="hibernate.connection.url">jdbc:mysql://teamlul.cqtdfz66koiq.eu-west-2.rds.amazonaws.com:3306/teamulu?zeroDateTimeBehavior=convertToNull</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">starbucks</property>
+        
         <property name="hibernate.transaction.auto_close_session">true</property>
         
 

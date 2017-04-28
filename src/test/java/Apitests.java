@@ -40,7 +40,6 @@ public class Apitests {
 //        assertTrue(id > 0);
 // 
 //    }
-
     @Test
     public void hibernate1() {
         try {
@@ -64,7 +63,7 @@ public class Apitests {
 
     @Test
     public void teamCreate1() {
-        Player p1 = new Player("Huni", "뚱후니", TeamName.SKT_T1);
+        Player p1 = new Player("Bang", "SKT T1 Bang", TeamName.SKT_T1);
         Player p2 = new Player("Faker", "Hide on bush", TeamName.SKT_T1);
         Player p3 = new Player("Peanut", "SKT T1 Peanut", TeamName.SKT_T1);
         try {
