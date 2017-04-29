@@ -1,0 +1,89 @@
+
+
+
+body {
+    background-image: url("../contents/owbg1.png");
+}
+
+#searchbox{
+    width: 30%;
+    height: 25%;
+    background-color: lightgrey;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding-left: 1em;
+    padding-top:1em;
+    border: solid;
+    border-color: darkslategray;
+    font-size: 1em;
+    color: slategrey;
+    border-radius: 5px;
+    z-index: -2;
+}
+
+
+#searchboxtext[type=text] {
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    width: 63%;
+    height: 20%;
+    background-color: lightskyblue;
+    float: top;
+    margin-top: 1.5em;
+    margin-left: 5%; 
+    padding-left: 1em;
+    border: solid;
+    border-color: darkslategray;
+    font-size: 1em;
+    color: slategrey;
+    border-radius: 5px;
+
+}
+
+#searchboxtext[type=text]:focus {
+    width: 83%;
+}
+
+#searchboxtext2[type=text] {
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    width: 63%;
+    height: 20%;
+    background-color: lightskyblue;
+    float: top;
+    margin-top: 1.5em;
+    margin-left: 5%; 
+    padding-left: 1em;
+    border: solid;
+    border-color: darkslategray;
+    font-size: 1em;
+    color: slategrey;
+    border-radius: 5px;
+    position: relative;
+
+}
+
+#searchboxtext2[type=text]:focus {
+    width: 83%;
+}
+
+#searchbutton {
+    position: absolute;
+    height: 10%;
+    width: 20%;
+    bottom:3em;
+    left:4em;
+}
+
+#owlogo {
+    width: 18%;
+    height: 32%; 
+    position: absolute;
+    top:22%;
+    right:4%;
+    z-index: -1;
+}
