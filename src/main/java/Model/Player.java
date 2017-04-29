@@ -5,6 +5,7 @@
  */
 package Model;
 
+import Controller.Observer;
 import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
@@ -18,18 +19,20 @@ import javax.persistence.Id;
  * @author Izymi
  */
 @Entity
-public class Player implements Serializable {
+public class Player implements Serializable, Observer, Comparable<Player> {
 
     private Long id;
     private String playerName;
     private String accountName;
     private TeamName teamName;
+    private Rating rating;
 
     public Player(String playerName, String accountName, TeamName name) {
         this.id = 0L;
         this.playerName = playerName;
         this.accountName = accountName;
         this.teamName = name;
+        this.rating = new Rating();
     }
 
     public Player() {
@@ -72,5 +75,17 @@ public class Player implements Serializable {
     public void setTeamName(TeamName teamName) {
         this.teamName = teamName;
     }
+
+    @Override
+    public void update() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int compareTo(Player t) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+
 
 }
