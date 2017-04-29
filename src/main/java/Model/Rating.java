@@ -5,10 +5,25 @@
  */
 package Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 /**
  *
  * @author Izymi
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Rating {
-    
+
+    private String kill_streak_best;
+    private String quote;
+
+    public Rating() {
+        
+    }
+
+    @Override
+    public String toString() {
+        return quote;
+    }
+
 }

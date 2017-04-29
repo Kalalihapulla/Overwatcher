@@ -5,10 +5,15 @@
  */
 package Model;
 
+import java.util.List;
+
 /**
  *
  * @author Izymi
  */
 public class Team {
-    
+
+    private TeamName teamName;
+    private List players;
+
 }
