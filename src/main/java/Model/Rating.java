@@ -5,6 +5,8 @@
  */
 package Model;
 
+import JSONModel.HeroStat;
+import JSONModel.Region;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
@@ -15,15 +17,44 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Rating {
 
     private String kill_streak_best;
-    private String quote;
+    private String type;
+ 
+    private HeroStat tracer;
+    private Region us;
 
     public Rating() {
-        
+
     }
 
     @Override
     public String toString() {
-        return quote;
+        return us.toString();
     }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+
+
+    public HeroStat getTracer() {
+        return tracer;
+    }
+
+    public void setTracer(HeroStat tracer) {
+        this.tracer = tracer;
+    }
+
+    public Region getUs() {
+        return us;
+    }
+
+    public void setUs(Region us) {
+        this.us = us;
+    }           
 
 }

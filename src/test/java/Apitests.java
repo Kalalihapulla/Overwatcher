@@ -1,5 +1,7 @@
 
+import Controller.Application;
 import Model.Player;
+import Model.Rating;
 import Model.TeamName;
 import Model.UserAccount;
 import Util.HibernateStuff;
@@ -14,6 +16,9 @@ import org.hibernate.SessionFactory;
 import org.junit.Assert;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.web.client.RestTemplate;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -27,6 +32,7 @@ import org.junit.Test;
 public class Apitests {
 
     private SessionFactory sessionFactory;
+    private static final Logger log = LoggerFactory.getLogger(Application.class);
 
 //    @Test
 //    public void riotJava1() throws RiotApiException {       
@@ -84,6 +90,18 @@ public class Apitests {
         } catch (HibernateException e) {
             assertTrue(false);
         }
+
+    }
+
+    @Test
+    public void testStat() {
+        RestTemplate restTemplate = new RestTemplate();
+        Rating r = restTemplate.getForObject("http://ec2-176-34-130-81.eu-west-1.compute.amazonaws.com:4444/api/v3/u/Taimou-2526/stats", Rating.class);
+        log.info(r.toString());
+
+      int hld = r.getUs().getStats().getCompetitive().getGame_stats().getHealing_done();
+        System.out.println(hld);
+        assertTrue(hld > 10000);
 
     }
 
