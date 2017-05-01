@@ -2,13 +2,18 @@
 
 
 body {
-    background-image: url("../contents/owbg1.png");
+  background: url("../contents/owbg1.png") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
 }
 
 #searchbox{
     width: 30%;
     height: 25%;
-    background-color: lightgrey;
+    background-color: rgba(30,30,30,0.7);
     position: absolute;
     top:0;
     bottom: 0;
@@ -18,7 +23,7 @@ body {
     padding-left: 1em;
     padding-top:1em;
     border: solid;
-    border-color: darkslategray;
+    border-color: #262626;
     font-size: 1em;
     color: slategrey;
     border-radius: 5px;
@@ -31,7 +36,7 @@ body {
     transition: width 0.4s ease-in-out;
     width: 63%;
     height: 20%;
-    background-color: lightskyblue;
+    background-color: rgba(190,190,190,0.8);
     float: top;
     margin-top: 1.5em;
     margin-left: 5%; 
@@ -44,16 +49,14 @@ body {
 
 }
 
-#searchboxtext[type=text]:focus {
-    width: 83%;
-}
+
 
 #searchboxtext2[type=text] {
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
     width: 63%;
     height: 20%;
-    background-color: lightskyblue;
+    background-color: rgba(190,190,190,0.8);
     float: top;
     margin-top: 1.5em;
     margin-left: 5%; 
@@ -67,9 +70,6 @@ body {
 
 }
 
-#searchboxtext2[type=text]:focus {
-    width: 83%;
-}
 
 #searchbutton {
     position: absolute;
@@ -86,4 +86,13 @@ body {
     top:22%;
     right:4%;
     z-index: -1;
+}
+
+.navbar {
+   background-color: rgba(0,0,0,0.3);
+   font-color: green;
+}
+
+.nav li{
+    color: whitesmoke;
 }
