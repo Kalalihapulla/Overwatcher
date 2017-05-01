@@ -46,63 +46,79 @@ public class Apitests {
 //        assertTrue(id > 0);
 // 
 //    }
+//    @Test
+//    public void hibernate1() {
+//        try {
+//            this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
+//
+//            Session session
+//                    = sessionFactory.openSession();
+//
+//            session.beginTransaction();
+//            UserAccount user = new UserAccount("kapap", "ulu");
+//            session.saveOrUpdate(user);
+//            session.getTransaction().commit();
+//
+//            assertTrue(true);
+//
+//        } catch (HibernateException e) {
+//            assertTrue(false);
+//        }
+//
+//    }
+//
+//    @Test
+//    public void teamCreate1() {
+//        Player p1 = new Player("Bang", "SKT T1 Bang", TeamName.SKT_T1);
+//        Player p2 = new Player("Faker", "Hide on bush", TeamName.SKT_T1);
+//        Player p3 = new Player("Peanut", "SKT T1 Peanut", TeamName.SKT_T1);
+//        try {
+//            this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
+//
+//            Session session
+//                    = sessionFactory.openSession();
+//
+//            session.beginTransaction();
+//
+//            session.saveOrUpdate(p1);
+//            session.saveOrUpdate(p2);
+//            session.saveOrUpdate(p3);
+//            session.getTransaction().commit();
+//
+//            assertTrue(true);
+//
+//        } catch (HibernateException e) {
+//            assertTrue(false);
+//        }
+//
+//    }
+//    @Test
+//    public void testStat() {
+//        RestTemplate restTemplate = new RestTemplate();
+//        Rating r = restTemplate.getForObject("http://ec2-176-34-130-81.eu-west-1.compute.amazonaws.com:4444/api/v3/u/Taimou-2526/stats", Rating.class);
+//        log.info(r.toString());
+//
+//        int hld = r.getUs().getStats().getCompetitive().getAverage_stats().getDamage_done_avg();
+//        System.out.println(hld);
+//        assertTrue(hld > 10000);
+//
+//    }
+
     @Test
-    public void hibernate1() {
-        try {
-            this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
+    public void savePlayer() {
+        this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
 
-            Session session
-                    = sessionFactory.openSession();
-
-            session.beginTransaction();
-            UserAccount user = new UserAccount("kapap", "ulu");
-            session.saveOrUpdate(user);
-            session.getTransaction().commit();
-
-            assertTrue(true);
-
-        } catch (HibernateException e) {
-            assertTrue(false);
-        }
-
-    }
-
-    @Test
-    public void teamCreate1() {
-        Player p1 = new Player("Bang", "SKT T1 Bang", TeamName.SKT_T1);
-        Player p2 = new Player("Faker", "Hide on bush", TeamName.SKT_T1);
-        Player p3 = new Player("Peanut", "SKT T1 Peanut", TeamName.SKT_T1);
-        try {
-            this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
-
-            Session session
-                    = sessionFactory.openSession();
-
-            session.beginTransaction();
-
-            session.saveOrUpdate(p1);
-            session.saveOrUpdate(p2);
-            session.saveOrUpdate(p3);
-            session.getTransaction().commit();
-
-            assertTrue(true);
-
-        } catch (HibernateException e) {
-            assertTrue(false);
-        }
-
-    }
-
-    @Test
-    public void testStat() {
+        Session session
+                = sessionFactory.openSession();
+        session.beginTransaction();
         RestTemplate restTemplate = new RestTemplate();
-        Rating r = restTemplate.getForObject("http://ec2-176-34-130-81.eu-west-1.compute.amazonaws.com:4444/api/v3/u/Taimou-2526/stats", Rating.class);
+        Player r = restTemplate.getForObject("http://ec2-176-34-130-81.eu-west-1.compute.amazonaws.com:4444/api/v3/u/Taimou-2526/stats", Player.class);
+          System.out.println(r.getRegion().getStats().getCompetitive().getAverage_stats().getEliminations_avg() + "fff");
+        
+        session.saveOrUpdate(r);
+        session.getTransaction().commit();
+      
         log.info(r.toString());
-
-      int hld = r.getUs().getStats().getCompetitive().getGame_stats().getHealing_done();
-        System.out.println(hld);
-        assertTrue(hld > 10000);
-
     }
 
 }

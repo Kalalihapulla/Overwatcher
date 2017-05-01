@@ -1,7 +1,9 @@
 
+import Controller.Application;
 import Model.Player;
 import Model.QPlayer;
 import Model.QUserAccount;
+import Model.Rating;
 import Model.UserAccount;
 import Util.HibernateStuff;
 import com.mysema.query.hql.HQLQuery;
@@ -18,6 +20,9 @@ import org.hibernate.SessionFactory;
 import org.junit.Assert;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.web.client.RestTemplate;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -31,6 +36,7 @@ import org.junit.Test;
 public class QueryTests {
 
     private SessionFactory sessionFactory;
+    private static final Logger log = LoggerFactory.getLogger(QueryTests.class);
 
     @Test
     public void qdsl1() throws InterruptedException {
@@ -74,7 +80,7 @@ public class QueryTests {
 
             builder.deleteCharAt(builder.length() - 1);
             builder.deleteCharAt(builder.length() - 1);
-     
+
             System.out.println(builder);
 
             Map<String, Summoner> summoners = api.getSummonersByName(Region.KR, builder.toString());
@@ -90,5 +96,7 @@ public class QueryTests {
         }
 
     }
+
+
 
 }

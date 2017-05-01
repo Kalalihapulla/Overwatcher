@@ -5,44 +5,36 @@
  */
 package JSONModel;
 
+import Model.Calculatable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToOne;
 
 /**
  *
  * @author Izymi
+ * 
  */
+
 @Entity
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Region implements Serializable{
-
-    private Stats stats;
-
+public class OverallStats implements Calculatable, Serializable{
+  
     private long id;
 
-    public Region() {
+    public OverallStats() {
         this.id = 0L;
-        this.stats = new Stats();
     }
+    
 
-    @OneToOne(targetEntity = Stats.class,
-            cascade = CascadeType.ALL)
-    public Stats getStats() {
-        return stats;
+    @Override
+    public double calculate() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    public void setStats(Stats stats) {
-        this.stats = stats;
-    }
-
-    @Id
-    @GeneratedValue
+  @Id
+  @GeneratedValue
     public long getId() {
         return id;
     }
@@ -50,5 +42,5 @@ public class Region implements Serializable{
     public void setId(long id) {
         this.id = id;
     }
-
+    
 }
