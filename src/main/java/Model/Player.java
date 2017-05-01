@@ -28,21 +28,19 @@ public class Player implements Serializable, Observer, Comparable<Player> {
     private String playerName;
     private String accountName;
     private TeamName teamName;
-    private Region region;
+    private Region us;
 
     public Player(String playerName, String accountName, TeamName name) {
         this.id = 0L;
         this.playerName = playerName;
         this.accountName = accountName;
         this.teamName = name;
-        this.region = new Region();
-        
-       
+        this.us = new Region();
 
     }
 
     public Player() {
-        this("w", "w", TeamName.KT_ROLSTER);
+        this("unknown", "unknown", TeamName.Team_EnVyUs);
     }
 
     @GeneratedValue
@@ -94,12 +92,12 @@ public class Player implements Serializable, Observer, Comparable<Player> {
 
     @OneToOne(targetEntity = Region.class,
             cascade = CascadeType.ALL)
-    public Region getRegion() {
-        return region;
+    public Region getUs() {
+        return us;
     }
 
-    public void setRegion(Region region) {
-        this.region = region;
+    public void setUs(Region us) {
+        this.us = us;
     }
 
 }

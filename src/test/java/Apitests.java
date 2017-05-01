@@ -30,7 +30,7 @@ import org.springframework.web.client.RestTemplate;
  * @author Izymi
  */
 public class Apitests {
-
+    
     private SessionFactory sessionFactory;
     private static final Logger log = LoggerFactory.getLogger(Application.class);
 
@@ -92,33 +92,33 @@ public class Apitests {
 //        }
 //
 //    }
-//    @Test
-//    public void testStat() {
-//        RestTemplate restTemplate = new RestTemplate();
-//        Rating r = restTemplate.getForObject("http://ec2-176-34-130-81.eu-west-1.compute.amazonaws.com:4444/api/v3/u/Taimou-2526/stats", Rating.class);
-//        log.info(r.toString());
-//
-//        int hld = r.getUs().getStats().getCompetitive().getAverage_stats().getDamage_done_avg();
-//        System.out.println(hld);
-//        assertTrue(hld > 10000);
-//
-//    }
+    @Test
+    public void testStat() {
+        RestTemplate restTemplate = new RestTemplate();
+        Rating r = restTemplate.getForObject("http://ec2-176-34-130-81.eu-west-1.compute.amazonaws.com:4444/api/v3/u/Taimou-2526/stats", Rating.class);
+        log.info(r.toString());
 
+        int hld = r.getUs().getStats().getCompetitive().getAverage_stats().getDamage_done_avg();
+        System.out.println(hld);
+        assertTrue(hld > 10000);
+
+    }
     @Test
     public void savePlayer() {
         this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
-
+        
         Session session
                 = sessionFactory.openSession();
         session.beginTransaction();
         RestTemplate restTemplate = new RestTemplate();
         Player r = restTemplate.getForObject("http://ec2-176-34-130-81.eu-west-1.compute.amazonaws.com:4444/api/v3/u/Taimou-2526/stats", Player.class);
-          System.out.println(r.getRegion().getStats().getCompetitive().getAverage_stats().getEliminations_avg() + "fff");
+        r.setPlayerName("Taimou");
+        r.setAccountName("Taimou-2526");
         
         session.saveOrUpdate(r);
         session.getTransaction().commit();
-      
+        
         log.info(r.toString());
     }
-
+    
 }

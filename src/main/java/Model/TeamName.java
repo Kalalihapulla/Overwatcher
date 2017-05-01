@@ -10,8 +10,11 @@ package Model;
  * @author Izymi
  */
 public enum TeamName {
-    SKT_T1,
-    KT_ROLSTER;
-    
-    
+    Team_EnVyUs,
+    NRG_Esports,
+    Cloud9,
+    Fnatic,
+    Misfits,
+    Rogue;
+
 }
