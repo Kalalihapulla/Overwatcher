@@ -24,7 +24,7 @@ public class Application {
         log.info(r.toString());
       
         System.out.println(r);
-        System.out.println(r.getUs().getStats().getCompetitive().getGame_stats().getHealing_done());
+//        System.out.println(r.getUs().getStats().getCompetitive().getAverage_stats());
     }
 
 }

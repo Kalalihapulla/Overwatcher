@@ -9,12 +9,8 @@ package Model;
  *
  * @author Izymi
  */
-public enum TeamName {
-    Team_EnVyUs,
-    NRG_Esports,
-    Cloud9,
-    Fnatic,
-    Misfits,
-    Rogue;
+public interface Calculatable {
+
+    public double calculate();
 
 }
