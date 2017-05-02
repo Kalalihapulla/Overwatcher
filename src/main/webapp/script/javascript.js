@@ -4,7 +4,23 @@
  * and open the template in the editor.
  */
 
+
 $(document).ready(function () {
+    
+ $.ajax({
+        url: "https://owapi.net/api/v3/u/cocco-2188/stats"
+       
+
+    }).then(function(data) {
+       alert("success");
+       console.log("asdasd");
+       alert(data);
+    var test = data.us.stats.competitive.overall_stats.wins;
+     
+        $("#harakkatesti").append(test);
+       
+    });
+
 
 
     var Stage = 0;
@@ -20,7 +36,7 @@ $(document).ready(function () {
 
 
     $("#searchboxtext2").hide();
-    $("#searchboxtext").on('input', function () {
+    $("#searchboxtext1").on('input', function () {
         $("#searchboxtext2").show();
     });
 

@@ -16,12 +16,12 @@
         <script src="script/javascript.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-        <!--Fix scaling!!!-->
+     
 
-        <title>User search</title>
+        <title>Ladder statistics</title>
     </head>
     <body>
-
+        
         <nav class="navbar navbar-default navbar-inverse" role="navigation">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -39,7 +39,7 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li><a href="#">About</a></li>
-                        <li><a href="Ladderstats.jsp">Ladder statistics</a></li>
+                        <li><a href="#">Ladder statistics</a></li>
                        
                     </ul>
                    
@@ -82,16 +82,12 @@
                 </div>
             </div>
         </nav>
-
-
-
-
-        <div id="searchbox">         
-            <input id="searchboxtext1"type="text" name="search" placeholder="Search for Battle.net user">
-            <input id="searchboxtext2" type="text" name="search" placeholder="Type in the Battle.net ID associated with the user">
-            <button id="searchbutton" type="button">Search</button>
-            <img id="owlogo" src="contents/owlogo.png">
-
+        
+        <div id="harakkatesti">
+            
+            
         </div>
+
+   
     </body>
 </html>

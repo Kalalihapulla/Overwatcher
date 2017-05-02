@@ -7,12 +7,13 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  padding: 1.5em;
 
 }
 
 #searchbox{
-    width: 30%;
-    height: 25%;
+    width: 50%;
+    height: 30%;
     background-color: rgba(30,30,30,0.7);
     position: absolute;
     top:0;
@@ -31,9 +32,7 @@ body {
 }
 
 
-#searchboxtext[type=text] {
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
+#searchboxtext1[type=text] {
     width: 63%;
     height: 20%;
     background-color: rgba(190,190,190,0.8);
@@ -52,8 +51,6 @@ body {
 
 
 #searchboxtext2[type=text] {
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
     width: 63%;
     height: 20%;
     background-color: rgba(190,190,190,0.8);
@@ -95,4 +92,46 @@ body {
 
 .nav li{
     color: whitesmoke;
+}
+
+#login-dp{
+    min-width: 250px;
+    padding: 14px 14px 0;
+    overflow:hidden;
+    background-color:rgba(255,255,255,.8);
+}
+#login-dp .help-block{
+    font-size:12px;
+    color: grey;
+}
+#login-dp .bottom{
+    background-color:rgba(255,255,255,.8);
+    border-top:1px solid #ddd;
+    clear:both;
+    padding:14px;
+}
+
+#login-dp .form-group {
+    margin-bottom: 10px;
+}
+
+@media(max-width:768px){
+    #login-dp{
+        background-color: inherit;
+        color: #fff;
+    }
+    #login-dp .bottom{
+        background-color: inherit;
+        border-top:0 none;
+    }
+}
+
+#logincolor {
+    color: grey;
+}
+
+#harakkatesti {
+    width: 500px;
+    height: 500px;
+    background-color: whitesmoke;
 }
