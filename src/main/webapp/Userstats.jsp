@@ -1,11 +1,10 @@
 
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+     
 
 
         <!--Javascript-->
@@ -13,7 +12,7 @@
         <script src="script/jquery.min.js"></script>
         <script src="script/javascript.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+        
         <!--CSS-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="CSS/Style.css">
@@ -41,7 +40,8 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li><a href="#">About</a></li>
-                        <li><a href="#">Ladder statistics</a></li>
+                        <li><a href="Ladderstats.jsp">Ladder statistics</a></li>
+                        <li><a href="Userstats.jsp">User statistics</a></li>
 
                     </ul>
 
@@ -85,45 +85,7 @@
             </div>
         </nav>
 
-    <body>
+       
 
-        <div class="container" id="tablebg">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Ranking</th>
-                        <th>K/D average</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Rob</td>
-                        <td>1337</td>
-                        <td>1.3</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Bob</td>
-                        <td>1234</td>
-                        <td>0.6</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Rub</td>
-                        <td>4200</td>
-                        <td>1.8</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
     </body>
-
-
-</div>
-
-
-</body>
 </html>

@@ -5,9 +5,6 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <!--CSS-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="CSS/Style.css">
 
 
         <!--Javascript-->
@@ -15,6 +12,10 @@
         <script src="script/jquery.min.js"></script>
         <script src="script/javascript.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+          <!--CSS-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="CSS/Style.css">
 
         <!--Fix scaling!!!-->
 
@@ -40,9 +41,9 @@
                     <ul class="nav navbar-nav">
                         <li><a href="#">About</a></li>
                         <li><a href="Ladderstats.jsp">Ladder statistics</a></li>
-                       
+
                     </ul>
-                   
+
                     <ul class="nav navbar-nav navbar-right">
                         <li><p class="navbar-text">Already have an account?</p></li>
                         <li class="dropdown">
@@ -59,7 +60,7 @@
                                                 <div class="form-group">
                                                     <label class="sr-only" for="exampleInputPassword2">Password</label>
                                                     <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
-                                                    
+
                                                 </div>
                                                 <div class="form-group">
                                                     <button type="submit" class="btn btn-primary btn-block">Sign in</button>
@@ -72,7 +73,7 @@
                                             </form>
                                         </div>
                                         <div class="bottom text-center" id="logincolor">
-                                              New here ? <a href="#"><b>Join Us</b></a>
+                                            New here ? <a href="#"><b>Join Us</b></a>
                                         </div>
                                     </div>
                                 </li>
@@ -85,13 +86,24 @@
 
 
 
+     
 
-        <div id="searchbox">         
-            <input id="searchboxtext1"type="text" name="search" placeholder="Search for Battle.net user">
-            <input id="searchboxtext2" type="text" name="search" placeholder="Type in the Battle.net ID associated with the user">
-            <button id="searchbutton" type="button">Search</button>
-            <img id="owlogo" src="contents/owlogo.png">
 
-        </div>
+            <div id="searchbox">         
+                <input id="searchboxtext1"type="text" name="search" placeholder="Search for Battle.net user">
+                <input id="searchboxtext2" type="text" name="search" placeholder="Type in the Battle.net ID associated with the user">
+
+                <select id="serverid">
+                    <option  value="eu">Europe</option>
+                    <option  value="na">North America</option>
+                    <option  value="sk">Asia</option>       
+                </select>
+
+                <button id="searchbutton" type="button">Search</button>
+                <img id="owlogo" src="contents/owlogo.png">
+            </div>
+
+
+      
     </body>
 </html>
