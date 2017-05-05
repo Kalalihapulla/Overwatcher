@@ -1,0 +1,137 @@
+
+
+
+body {
+  background: url("../contents/owbg1.png") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding: 1.5em;
+
+}
+
+#searchbox{
+    width: 50%;
+    height: 30%;
+    background-color: rgba(30,30,30,0.7);
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding-left: 1em;
+    padding-top:1em;
+    border: solid;
+    border-color: #262626;
+    font-size: 1em;
+    color: slategrey;
+    border-radius: 5px;
+    z-index: -2;
+}
+
+
+#searchboxtext1[type=text] {
+    width: 63%;
+    height: 20%;
+    background-color: rgba(190,190,190,0.8);
+    float: top;
+    margin-top: 1.5em;
+    margin-left: 5%; 
+    padding-left: 1em;
+    border: solid;
+    border-color: darkslategray;
+    font-size: 1em;
+    color: slategrey;
+    border-radius: 5px;
+
+}
+
+
+
+#searchboxtext2[type=text] {
+    width: 63%;
+    height: 20%;
+    background-color: rgba(190,190,190,0.8);
+    float: top;
+    margin-top: 1.5em;
+    margin-left: 5%; 
+    padding-left: 1em;
+    border: solid;
+    border-color: darkslategray;
+    font-size: 1em;
+    color: slategrey;
+    border-radius: 5px;
+    position: relative;
+
+}
+
+
+#searchbutton {
+    position: absolute;
+    height: 10%;
+    width: 20%;
+    bottom:3em;
+    left:4em;
+}
+
+#owlogo {
+    width: 18%;
+    height: 32%; 
+    position: absolute;
+    top:22%;
+    right:4%;
+    z-index: -1;
+}
+
+.navbar {
+   background-color: rgba(0,0,0,0.3);
+   font-color: green;
+}
+
+.nav li{
+    color: whitesmoke;
+}
+
+#login-dp{
+    min-width: 250px;
+    padding: 14px 14px 0;
+    overflow:hidden;
+    background-color:rgba(255,255,255,.8);
+}
+#login-dp .help-block{
+    font-size:12px;
+    color: grey;
+}
+#login-dp .bottom{
+    background-color:rgba(255,255,255,.8);
+    border-top:1px solid #ddd;
+    clear:both;
+    padding:14px;
+}
+
+#login-dp .form-group {
+    margin-bottom: 10px;
+}
+
+@media(max-width:768px){
+    #login-dp{
+        background-color: inherit;
+        color: #fff;
+    }
+    #login-dp .bottom{
+        background-color: inherit;
+        border-top:0 none;
+    }
+}
+
+#logincolor {
+    color: grey;
+}
+
+#harakkatesti {
+    width: 500px;
+    height: 500px;
+    background-color: whitesmoke;
+}
