@@ -1,2 +1,2 @@
 
-web: java -jar target/spring-boot-web-jsp-1.0.war
+web:    java $JAVA_OPTS -jar target/dependency/webapp-runner.jar --port $PORT target/*.war
