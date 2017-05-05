@@ -18,6 +18,12 @@ public class WelcomeController {
 //        model.put("message", this.message);
         return "Usersearch";
     }
+    
+        @RequestMapping("/ladderstats")
+    public String ladder (Map<String, Object> model) {
+//        model.put("message", this.message);
+        return "Ladderstats";
+    }
 
 
 }

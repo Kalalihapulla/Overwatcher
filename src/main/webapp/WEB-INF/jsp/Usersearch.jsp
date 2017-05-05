@@ -1,5 +1,5 @@
 
-
+<%@taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -39,10 +39,19 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li><a href="#">About</a></li>
-                        <li><a href="Ladderstats.jsp">Ladder statistics</a></li>
-                       
+                        <li>Ladder statistics</a></li>
+                        <li> <form:form method = "GET" action = "/ladderstats">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <input type = "submit" value = "Redirect Page"/>
+                                        </td>
+                                    </tr>
+                                </table>  
+                            </form:form></li>
+
                     </ul>
-                   
+
                     <ul class="nav navbar-nav navbar-right">
                         <li><p class="navbar-text">Already have an account?</p></li>
                         <li class="dropdown">
@@ -59,7 +68,7 @@
                                                 <div class="form-group">
                                                     <label class="sr-only" for="exampleInputPassword2">Password</label>
                                                     <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
-                                                    
+
                                                 </div>
                                                 <div class="form-group">
                                                     <button type="submit" class="btn btn-primary btn-block">Sign in</button>
@@ -72,7 +81,7 @@
                                             </form>
                                         </div>
                                         <div class="bottom text-center" id="logincolor">
-                                              New here ? <a href="#"><b>Join Us</b></a>
+                                            New here ? <a href="#"><b>Join Us</b></a>
                                         </div>
                                     </div>
                                 </li>
