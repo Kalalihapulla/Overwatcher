@@ -19,9 +19,9 @@ $(document).ready(function () {
 
         $.ajax({
             url: searchurl,
-            error: function(){
-            alert('User not found, try again');
-        }
+            error: function () {
+                alert('User not found, try again');
+            }
 
 
         }).then(function (data) {
@@ -29,27 +29,47 @@ $(document).ready(function () {
 
             if (serverid === "eu") {
                 userdata = data.eu;
-                if (userdata === undefined) {
+                if (userdata === null) {
                     alert("No data found on this server");
                 }
-                else {
+                if (userdata.stats !== null) {
+                    document.location.href = "Userstats.jsp";
+                }
+            }
+           else if (serverid === "na") {
+                userdata = data.us;
+                alert(userdata);
+                if (userdata === null) {
+                    alert("No data found on this server");
+                }
+                if (userdata !== null) {
                     document.location.href = "Userstats.jsp";
                 }
 
-            } else if (serverid === "na") {
-                userdata = data.us;
-                if (userdata === undefined) {
+            }
+
+            else if (serverid === "kr") {
+                userdata = data.kr;
+
+                alert(userdata);
+                if (userdata === null) {
                     alert("No data found on this server");
+                }
+                if (userdata !== null) {
+                    document.location.href = "Userstats.jsp";
                 }
 
             }
+            
+              
+
 
             alert(userdata.stats.competitive.overall_stats.wins);
 
             //var test = data.serverid.stats.competitive.overall_stats.wins;
 
             //  $("#harakkatesti").append(userdata.stats.competitive.overall_stats.wins);
-           
+
 
         });
 
