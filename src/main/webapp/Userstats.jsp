@@ -4,7 +4,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-     
+
 
 
         <!--Javascript-->
@@ -12,7 +12,7 @@
         <script src="script/jquery.min.js"></script>
         <script src="script/javascript.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        
+
         <!--CSS-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="CSS/Style.css">
@@ -85,7 +85,30 @@
             </div>
         </nav>
 
-       
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col col-lg-2">
+                    1 of 3
+                </div>
+                <div class="col-12 col-md-auto">
+                    Variable width content
+                </div>
+                <div class="col col-lg-2">
+                    3 of 3
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    1 of 3
+                </div>
+                <div class="col-12 col-md-auto">
+                    Variable width content
+                </div>
+                <div class="col col-lg-2">
+                    3 of 3
+                </div>
+            </div>
+        </div>
 
     </body>
 </html>

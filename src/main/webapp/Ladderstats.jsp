@@ -1,7 +1,7 @@
 
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<!DOCTYPE html>s
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -15,7 +15,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
         <!--CSS-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="CSS/Style.css">
 
 
@@ -118,6 +118,32 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
+
+
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col col-lg-2">
+                    1 of 3
+                </div>
+                <div class="col-12 col-md-auto">
+                    Variable width content
+                </div>
+                <div class="col col-lg-2">
+                    3 of 3
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    1 of 3
+                </div>
+                <div class="col-12 col-md-auto">
+                    Variable width content
+                </div>
+                <div class="col col-lg-2">
+                    3 of 3
+                </div>
+            </div>
         </div>
     </body>
 

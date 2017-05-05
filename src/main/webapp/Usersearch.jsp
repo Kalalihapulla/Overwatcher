@@ -96,7 +96,7 @@
                 <select id="serverid">
                     <option  value="eu">Europe</option>
                     <option  value="na">North America</option>
-                    <option  value="sk">Asia</option>       
+                    <option  value="kr">Korea</option>       
                 </select>
 
                 <button id="searchbutton" type="button">Search</button>
