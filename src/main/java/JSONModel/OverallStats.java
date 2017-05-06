@@ -39,7 +39,7 @@ public class OverallStats implements Calculatable, Serializable{
     
 
     @Override
-    public double calculate() {
+    public int calculate() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
   @Id

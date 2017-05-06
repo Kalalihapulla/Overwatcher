@@ -90,17 +90,20 @@ public class QueryTests {
 //            System.err.println(e);
 //            assertTrue(false);
 //        }
-//    @Test
-//    public void getPlayer() {
-//        this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
-//        Session session
-//                = sessionFactory.openSession();
-//        
-//        Player player
-//                = (Player) session.get(Player.class, 1L);
-//        System.out.println(player.getRating().getUs().getStats().getCompetitive().getAverage_stats().getDamage_done_avg());
-//        session.flush();
-//        assertTrue(player.getPlayerName().equals("Taimou"));
-//        
-//    }
+    @Test
+    public void getPlayer() {
+        this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
+        Session session
+                = sessionFactory.openSession();
+
+        Player player
+                = (Player) session.get(Player.class, 1L);
+        Player player2
+                = (Player) session.get(Player.class, 2L);
+        System.out.println(player.getRating().getUs().getStats().getCompetitive().getAverage_stats().calculate());
+        System.out.println(player2.getRating().getUs().getStats().getCompetitive().getAverage_stats().calculate());
+
+        assertTrue(player.getPlayerName().equals("Taimou"));
+
+    }
 }

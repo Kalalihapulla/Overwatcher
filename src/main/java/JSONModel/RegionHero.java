@@ -25,6 +25,7 @@ public class RegionHero implements Serializable {
     private HeroType heroes;
 
     public RegionHero() {
+        this.heroes = new HeroType();
     }
 
     @Id

@@ -8,9 +8,11 @@ package JSONModel;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import javax.annotation.Generated;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -20,14 +22,16 @@ import javax.persistence.Id;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class HeroType implements Serializable {
 
-    @Id
-    @GeneratedValue
-
     private long id;
+    private DataType stats;
 
     public HeroType() {
         this.id = 0L;
+        this.stats = new DataType();
     }
+
+    @Id
+    @GeneratedValue
 
     public long getId() {
         return id;
@@ -35,6 +39,16 @@ public class HeroType implements Serializable {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    @OneToOne(targetEntity = DataType.class,
+            cascade = CascadeType.ALL)
+    public DataType getStats() {
+        return stats;
+    }
+
+    public void setStats(DataType stats) {
+        this.stats = stats;
     }
 
 }

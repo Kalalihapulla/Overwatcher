@@ -35,7 +35,7 @@ public class Player implements Serializable, Observer, Comparable<Player> {
         this.playerName = playerName;
         this.accountName = accountName;
         this.teamName = name;
-        this.rating= new RatingPlayer();
+        this.rating = new RatingPlayer();
 
     }
 
@@ -45,7 +45,7 @@ public class Player implements Serializable, Observer, Comparable<Player> {
 
     @Override
     public String toString() {
-       return id + playerName + teamName;
+        return id + playerName + teamName;
     }
 
     @GeneratedValue
@@ -101,7 +101,7 @@ public class Player implements Serializable, Observer, Comparable<Player> {
         return rating;
     }
 
-    public void setRating(RatingPlayer rating){
+    public void setRating(RatingPlayer rating) {
         this.rating = rating;
     }
 

@@ -6,6 +6,7 @@
 package JSONModel;
 
 import Model.Calculatable;
+import Model.Value;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import javax.persistence.Basic;
@@ -19,7 +20,7 @@ import javax.persistence.Id;
  */
 @Entity
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class AverageStats implements Calculatable, Serializable {
+public class AverageStats extends Value implements Calculatable, Serializable {
 
     private int damage_done_avg;
     private int healing_done_avg;
@@ -134,8 +135,8 @@ public class AverageStats implements Calculatable, Serializable {
     }
 
     @Override
-    public double calculate() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int calculate() {
+        return super.calculate(this);
     }
 
     @Id
