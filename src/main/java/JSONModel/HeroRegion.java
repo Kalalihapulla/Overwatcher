@@ -3,15 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
+package JSONModel;
 
 /**
  *
  * @author Izymi
  */
-public interface Calculatable {
-   
+public class HeroRegion {
+  
+    
 
-    public double calculate();
-
+    public HeroRegion() {
+    }
+    
 }

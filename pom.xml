@@ -3,11 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-boot-web-jsp</artifactId>
+    <artifactId>ow-master-main</artifactId>
     <packaging>war</packaging>
     <name>FinalOW</name>
-    <description>Spring Boot Web JSP Example</description>
-    <url>https://www.mkyong.com</url>
+    <description>OWMaster</description>
+    <url>https://afternoon-lowlands-40705.herokuapp.com/</url>
     <version>1.0</version>
 
     <parent>

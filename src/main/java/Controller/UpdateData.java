@@ -7,7 +7,7 @@ package Controller;
 
 import Model.Player;
 import Model.ProData;
-import Model.Rating;
+import Model.RatingPlayer;
 import Model.Team;
 import Model.TeamName;
 //import Util.HibernateStuff;
@@ -58,7 +58,7 @@ public class UpdateData {
 //        
 //        while (players.hasNext()) {
 //            Player player = players.next();
-//            Rating us = restTemplate.getForObject("http://ec2-176-34-130-81.eu-west-1.compute.amazonaws.com:4444/api/v3/u/" + player.getAccountName() + "/stats", Rating.class);
+//            RatingPlayer us = restTemplate.getForObject("http://ec2-176-34-130-81.eu-west-1.compute.amazonaws.com:4444/api/v3/u/" + player.getAccountName() + "/stats", RatingPlayer.class);
 //            player.setRating(us);
 //            addToTeam(player);
 //            session.saveOrUpdate(player);

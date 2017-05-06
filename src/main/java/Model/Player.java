@@ -28,14 +28,14 @@ public class Player implements Serializable, Observer, Comparable<Player> {
     private String playerName;
     private String accountName;
     private TeamName teamName;
-    private Rating rating;
+    private RatingPlayer rating;
 
     public Player(String playerName, String accountName, TeamName name) {
         this.id = 0L;
         this.playerName = playerName;
         this.accountName = accountName;
         this.teamName = name;
-        this.rating= new Rating();
+        this.rating= new RatingPlayer();
 
     }
 
@@ -90,13 +90,13 @@ public class Player implements Serializable, Observer, Comparable<Player> {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @OneToOne(targetEntity = Rating.class,
+    @OneToOne(targetEntity = RatingPlayer.class,
             cascade = CascadeType.ALL)
-    public Rating getRating() {
+    public RatingPlayer getRating() {
         return rating;
     }
 
-    public void setRating(Rating rating){
+    public void setRating(RatingPlayer rating){
         this.rating = rating;
     }
 

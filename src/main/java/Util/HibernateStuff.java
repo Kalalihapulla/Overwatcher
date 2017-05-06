@@ -1,7 +1,7 @@
 package Util;
 
 import JSONModel.*;
-import Model.Rating;
+import Model.RatingPlayer;
 import Model.Team;
 import org.hibernate.SessionFactory;
 import org.hibernate.SessionFactoryObserver;
@@ -22,7 +22,7 @@ public class HibernateStuff {
         Configuration config = new Configuration();
        
         config.addAnnotatedClass(Model.Player.class);
-        config.addAnnotatedClass(Rating.class);
+        config.addAnnotatedClass(RatingPlayer.class);
         config.addAnnotatedClass(Team.class);
         config.addAnnotatedClass(Region.class);
         config.addAnnotatedClass(Stats.class);

@@ -3,7 +3,7 @@
 import JSONModel.Region;
 import Model.Player;
 import Model.ProData;
-import Model.Rating;
+import Model.RatingPlayer;
 import Model.Team;
 import Model.TeamName;
 import Model.UserAccount;
@@ -96,7 +96,7 @@ public class Apitests {
 //    @Test
 //    public void testStat() {
 //        RestTemplate restTemplate = new RestTemplate();
-//        Rating r = restTemplate.getForObject("http://ec2-176-34-130-81.eu-west-1.compute.amazonaws.com:4444/api/v3/u/Taimou-2526/stats", Rating.class);
+//        RatingPlayer r = restTemplate.getForObject("http://ec2-176-34-130-81.eu-west-1.compute.amazonaws.com:4444/api/v3/u/Taimou-2526/stats", RatingPlayer.class);
 //        log.info(r.toString());
 //
 //        int hld = r.getUs().getStats().getCompetitive().getAverage_stats().getDamage_done_avg();
@@ -160,7 +160,7 @@ public class Apitests {
         RestTemplate restTemplate = new RestTemplate();
         while (players.hasNext()) {
             Player player = players.next();
-            Rating us = restTemplate.getForObject("http://ec2-176-34-130-81.eu-west-1.compute.amazonaws.com:4444/api/v3/u/" + player.getAccountName() + "/stats", Rating.class);
+            RatingPlayer us = restTemplate.getForObject("http://ec2-176-34-130-81.eu-west-1.compute.amazonaws.com:4444/api/v3/u/" + player.getAccountName() + "/stats", RatingPlayer.class);
             player.setRating(us);
             session.saveOrUpdate(player);
         }
