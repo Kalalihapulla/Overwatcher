@@ -5,7 +5,7 @@
  */
 package JSONModel;
 
-import AbstractModels.StatisticObject;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import javax.persistence.CascadeType;

@@ -98,12 +98,25 @@ public class QueryTests {
 
         Player player
                 = (Player) session.get(Player.class, 1L);
-        Player player2
-                = (Player) session.get(Player.class, 2L);
-        System.out.println(player.getRating().getUs().getStats().getCompetitive().getAverage_stats().calculate());
-        System.out.println(player2.getRating().getUs().getStats().getCompetitive().getAverage_stats().calculate());
 
         assertTrue(player.getPlayerName().equals("Taimou"));
+
+    }
+
+    @Test
+    public void compare() {
+        this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
+        Session session
+                = sessionFactory.openSession();
+
+        Player player
+                = (Player) session.get(Player.class, 1L);
+        Player player2
+                = (Player) session.get(Player.class, 2L);
+        System.out.println(player.getPlayerName() + player.ValueRank());
+        System.out.println(player2.getPlayerName() + player2.ValueRank());
+
+        assertTrue(player.compareTo(player2) == 1);
 
     }
 }

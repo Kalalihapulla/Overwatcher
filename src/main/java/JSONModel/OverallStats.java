@@ -6,6 +6,7 @@
 package JSONModel;
 
 import Model.Calculatable;
+import Model.Value;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -15,13 +16,12 @@ import javax.persistence.Id;
 /**
  *
  * @author Izymi
- * 
+ *
  */
-
 @Entity
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class OverallStats implements Calculatable, Serializable{
-  
+public class OverallStats extends Value implements Calculatable, Serializable {
+
     private long id;
     private double win_rate;
     private int comprank;
@@ -36,14 +36,14 @@ public class OverallStats implements Calculatable, Serializable{
     public OverallStats() {
         this.id = 0L;
     }
-    
 
     @Override
     public int calculate() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return super.calculate(this);
     }
-  @Id
-  @GeneratedValue
+
+    @Id
+    @GeneratedValue
     public long getId() {
         return id;
     }
@@ -123,5 +123,5 @@ public class OverallStats implements Calculatable, Serializable{
     public void setAvatar(String avatar) {
         this.avatar = avatar;
     }
-    
+
 }

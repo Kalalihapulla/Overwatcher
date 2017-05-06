@@ -29,6 +29,7 @@ public class Player implements Serializable, Observer, Comparable<Player> {
     private String accountName;
     private TeamName teamName;
     private RatingPlayer rating;
+    private int valueRating;
 
     public Player(String playerName, String accountName, TeamName name) {
         this.id = 0L;
@@ -36,6 +37,7 @@ public class Player implements Serializable, Observer, Comparable<Player> {
         this.accountName = accountName;
         this.teamName = name;
         this.rating = new RatingPlayer();
+        this.valueRating = 0;
 
     }
 
@@ -92,7 +94,19 @@ public class Player implements Serializable, Observer, Comparable<Player> {
 
     @Override
     public int compareTo(Player t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int value1 = ValueRank();
+        int value2 = t.ValueRank();
+        if (value1 == value2) {
+            return 0;
+        }
+
+        if (value1 > value2) {
+            return 1;
+
+        } else {
+            return -1;
+
+        }
     }
 
     @OneToOne(targetEntity = RatingPlayer.class,
@@ -103,6 +117,27 @@ public class Player implements Serializable, Observer, Comparable<Player> {
 
     public void setRating(RatingPlayer rating) {
         this.rating = rating;
+    }
+
+    public int ValueRank() {
+        int kr = rating.getKr().getStats().getCompetitive().getAverage_stats().calculate() + rating.getKr().getStats().getCompetitive().getOverall_stats().calculate();
+        int us = rating.getUs().getStats().getCompetitive().getAverage_stats().calculate() + rating.getUs().getStats().getCompetitive().getOverall_stats().calculate();
+        if (kr > us) {
+            valueRating = kr;
+            return kr;
+        } else {
+            valueRating = us;
+            return us;
+        }
+    }
+
+    @Basic
+    public int getValueRating() {
+        return valueRating;
+    }
+
+    public void setValueRating(int valueRating) {
+        this.valueRating = valueRating;
     }
 
 }
