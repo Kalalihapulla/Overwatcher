@@ -105,48 +105,48 @@ public class Apitests {
 //
 //    }
 //
-    @Test
-    public void savePlayer() {
-        this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
+//    @Test
+//    public void savePlayer() {
+//        this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
+//
+//        Session session
+//                = sessionFactory.openSession();
+//        session.beginTransaction();
+//        RestTemplate restTemplate = new RestTemplate();
+//        Player r = restTemplate.getForObject("http://ec2-176-34-130-81.eu-west-1.compute.amazonaws.com:4444/api/v3/u/Taimou-2526/stats", Player.class);
+//        r.setPlayerName("Taimou");
+//        r.setAccountName("Taimou-2526");
+//
+//        session.saveOrUpdate(r);
+//
+//        log.info(r.toString());
+//        assertTrue(r.getAccountName().equals("Taimou-2526"));
+//    }
 
-        Session session
-                = sessionFactory.openSession();
-        session.beginTransaction();
-        RestTemplate restTemplate = new RestTemplate();
-        Player r = restTemplate.getForObject("http://ec2-176-34-130-81.eu-west-1.compute.amazonaws.com:4444/api/v3/u/Taimou-2526/stats", Player.class);
-        r.setPlayerName("Taimou");
-        r.setAccountName("Taimou-2526");
-
-        session.saveOrUpdate(r);
-
-        log.info(r.toString());
-        assertTrue(r.getAccountName().equals("Taimou-2526"));
-    }
-
-    @Test
-    public void saveTeam() {
-        this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
-
-        Session session
-                = sessionFactory.openSession();
-        session.beginTransaction();
-        RestTemplate restTemplate = new RestTemplate();
-        Player r = restTemplate.getForObject("http://ec2-176-34-130-81.eu-west-1.compute.amazonaws.com:4444/api/v3/u/Tisumi-11362/stats", Player.class);
-        r.setPlayerName("Surefour");
-        r.setAccountName("Tisumi-11362");
-        r.setTeamName(TeamName.Cloud9);
-        Team c9 = new Team(TeamName.Cloud9);
-        Team envy = new Team(TeamName.Team_EnVyUs);
-        c9.add(r);
-
-        session.saveOrUpdate(r);
-        session.saveOrUpdate(c9);
-        session.saveOrUpdate(envy);
-
-        log.info(r.toString());
-        assertTrue(r.getAccountName().equals("Tisumi-11362"));
-
-    }
+//    @Test
+//    public void saveTeam() {
+//        this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
+//
+//        Session session
+//                = sessionFactory.openSession();
+//        session.beginTransaction();
+//        RestTemplate restTemplate = new RestTemplate();
+//        Player r = restTemplate.getForObject("http://ec2-176-34-130-81.eu-west-1.compute.amazonaws.com:4444/api/v3/u/Tisumi-11362/stats", Player.class);
+//        r.setPlayerName("Surefour");
+//        r.setAccountName("Tisumi-11362");
+//        r.setTeamName(TeamName.Cloud9);
+//        Team c9 = new Team(TeamName.Cloud9);
+//        Team envy = new Team(TeamName.Team_EnVyUs);
+//        c9.add(r);
+//
+//        session.saveOrUpdate(r);
+//        session.saveOrUpdate(c9);
+//        session.saveOrUpdate(envy);
+//
+//        log.info(r.toString());
+//        assertTrue(r.getAccountName().equals("Tisumi-11362"));
+//
+//    }
 
     @Test
     public void insert() {
@@ -168,5 +168,6 @@ public class Apitests {
         assertTrue(true);
 
     }
+    
 
 }

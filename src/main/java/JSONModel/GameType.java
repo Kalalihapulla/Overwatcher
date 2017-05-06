@@ -5,6 +5,7 @@
  */
 package JSONModel;
 
+import AbstractModels.StatisticObject;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import javax.persistence.CascadeType;
@@ -26,7 +27,7 @@ public class GameType implements Serializable {
     private OverallStats overall_stats;
 
     public GameType() {
-        this.average_stats = new AverageStats();
+
         this.overall_stats = new OverallStats();
         this.id = 0L;
     }
@@ -45,6 +46,7 @@ public class GameType implements Serializable {
             cascade = CascadeType.ALL)
     public OverallStats getOverall_stats() {
         return overall_stats;
+
     }
 
     public void setOverall_stats(OverallStats overall_stats) {
@@ -53,10 +55,12 @@ public class GameType implements Serializable {
 
     @Id
     @GeneratedValue
+    
     public Long getId() {
         return id;
     }
 
+  
     public void setId(Long id) {
         this.id = id;
     }

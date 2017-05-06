@@ -3,21 +3,21 @@ import Model.Player;
 //import Model.QPlayer;
 //import Model.QUserAccount;
 //import Model.Rating;
-//import Model.UserAccount;
-//import Util.HibernateStuff;
-//import com.mysema.query.hql.HQLQuery;
-//import com.mysema.query.hql.hibernate.HibernateQuery;
-//import java.util.ArrayList;
-//import java.util.List;
-//import java.util.Map;
-//import org.hibernate.Session;
-//import org.hibernate.SessionFactory;
-//import org.junit.Assert;
-//import static org.junit.Assert.assertTrue;
-//import org.junit.Test;
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
-//import org.springframework.web.client.RestTemplate;
+import Model.UserAccount;
+import Util.HibernateStuff;
+import com.mysema.query.hql.HQLQuery;
+import com.mysema.query.hql.hibernate.HibernateQuery;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.junit.Assert;
+import static org.junit.Assert.assertTrue;
+import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.web.client.RestTemplate;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -30,8 +30,9 @@ import Model.Player;
  */
 public class QueryTests {
 //
-//    private SessionFactory sessionFactory;
-//    private static final Logger log = LoggerFactory.getLogger(QueryTests.class);
+
+    private SessionFactory sessionFactory;
+    private static final Logger log = LoggerFactory.getLogger(QueryTests.class);
 
 //    @Test
 //    public void qdsl1() throws InterruptedException {
@@ -89,9 +90,17 @@ public class QueryTests {
 //            System.err.println(e);
 //            assertTrue(false);
 //        }
-
+    @Test
+    public void getPlayer() {
+        this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
+        Session session
+                = sessionFactory.openSession();
+        
+        Player player
+                = (Player) session.get(Player.class, 1L);
+        System.out.println(player.getRating().getUs().getStats().getCompetitive().getAverage_stats().getDamage_done_avg());
+        
+        assertTrue(player.getPlayerName().equals("Taimou"));
+        
     }
-
-
-
-
+}

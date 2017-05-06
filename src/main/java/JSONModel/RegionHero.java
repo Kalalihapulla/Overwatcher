@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
+package JSONModel;
 
-import JSONModel.RegionHero;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import javax.persistence.CascadeType;
@@ -20,16 +19,12 @@ import javax.persistence.OneToOne;
  */
 @Entity
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class RatingHeroes implements Serializable {
+public class RegionHero implements Serializable {
 
     private long id;
-    private RegionHero us;
-    private RegionHero eu;
+    private HeroType heroes;
 
-    public RatingHeroes() {
-        this.id = 0L;
-        this.eu = new RegionHero();
-        this.us = new RegionHero();
+    public RegionHero() {
     }
 
     @Id
@@ -42,24 +37,14 @@ public class RatingHeroes implements Serializable {
         this.id = id;
     }
 
-    @OneToOne(targetEntity = RegionHero.class,
+    @OneToOne(targetEntity = HeroType.class,
             cascade = CascadeType.ALL)
-    public RegionHero getUs() {
-        return us;
+    public HeroType getHeroes() {
+        return heroes;
     }
 
-    public void setUs(RegionHero us) {
-        this.us = us;
-    }
-
-    @OneToOne(targetEntity = RegionHero.class,
-            cascade = CascadeType.ALL)
-    public RegionHero getEu() {
-        return eu;
-    }
-
-    public void setEu(RegionHero eu) {
-        this.eu = eu;
+    public void setHeroes(HeroType heroes) {
+        this.heroes = heroes;
     }
 
 }

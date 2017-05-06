@@ -43,6 +43,11 @@ public class Player implements Serializable, Observer, Comparable<Player> {
         this("unknown", "unknown", TeamName.Team_EnVyUs);
     }
 
+    @Override
+    public String toString() {
+       return id + playerName + teamName;
+    }
+
     @GeneratedValue
     @Id
     public Long getId() {

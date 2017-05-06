@@ -3,17 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package JSONModel;
+package AbstractModels;
 
 /**
  *
  * @author Izymi
  */
-public class HeroRegion {
-  
-    
-
-    public HeroRegion() {
-    }
+public abstract class RegionObject {
     
 }
