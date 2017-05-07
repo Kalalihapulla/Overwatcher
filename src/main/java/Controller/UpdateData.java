@@ -24,7 +24,7 @@ import org.springframework.web.client.RestTemplate;
 
 /**
  *
- * @author Izymi
+ * @author Himel
  */
 
 public class UpdateData {

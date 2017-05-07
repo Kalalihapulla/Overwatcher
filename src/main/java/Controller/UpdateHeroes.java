@@ -5,10 +5,13 @@
  */
 package Controller;
 
+import org.hibernate.SessionFactory;
+
 /**
  *
- * @author Izymi
+ * @author Himel
  */
 public class UpdateHeroes {
+       private SessionFactory sessionFactory;
     
 }

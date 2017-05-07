@@ -10,7 +10,7 @@ import java.sql.DriverManager;
 
 /**
  *
- * @author Izymi
+ * @author Himel
  */
 public class Test {
 

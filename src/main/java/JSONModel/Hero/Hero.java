@@ -5,8 +5,9 @@
  */
 package JSONModel.Hero;
 
+import JSONModel.Player.AverageStats;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import java.io.Serializable;
+import javax.annotation.Generated;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,14 +20,14 @@ import javax.persistence.OneToOne;
  */
 @Entity
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class RegionHero implements Serializable {
+public class Hero {
 
     private long id;
-    private HeroType heroes;
+    private AverageHero average_stats;
 
-    public RegionHero() {
-        this.heroes = new HeroType();
+    public Hero() {
         this.id = 0L;
+        this.average_stats = new AverageHero();
     }
 
     @Id
@@ -38,15 +39,14 @@ public class RegionHero implements Serializable {
     public void setId(long id) {
         this.id = id;
     }
-
-    @OneToOne(targetEntity = HeroType.class,
+ @OneToOne(targetEntity = AverageHero.class,
             cascade = CascadeType.ALL)
-    public HeroType getHeroes() {
-        return heroes;
+    public AverageHero getAverage_stats() {
+        return average_stats;
     }
 
-    public void setHeroes(HeroType heroes) {
-        this.heroes = heroes;
+    public void setAverage_stats(AverageHero average_stats) {
+        this.average_stats = average_stats;
     }
 
 }

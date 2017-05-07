@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
- * @author Izymi
+ * @author Himel
  */
 @RestController
 public class TeamController extends QueryMethods {

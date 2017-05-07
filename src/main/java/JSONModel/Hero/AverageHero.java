@@ -7,26 +7,40 @@ package JSONModel.Hero;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 
 /**
  *
- * @author Izymi
+ * @author Himel
  */
 @Entity
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class RegionHero implements Serializable {
+public class AverageHero implements Serializable {
 
+    private double damage_done_average;
+    private double eliminations_average;
     private long id;
-    private HeroType heroes;
 
-    public RegionHero() {
-        this.heroes = new HeroType();
+    public AverageHero() {
         this.id = 0L;
+    }
+
+    public double getDamage_done_average() {
+        return damage_done_average;
+    }
+
+    public void setDamage_done_average(double damage_done_average) {
+        this.damage_done_average = damage_done_average;
+    }
+
+    public double getEliminations_average() {
+        return eliminations_average;
+    }
+
+    public void setEliminations_average(double eliminations_average) {
+        this.eliminations_average = eliminations_average;
     }
 
     @Id
@@ -37,16 +51,6 @@ public class RegionHero implements Serializable {
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    @OneToOne(targetEntity = HeroType.class,
-            cascade = CascadeType.ALL)
-    public HeroType getHeroes() {
-        return heroes;
-    }
-
-    public void setHeroes(HeroType heroes) {
-        this.heroes = heroes;
     }
 
 }

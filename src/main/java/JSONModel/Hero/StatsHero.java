@@ -5,30 +5,49 @@
  */
 package JSONModel.Hero;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 /**
  *
  * @author Izymi
  */
 @Entity
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class StatsHero implements Serializable {
 
-    @Id
+    private HeroGameType competitive;
     private Long id;
 
     public StatsHero() {
+        this.competitive = new HeroGameType();
+        this.id = 0L;
 
     }
 
+    @Id
+    @GeneratedValue
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    @OneToOne(targetEntity = HeroGameType.class,
+            cascade = CascadeType.ALL)
+    public HeroGameType getHeroGameType() {
+        return competitive;
+    }
+
+    public void setHeroGameType(HeroGameType competitive) {
+        this.competitive = competitive;
     }
 
 }
