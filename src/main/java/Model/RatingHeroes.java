@@ -24,11 +24,11 @@ public class RatingHeroes implements Serializable {
 
     private long id;
     private RegionHero us;
-    private RegionHero eu;
+    private RegionHero kr;
 
     public RatingHeroes() {
         this.id = 0L;
-        this.eu = new RegionHero();
+        this.kr = new RegionHero();
         this.us = new RegionHero();
     }
 
@@ -54,12 +54,12 @@ public class RatingHeroes implements Serializable {
 
     @OneToOne(targetEntity = RegionHero.class,
             cascade = CascadeType.ALL)
-    public RegionHero getEu() {
-        return eu;
+    public RegionHero getKr() {
+        return kr;
     }
 
-    public void setEu(RegionHero eu) {
-        this.eu = eu;
+    public void setKr(RegionHero kr) {
+        this.kr = kr;
     }
 
 }

@@ -18,21 +18,21 @@ import org.junit.Test;
  */
 public class JsonTests {
 
-//    @Test
-//    public void json1() {
-//        UserAccount account = new UserAccount("dd", "F");
-//        UserAccount account3 = new UserAccount("ddd", "Ffg");
-//        UserAccount account2 = new UserAccount("dtgfd", "gfgfF");
-//        ArrayList s = new ArrayList<UserAccount>();
-//        s.add(account);
-//        s.add(account2);
-//        s.add(account3);
-//
-//        Gson g = new Gson();
-//        String f = g.toJson(s);
-//      assertTrue(f.length() > 15);
-//       
-//
-//    }
+    @Test
+    public void json1() {
+        UserAccount account = new UserAccount("dd", "F");
+        UserAccount account3 = new UserAccount("ddd", "Ffg");
+        UserAccount account2 = new UserAccount("dtgfd", "gfgfF");
+        ArrayList s = new ArrayList<UserAccount>();
+        s.add(account);
+        s.add(account2);
+        s.add(account3);
+
+        Gson g = new Gson();
+        String f = g.toJson(s);
+      assertTrue(f.length() > 15);
+       
+
+    }
 
 }

@@ -43,7 +43,7 @@ public class HibernateStuff {
         config.addAnnotatedClass(Hero.class);
         config.addAnnotatedClass(AverageHero.class);
         config = config.configure();
-//   new SchemaExport(config).create(true, true);
+//          new SchemaExport(config).create(true, true);
 
         StandardServiceRegistryBuilder serviceRegistryBuilder
                 = new StandardServiceRegistryBuilder();
