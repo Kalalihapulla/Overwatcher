@@ -1,5 +1,4 @@
 
-
 import Controller.UpdateData;
 import JSONModel.Player.RegionPlayer;
 import Model.Player;
@@ -123,7 +122,6 @@ public class Apitests {
 //        log.info(r.toString());
 //        assertTrue(r.getAccountName().equals("Taimou-2526"));
 //    }
-
 //    @Test
 //    public void saveTeam() {
 //        this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
@@ -148,9 +146,8 @@ public class Apitests {
 //        assertTrue(r.getAccountName().equals("Tisumi-11362"));
 //
 //    }
-
     @Test
-    public void insert() {
+    public void insertData() {
         UpdateData data = new UpdateData();
         data.insertData();
 //        this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
@@ -171,6 +168,11 @@ public class Apitests {
         assertTrue(true);
 
     }
-    
+
+    @Test
+    public void insertHero() {
+        
+
+    }
 
 }
