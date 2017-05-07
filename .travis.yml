@@ -8,6 +8,6 @@ deploy:
     secure: ee5582de-3b3e-4334-8518-690e10c4114d
   app: 
     final: afternoon-lowlands-40705
+    testbranch1: projectulu
   on:
     repo: himelr/TeamLUL
-
