@@ -7,6 +7,9 @@ package Model;
 
 import Util.HibernateStuff;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
@@ -43,5 +46,25 @@ public abstract class QueryMethods implements Serializable {
        
         return team;
 
+    }
+    public List<Team> allTeam(){
+              this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
+        Session session
+                = sessionFactory.openSession();
+        Criteria criteria = session.createCriteria(Team.class);
+
+        List teams = criteria.list();
+        List<Team> allTeams = new ArrayList();
+        teams.forEach((team) -> {
+            Team team1 = (Team) team;
+            allTeams.add(team1);
+
+        });
+        
+        return allTeams;
+
+        
+        
+        
     }
 }
