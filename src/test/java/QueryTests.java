@@ -1,5 +1,6 @@
 
 import Model.Player;
+import Model.Team;
 //import Model.QPlayer;
 //import Model.QUserAccount;
 //import Model.Rating;
@@ -95,28 +96,40 @@ public class QueryTests {
         this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
         Session session
                 = sessionFactory.openSession();
-
+        
         Player player
                 = (Player) session.get(Player.class, 1L);
-
+        
         assertTrue(player.getPlayerName().equals("Taimou"));
-
+        
     }
-
+    
     @Test
     public void compare() {
         this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
         Session session
                 = sessionFactory.openSession();
-
+        
         Player player
                 = (Player) session.get(Player.class, 1L);
         Player player2
                 = (Player) session.get(Player.class, 2L);
-        System.out.println(player.getPlayerName() + player.ValueRank());
-        System.out.println(player2.getPlayerName() + player2.ValueRank());
-
+        System.out.println(player.getPlayerName() + player.valueRank());
+        System.out.println(player2.getPlayerName() + player2.valueRank());
+      
+        
         assertTrue(player.compareTo(player2) == 1);
-
+        
+    }
+    
+    @Test
+    public void getTeam() {
+        this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
+        Session session
+                = sessionFactory.openSession();
+        Team team = (Team) session.get(Team.class, 3L);
+        System.out.println(team.valueRank());
+        assertTrue(team.valueRank() > 250);
+        
     }
 }

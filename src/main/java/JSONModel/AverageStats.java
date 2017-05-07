@@ -6,7 +6,7 @@
 package JSONModel;
 
 import Model.Calculatable;
-import Model.Value;
+import Model.ValueCalculate;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import javax.persistence.Basic;
@@ -20,7 +20,7 @@ import javax.persistence.Id;
  */
 @Entity
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class AverageStats extends Value implements Calculatable, Serializable {
+public class AverageStats extends ValueCalculate implements Calculatable, Serializable {
 
     private int damage_done_avg;
     private int healing_done_avg;

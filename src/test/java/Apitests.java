@@ -1,5 +1,6 @@
 
 
+import Controller.UpdateData;
 import JSONModel.Region;
 import Model.Player;
 import Model.ProData;
@@ -150,21 +151,23 @@ public class Apitests {
 
     @Test
     public void insert() {
-        this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
-
-        Session session
-                = sessionFactory.openSession();
-        session.beginTransaction();
-        ProData proData = new ProData();
-        Iterator<Player> players = proData.getPlayers();
-        RestTemplate restTemplate = new RestTemplate();
-        while (players.hasNext()) {
-            Player player = players.next();
-            RatingPlayer us = restTemplate.getForObject("http://ec2-176-34-130-81.eu-west-1.compute.amazonaws.com:4444/api/v3/u/" + player.getAccountName() + "/stats", RatingPlayer.class);
-            player.setRating(us);
-            session.saveOrUpdate(player);
-        }
-        session.getTransaction().commit();
+        UpdateData data = new UpdateData();
+        data.insertData();
+//        this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
+//
+//        Session session
+//                = sessionFactory.openSession();
+//        session.beginTransaction();
+//        ProData proData = new ProData();
+//        Iterator<Player> players = proData.getPlayers();
+//        RestTemplate restTemplate = new RestTemplate();
+//        while (players.hasNext()) {
+//            Player player = players.next();
+//            RatingPlayer us = restTemplate.getForObject("http://ec2-176-34-130-81.eu-west-1.compute.amazonaws.com:4444/api/v3/u/" + player.getAccountName() + "/stats", RatingPlayer.class);
+//            player.setRating(us);
+//            session.saveOrUpdate(player);
+//        }
+//        session.getTransaction().commit();
         assertTrue(true);
 
     }

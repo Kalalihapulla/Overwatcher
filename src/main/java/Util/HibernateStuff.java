@@ -31,7 +31,7 @@ public class HibernateStuff {
         config.addAnnotatedClass(AverageStats.class);
 
         config = config.configure();
-       //new SchemaExport(config).create(true, true);
+      //new SchemaExport(config).create(true, true);
 
         StandardServiceRegistryBuilder serviceRegistryBuilder
                 = new StandardServiceRegistryBuilder();

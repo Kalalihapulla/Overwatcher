@@ -6,7 +6,7 @@
 package JSONModel;
 
 import Model.Calculatable;
-import Model.Value;
+import Model.ValueCalculate;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -20,7 +20,7 @@ import javax.persistence.Id;
  */
 @Entity
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class OverallStats extends Value implements Calculatable, Serializable {
+public class OverallStats extends ValueCalculate implements Calculatable, Serializable {
 
     private long id;
     private double win_rate;

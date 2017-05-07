@@ -22,7 +22,7 @@ import javax.persistence.OneToOne;
  * @author Izymi
  */
 @Entity
-public class Player implements Serializable, Observer, Comparable<Player> {
+public class Player implements Serializable, Observer, Comparable<Player>, ValueRank {
 
     private Long id;
     private String playerName;
@@ -94,8 +94,8 @@ public class Player implements Serializable, Observer, Comparable<Player> {
 
     @Override
     public int compareTo(Player t) {
-        int value1 = ValueRank();
-        int value2 = t.ValueRank();
+        int value1 = valueRank();
+        int value2 = t.valueRank();
         if (value1 == value2) {
             return 0;
         }
@@ -119,7 +119,8 @@ public class Player implements Serializable, Observer, Comparable<Player> {
         this.rating = rating;
     }
 
-    public int ValueRank() {
+    @Override
+    public int valueRank() {
         int kr = rating.getKr().getStats().getCompetitive().getAverage_stats().calculate() + rating.getKr().getStats().getCompetitive().getOverall_stats().calculate();
         int us = rating.getUs().getStats().getCompetitive().getAverage_stats().calculate() + rating.getUs().getStats().getCompetitive().getOverall_stats().calculate();
         if (kr > us) {

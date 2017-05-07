@@ -13,7 +13,7 @@ import java.io.Serializable;
  *
  * @author Izymi
  */
-public abstract class Value implements Serializable{
+public abstract class ValueCalculate implements Serializable{
 
     private static final double damage_done_avgC = 0.007;
     private static final double healing_done_avgC = 0.015;
