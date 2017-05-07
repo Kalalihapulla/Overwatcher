@@ -1,5 +1,6 @@
 
 import Model.Player;
+import Model.QueryMethods;
 import Model.Team;
 //import Model.QPlayer;
 //import Model.QUserAccount;
@@ -29,7 +30,7 @@ import org.springframework.web.client.RestTemplate;
  *
  * @author Izymi
  */
-public class QueryTests {
+public class QueryTests extends QueryMethods {
 //
 
     private SessionFactory sessionFactory;
@@ -92,36 +93,32 @@ public class QueryTests {
 //            assertTrue(false);
 //        }
     @Test
-    public void getPlayer() {
+    public void getPlayer1() {
         this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
-        Session session
-                = sessionFactory.openSession();
-        
-        Player player
-                = (Player) session.get(Player.class, 1L);
-        
+
+        Player player = getPlayer(1L);
+
         assertTrue(player.getPlayerName().equals("Taimou"));
-        
+
     }
-    
+
     @Test
     public void compare() {
         this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
         Session session
                 = sessionFactory.openSession();
-        
+
         Player player
                 = (Player) session.get(Player.class, 1L);
         Player player2
                 = (Player) session.get(Player.class, 2L);
         System.out.println(player.getPlayerName() + player.valueRank());
         System.out.println(player2.getPlayerName() + player2.valueRank());
-      
-        
+
         assertTrue(player.compareTo(player2) == 1);
-        
+
     }
-    
+
     @Test
     public void getTeam() {
         this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
@@ -130,6 +127,6 @@ public class QueryTests {
         Team team = (Team) session.get(Team.class, 3L);
         System.out.println(team.valueRank());
         assertTrue(team.valueRank() > 250);
-        
+
     }
 }
