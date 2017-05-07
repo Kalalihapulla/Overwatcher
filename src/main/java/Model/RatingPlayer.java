@@ -5,7 +5,7 @@
  */
 package Model;
 
-import JSONModel.Region;
+import JSONModel.Player.RegionPlayer;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import javax.persistence.CascadeType;
@@ -25,13 +25,13 @@ public class RatingPlayer implements Serializable {
 
     private long id;
 
-    private Region us;
-    private Region kr;
+    private RegionPlayer us;
+    private RegionPlayer kr;
 
     public RatingPlayer() {
         this.id = 0L;
-        this.us = new Region();
-        this.kr = new Region();
+        this.us = new RegionPlayer();
+        this.kr = new RegionPlayer();
 
     }
 
@@ -40,13 +40,13 @@ public class RatingPlayer implements Serializable {
         return us.toString();
     }
 
-    @OneToOne(targetEntity = Region.class,
+    @OneToOne(targetEntity = RegionPlayer.class,
             cascade = CascadeType.ALL)
-    public Region getUs() {
+    public RegionPlayer getUs() {
         return us;
     }
 
-    public void setUs(Region us) {
+    public void setUs(RegionPlayer us) {
         this.us = us;
     }
 
@@ -59,13 +59,13 @@ public class RatingPlayer implements Serializable {
     public void setId(long id) {
         this.id = id;
     }
-   @OneToOne(targetEntity = Region.class,
+   @OneToOne(targetEntity = RegionPlayer.class,
             cascade = CascadeType.ALL)
-    public Region getKr() {
+    public RegionPlayer getKr() {
         return kr;
     }
 
-    public void setKr(Region kr) {
+    public void setKr(RegionPlayer kr) {
         this.kr = kr;
     }
 

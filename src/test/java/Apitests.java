@@ -1,7 +1,7 @@
 
 
 import Controller.UpdateData;
-import JSONModel.Region;
+import JSONModel.Player.RegionPlayer;
 import Model.Player;
 import Model.ProData;
 import Model.RatingPlayer;
@@ -40,7 +40,7 @@ public class Apitests {
 //    public void riotJava1() throws RiotApiException {       
 //        RiotApi api = new RiotApi("RGAPI-696ed310-71e7-4f8e-bee1-9b3ee195f98a");
 //
-//        Map<String, Summoner> summoners = api.getSummonersByName(Region.NA, "rithms, tryndamere");
+//        Map<String, Summoner> summoners = api.getSummonersByName(RegionPlayer.NA, "rithms, tryndamere");
 //        Summoner summoner = summoners.get("rithms");
 //
 //        long id = summoner.getId();

@@ -1,6 +1,10 @@
 package Util;
 
-import JSONModel.*;
+import JSONModel.Player.RegionPlayer;
+import JSONModel.Player.AverageStats;
+import JSONModel.Player.PlayerGameType;
+import JSONModel.Player.OverallStats;
+import JSONModel.Player.StatsPlayer;
 import Model.RatingPlayer;
 import Model.Team;
 import org.hibernate.SessionFactory;
@@ -24,14 +28,14 @@ public class HibernateStuff {
         config.addAnnotatedClass(Model.Player.class);
         config.addAnnotatedClass(RatingPlayer.class);
         config.addAnnotatedClass(Team.class);
-        config.addAnnotatedClass(Region.class);
-        config.addAnnotatedClass(Stats.class);
-        config.addAnnotatedClass(GameType.class);
+        config.addAnnotatedClass(RegionPlayer.class);
+        config.addAnnotatedClass(StatsPlayer.class);
+        config.addAnnotatedClass(PlayerGameType.class);
         config.addAnnotatedClass(OverallStats.class);
         config.addAnnotatedClass(AverageStats.class);
 
         config = config.configure();
-      //new SchemaExport(config).create(true, true);
+     new SchemaExport(config).create(true, true);
 
         StandardServiceRegistryBuilder serviceRegistryBuilder
                 = new StandardServiceRegistryBuilder();

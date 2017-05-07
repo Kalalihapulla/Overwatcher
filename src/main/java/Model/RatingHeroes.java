@@ -5,7 +5,7 @@
  */
 package Model;
 
-import JSONModel.RegionHero;
+import JSONModel.Hero.RegionHero;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import javax.persistence.CascadeType;

@@ -5,8 +5,8 @@
  */
 package Model;
 
-import JSONModel.AverageStats;
-import JSONModel.OverallStats;
+import JSONModel.Player.AverageStats;
+import JSONModel.Player.OverallStats;
 import java.io.Serializable;
 
 /**

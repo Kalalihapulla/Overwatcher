@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package JSONModel;
+package JSONModel.Player;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -20,13 +20,13 @@ import javax.persistence.OneToOne;
  */
 @Entity
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class GameType implements Serializable {
+public class PlayerGameType implements Serializable {
 
     private Long id;
     private AverageStats average_stats;
     private OverallStats overall_stats;
 
-    public GameType() {
+    public PlayerGameType() {
 
         this.overall_stats = new OverallStats();
         this.id = 0L;

@@ -6,7 +6,7 @@
 package Model;
 
 import Controller.Observer;
-import JSONModel.Region;
+import JSONModel.Player.RegionPlayer;
 import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;

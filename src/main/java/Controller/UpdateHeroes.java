@@ -3,19 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package JSONModel;
-
-import java.io.Serializable;
+package Controller;
 
 /**
  *
  * @author Izymi
  */
-
-public class DataType implements Serializable{
-
-    public DataType() {
-        
-    }
+public class UpdateHeroes {
     
 }

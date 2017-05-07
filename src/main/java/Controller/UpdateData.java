@@ -60,6 +60,7 @@ public class UpdateData {
             Player player = players.next();
             RatingPlayer us = restTemplate.getForObject("http://ec2-176-34-130-81.eu-west-1.compute.amazonaws.com:4444/api/v3/u/" + player.getAccountName() + "/stats", RatingPlayer.class);
             player.setRating(us);
+            player.valueRank();
             addToTeam(player);
             session.saveOrUpdate(player);
         }

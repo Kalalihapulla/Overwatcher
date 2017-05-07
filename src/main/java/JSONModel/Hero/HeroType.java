@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package JSONModel;
+package JSONModel.Hero;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
@@ -23,11 +23,11 @@ import javax.persistence.OneToOne;
 public class HeroType implements Serializable {
 
     private long id;
-    private DataType stats;
+    private StatsHero stats;
 
     public HeroType() {
         this.id = 0L;
-        this.stats = new DataType();
+        this.stats = new StatsHero();
     }
 
     @Id
@@ -41,13 +41,13 @@ public class HeroType implements Serializable {
         this.id = id;
     }
 
-    @OneToOne(targetEntity = DataType.class,
+    @OneToOne(targetEntity = StatsHero.class,
             cascade = CascadeType.ALL)
-    public DataType getStats() {
+    public StatsHero getStats() {
         return stats;
     }
 
-    public void setStats(DataType stats) {
+    public void setStats(StatsHero stats) {
         this.stats = stats;
     }
 

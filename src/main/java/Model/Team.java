@@ -5,7 +5,7 @@
  */
 package Model;
 
-import JSONModel.AverageStats;
+import JSONModel.Player.AverageStats;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;

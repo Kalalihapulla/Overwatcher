@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package JSONModel;
+package JSONModel.Player;
 
+import JSONModel.Player.StatsPlayer;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import javax.persistence.CascadeType;
@@ -21,24 +22,24 @@ import javax.persistence.OneToOne;
  */
 @Entity
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Region implements Serializable{
+public class RegionPlayer implements Serializable{
 
-    private Stats stats;
+    private StatsPlayer stats;
 
     private long id;
 
-    public Region() {
+    public RegionPlayer() {
         this.id = 0L;
-        this.stats = new Stats();
+        this.stats = new StatsPlayer();
     }
 
-    @OneToOne(targetEntity = Stats.class,
+    @OneToOne(targetEntity = StatsPlayer.class,
             cascade = CascadeType.ALL)
-    public Stats getStats() {
+    public StatsPlayer getStats() {
         return stats;
     }
 
-    public void setStats(Stats stats) {
+    public void setStats(StatsPlayer stats) {
         this.stats = stats;
     }
 

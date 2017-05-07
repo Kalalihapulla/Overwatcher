@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package JSONModel;
+package JSONModel.Player;
 
 import Model.Calculatable;
 import Model.ValueCalculate;
