@@ -28,8 +28,20 @@ public abstract class QueryMethods implements Serializable {
 
         Player player
                 = (Player) session.get(Player.class, id);
-        session.close();
+       
         return player;
+
+    }
+
+    public Team getTeam(Long id) {
+        this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
+        Session session
+                = sessionFactory.openSession();
+
+        Team team
+                = (Team) session.get(Team.class, id);
+       
+        return team;
 
     }
 }
