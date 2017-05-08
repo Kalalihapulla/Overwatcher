@@ -2,6 +2,7 @@
 import Model.Player;
 import Model.QueryMethods;
 import Model.Team;
+import Model.TeamName;
 //import Model.QPlayer;
 //import Model.QUserAccount;
 //import Model.Rating;
@@ -92,8 +93,19 @@ public class QueryTests extends QueryMethods {
 //            System.err.println(e);
 //            assertTrue(false);
 //        }
+    
     @Test
-    public void getPlayer1() {
+    public void getPlayer1Id() {
+        this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
+        
+        Player player = getPlayer(1L);
+        
+        assertTrue(player.getId().equals(1L));
+        
+    }
+    
+    @Test
+    public void getPlayer1Name() {
         this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
         
         Player player = getPlayer(1L);
@@ -103,7 +115,38 @@ public class QueryTests extends QueryMethods {
     }
     
     @Test
-    public void compare() {
+    public void getPlayer1AccountName() {
+        this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
+        
+        Player player = getPlayer(1L);
+        
+        assertTrue(player.getAccountName().equals("Taimou-2526"));
+        
+    }
+    
+    @Test
+    public void getPlayer1TeamName() {
+        this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
+        
+        Player player = getPlayer(1L);
+        
+        assertTrue(player.getTeamName().equals(TeamName.Team_EnVyUs));
+    }
+    
+    @Test
+    public void getPlayer1Rating() {
+        this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
+        Session session
+                = sessionFactory.openSession();
+        
+        Player player
+                = (Player) session.get(Player.class, 1L);
+        
+        assertTrue(player.getValueRating() >= 0);
+    }
+    
+    @Test
+    public void comparePlayers() {
         this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
         Session session
                 = sessionFactory.openSession();
@@ -120,9 +163,35 @@ public class QueryTests extends QueryMethods {
     }
     
     @Test
-    public void getTeam1() {
+    public void getTeam1id() {
+        this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
         
-        assertTrue(getTeam(3L).valueRank() > 250);
+        Team team = getTeam(1L);
+        
+        assertTrue(team.getId() == 1L);
+    }
+    
+    @Test
+    public void getTeam1Name() {
+        this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
+        
+        Team team = getTeam(1L);
+        
+        assertTrue(team.getTeamName().equals(TeamName.Misfits));
         
     }
+    
+    @Test
+    public void getTeam1Rating() {
+        this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
+        Session session
+                = sessionFactory.openSession();
+        
+        Team team
+                = (Team) session.get(Team.class, 1L);
+        
+        assertTrue(team.getValueRating() >= 0);
+    }
+    
+
 }
