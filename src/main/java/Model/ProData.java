@@ -94,8 +94,8 @@ public class ProData {
         
         this.unkoe = new Player("uNKOE", "uNKOE-2828", TeamName.Rogue);
         this.winz = new Player("winz", "winz-2621", TeamName.Rogue);
-        this.soon = new Player("SoOn", "winz-2621", TeamName.Rogue);
-        this.akm = new Player("aKm", "winz-2621", TeamName.Rogue);
+        this.soon = new Player("SoOn", "SoOn-2543", TeamName.Rogue);
+        this.akm = new Player("aKm", "aKm-2452", TeamName.Rogue);
         this.knoxxx = new Player("KnOxXx", "KnOxXx-21951", TeamName.Rogue);
 
     }
