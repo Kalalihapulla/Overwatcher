@@ -1,4 +1,5 @@
-
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -39,7 +40,7 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li><a href="#">About</a></li>
-                        <li><a href="#">Ladder statistics</a></li>
+                        <li><a href="#">Ladder statistics ${message}</a></li>
                        
                     </ul>
                    
