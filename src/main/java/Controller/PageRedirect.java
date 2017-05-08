@@ -21,7 +21,7 @@ public class PageRedirect {
     @RequestMapping("/")
     public String welcome(Map<String, Object> model) {
 //        model.put("message", this.message);
-        return "Usersearch";
+        return "Ladderstats";
     }
 
     @RequestMapping("/ladderstats")

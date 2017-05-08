@@ -1,4 +1,5 @@
-
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -7,15 +8,17 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <!--CSS-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="CSS/Style.css">
-
-
         <!--Javascript-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="script/jquery.min.js"></script>
         <script src="script/javascript.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <!--CSS-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link rel="stylesheet" type="text/css" href="CSS/Style.css">
+
 
         <!--Fix scaling!!!-->
 
@@ -40,16 +43,7 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li><a href="#">About</a></li>
-                        <li>Ladder statistics</a></li>
-                        <li> <form:form method = "GET" action = "/ladderstats">
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <input type = "submit" value = "Redirect Page"/>
-                                        </td>
-                                    </tr>
-                                </table>  
-                            </form:form></li>
+                        <li><a href="Ladderstats.jsp">Ladder statistics</a></li>
 
                     </ul>
 
@@ -96,12 +90,27 @@
 
 
 
+
+
         <div id="searchbox">         
             <input id="searchboxtext1"type="text" name="search" placeholder="Search for Battle.net user">
             <input id="searchboxtext2" type="text" name="search" placeholder="Type in the Battle.net ID associated with the user">
-            <button id="searchbutton" type="button">Search</button>
-            <img id="owlogo" src="contents/owlogo.png">
 
+            <select id="serverid">
+                <option  value="eu">Europe</option>
+                <option  value="na">North America</option>
+                <option  value="kr">Korea</option>       
+            </select>
+
+            <button id="searchbutton" type="button">Search</button>
+            <button id="searchbutton2" type="button">Search</button>
+            <img id="owlogo" src="contents/owlogo.png">
         </div>
+
+        
+
+
+
     </body>
 </html>
+s
