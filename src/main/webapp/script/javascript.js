@@ -128,7 +128,8 @@ $(document).ready(function () {
         alert("loaded");
 
         $.ajax({
-            url: "/getPlayer?id=2",
+            url: "/allPlayers",
+            async: false,
             error: function () {
                 alert('User not found, try again');
             }
