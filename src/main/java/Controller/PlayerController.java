@@ -8,6 +8,7 @@ package Controller;
 import Model.Player;
 import Model.QueryMethods;
 import Model.Team;
+import java.util.List;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,6 +27,11 @@ public class PlayerController extends QueryMethods {
 
     }
 
+    @RequestMapping("/allPlayers")
+    public List<Player> allPlayers() {
 
+        return getAllPlayers();
+
+    }
 
 }

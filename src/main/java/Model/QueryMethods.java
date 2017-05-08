@@ -31,9 +31,19 @@ public abstract class QueryMethods implements Serializable {
 
         Player player
                 = (Player) session.get(Player.class, id);
-       
+
         return player;
 
+    }
+
+    public List<Player> getAllPlayers() {
+        this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
+        Session session
+                = sessionFactory.openSession();
+        Criteria criteria = session.createCriteria(Player.class);
+        List<Player> players = criteria.list();
+
+        return players;
     }
 
     public Team getTeam(Long id) {
@@ -43,28 +53,20 @@ public abstract class QueryMethods implements Serializable {
 
         Team team
                 = (Team) session.get(Team.class, id);
-       
+
         return team;
 
     }
-    public List<Team> allTeam(){
-              this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
+
+    public List<Team> allTeam() {
+        this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
         Session session
                 = sessionFactory.openSession();
         Criteria criteria = session.createCriteria(Team.class);
 
-        List teams = criteria.list();
-        List<Team> allTeams = new ArrayList();
-        teams.forEach((team) -> {
-            Team team1 = (Team) team;
-            allTeams.add(team1);
+        List<Team> teams = criteria.list();
+  
+        return teams;
 
-        });
-        
-        return allTeams;
-
-        
-        
-        
     }
 }
