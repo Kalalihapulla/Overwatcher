@@ -177,7 +177,7 @@ public class QueryTests extends QueryMethods {
         
         Team team = getTeam(1L);
         
-        assertTrue(team.getTeamName().equals(TeamName.Misfits));
+        assertTrue(team.getTeamName().equals(TeamName.Fnatic));
         
     }
     
