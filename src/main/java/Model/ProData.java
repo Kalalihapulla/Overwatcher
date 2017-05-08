@@ -13,7 +13,7 @@ import javax.websocket.Decoder;
 
 /**
  *
- * @author Izymi
+ * @author Himel
  */
 public class ProData {
 
@@ -72,7 +72,7 @@ public class ProData {
         this.gods = new Player("Gods", "Gods-11104", TeamName.Cloud9);
         
         this.seagull = new Player("Seagull", "Seagull-1894", TeamName.NRG_Esports);
-        this.iddqd = new Player("Iddqd", "IDDQD-11988", TeamName.NRG_Esports);
+//        this.iddqd = new Player("Iddqd", "IDDQD-11988", TeamName.NRG_Esports);
         this.ajax = new Player("Ajax", "AJax-12136", TeamName.NRG_Esports);
         this.numlocked = new Player("Numlocked", "numlocked-21330", TeamName.NRG_Esports);
         this.dummy = new Player("Dummy", "dummy-1173", TeamName.NRG_Esports);
@@ -114,7 +114,7 @@ public class ProData {
         players.add(ryb);
         players.add(gods);
         players.add(seagull);
-        players.add(iddqd);
+//        players.add(iddqd);
         players.add(ajax);
         players.add(numlocked);
         players.add(dummy);
