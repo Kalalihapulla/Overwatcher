@@ -100,7 +100,7 @@ public class Player implements Serializable, Observer, Comparable<Player>, Value
             return 0;
         }
 
-        if (value1 > value2) {
+        if (value1 < value2) {
             return 1;
 
         } else {

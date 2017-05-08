@@ -20,9 +20,9 @@ public class JsonTests {
 
     @Test
     public void json1() {
-        UserAccount account = new UserAccount("dd", "F");
-        UserAccount account3 = new UserAccount("ddd", "Ffg");
-        UserAccount account2 = new UserAccount("dtgfd", "gfgfF");
+        UserAccount account = new UserAccount("dd", "F","dd");
+        UserAccount account3 = new UserAccount("ddd", "Ffg","dd");
+        UserAccount account2 = new UserAccount("dtgfd", "gfgfF","dd");
         ArrayList s = new ArrayList<UserAccount>();
         s.add(account);
         s.add(account2);

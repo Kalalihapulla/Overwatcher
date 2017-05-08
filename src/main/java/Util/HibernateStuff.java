@@ -9,6 +9,7 @@ import JSONModel.Player.StatsPlayer;
 import Model.RatingHeroes;
 import Model.RatingPlayer;
 import Model.Team;
+import Model.UserAccount;
 import org.hibernate.SessionFactory;
 import org.hibernate.SessionFactoryObserver;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -26,7 +27,7 @@ public class HibernateStuff {
      */
     public HibernateStuff() {
         Configuration config = new Configuration();
-
+//        config.addAnnotatedClass(UserAccount.class);
         config.addAnnotatedClass(Model.Player.class);
         config.addAnnotatedClass(RatingPlayer.class);
         config.addAnnotatedClass(Team.class);
@@ -43,7 +44,7 @@ public class HibernateStuff {
         config.addAnnotatedClass(Hero.class);
         config.addAnnotatedClass(AverageHero.class);
         config = config.configure();
-         //new SchemaExport(config).create(true, true);
+        //new SchemaExport(config).create(true, true);
 
         StandardServiceRegistryBuilder serviceRegistryBuilder
                 = new StandardServiceRegistryBuilder();

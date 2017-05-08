@@ -8,6 +8,8 @@ package Model;
 import Util.HibernateStuff;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
@@ -42,6 +44,7 @@ public abstract class QueryMethods implements Serializable {
                 = sessionFactory.openSession();
         Criteria criteria = session.createCriteria(Player.class);
         List<Player> players = criteria.list();
+        Collections.sort(players);
 
         return players;
     }
@@ -65,8 +68,21 @@ public abstract class QueryMethods implements Serializable {
         Criteria criteria = session.createCriteria(Team.class);
 
         List<Team> teams = criteria.list();
-  
+        Collections.sort(teams);
+
         return teams;
 
     }
+
+    public boolean createUser(UserAccount account) {
+        this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
+
+        Session session
+                = sessionFactory.openSession();
+        session.beginTransaction();
+        session.saveOrUpdate(account);
+        session.getTransaction().commit();
+        return true;
+    }
+
 }
