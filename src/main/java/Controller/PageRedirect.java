@@ -21,7 +21,7 @@ public class PageRedirect {
     @RequestMapping("/")
     public String welcome(Map<String, Object> model) {
 //        model.put("message", this.message);
-        return "Ladderstats";
+        return "Usersearch";
     }
 
     @RequestMapping("/ladderstats")
@@ -33,7 +33,19 @@ public class PageRedirect {
 //        Session session
 //                = sessionFactory.openSession();
 //        session.beginTransaction();
+        return "Ladderstats";
+    }
+
+    @RequestMapping("/usersearch")
+    public String user() {
+
         return "Usersearch";
+    }
+
+    @RequestMapping("/userstats")
+    public String stats() {
+
+        return "Userstats";
     }
 
 }

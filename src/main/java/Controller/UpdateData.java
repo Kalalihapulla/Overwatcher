@@ -68,7 +68,9 @@ public class UpdateData {
             session.saveOrUpdate(player);
         }
         while (!teams.isEmpty()) {
-            session.saveOrUpdate(teams.pop());
+            Team team = teams.pop();
+            team.valueRank();
+            session.saveOrUpdate(team);
         }
         session.getTransaction().commit();
         System.exit(0);

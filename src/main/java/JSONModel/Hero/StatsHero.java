@@ -15,7 +15,7 @@ import javax.persistence.OneToOne;
 
 /**
  *
- * @author Izymi
+ * @author Himel
  */
 @Entity
 @JsonIgnoreProperties(ignoreUnknown = true)
