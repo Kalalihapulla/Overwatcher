@@ -103,6 +103,7 @@ public class Team implements Serializable, Comparable<Team>, ValueRank {
             size++;
 
         }
+        this.valueRating = value1 / size;
         return value1 / size;
     }
 
