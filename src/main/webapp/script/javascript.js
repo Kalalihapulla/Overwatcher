@@ -123,10 +123,10 @@ $(document).ready(function () {
 //       
 //    });
 //    
-        $(window).load(function () {
-  
+    $(window).load(function () {
+
         alert("loaded");
-        
+
         $.ajax({
             url: "/getPlayer?id=2",
             error: function () {
@@ -142,13 +142,20 @@ $(document).ready(function () {
             var ladderRanking = data.rating.us.stats.competitive.overall_stats.comprank;
             var teamName = data.teamName;
             var rowId = 1;
+            var playerAvatar = data.rating.us.stats.competitive.overall_stats.avatar;
+            var avatarUrl = document.createElement("img");
+            var oImage = new Image();
+
+            avatarUrl.setAttribute("src", playerAvatar);
+            $('#playerList').append("<tr><th><td>" + playerName + "</td><td> " + valueRating + "</td><td>" + ladderRanking + "</td><td>" + teamName + "</td><td><img src="+playerAvatar+"></td></th></tr>");
 
 
-           //$('#playerList').append("<tr><th scope="row"> + rowId + "<td>" + playerName + "</td><td> " + valueRating + "</td><td>" + ladderRanking + "</td><td>" + teamName + "</td></th></tr>");
-           $('#playerList').append('<tr><th scope="row">2<td>pname</td><td>vrating</td><td>ladrating</td><td>teamname</td><td><img src="https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg%22%3E</td></th></tr>');
+            //$('#playerList').append("<tr><th scope="row"> + rowId + "<td>" + playerName + "</td><td> " + valueRating + "</td><td>" + ladderRanking + "</td><td>" + teamName + "</td></th></tr>");
+            //$('#playerList').append('<tr><th scope="row">2<td>pname</td><td>vrating</td><td>ladrating</td><td>teamname</td><td><img src="https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg%22%3E</td></th></tr>');
+            $('#playerList').append("<tr><th><td>" + playerName + "</td><td> " + valueRating + "</td><td>" + ladderRanking + "</td><td>" + teamName + "</td><td>" + avatarUrl + "</td></th></tr>");
         });
 
-       
+
 
 
         var Stage = 0;
