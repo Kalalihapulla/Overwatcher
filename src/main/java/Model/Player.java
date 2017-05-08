@@ -121,8 +121,10 @@ public class Player implements Serializable, Observer, Comparable<Player>, Value
 
     @Override
     public int valueRank() {
-        int kr = rating.getKr().getStats().getCompetitive().getAverage_stats().calculate() + rating.getKr().getStats().getCompetitive().getOverall_stats().calculate();
-        int us = rating.getUs().getStats().getCompetitive().getAverage_stats().calculate() + rating.getUs().getStats().getCompetitive().getOverall_stats().calculate();
+
+      
+        int kr = KrR();
+        int us = UsR();
         if (kr > us) {
             valueRating = kr;
             return kr;
@@ -141,4 +143,20 @@ public class Player implements Serializable, Observer, Comparable<Player>, Value
         this.valueRating = valueRating;
     }
 
+    public int KrR() {
+        try {
+            return rating.getKr().getStats().getCompetitive().getAverage_stats().calculate() + rating.getKr().getStats().getCompetitive().getOverall_stats().calculate();
+        } catch (Exception e) {
+            return 0;
+        }
+
+    }
+       public int UsR() {
+        try {
+            return rating.getUs().getStats().getCompetitive().getAverage_stats().calculate() + rating.getUs().getStats().getCompetitive().getOverall_stats().calculate();
+        } catch (Exception e) {
+            return 0;
+        }
+
+    }
 }

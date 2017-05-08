@@ -67,7 +67,7 @@ public class ProData {
         this.surefour = new Player("Surefour", "Surefour-2559", TeamName.Cloud9);
         this.mendo = new Player("Mendokusaii", "Mendokusaii-2955", TeamName.Cloud9);
         this.roolf = new Player("Roolf", "Roolf-1732", TeamName.Cloud9);
-        this.adam = new Player("Adam", "", TeamName.Cloud9);
+//        this.adam = new Player("Adam", "", TeamName.Cloud9);
         this.ryb = new Player("Ryb", "ryb-2520", TeamName.Cloud9);
         this.gods = new Player("Gods", "Gods-11104", TeamName.Cloud9);
         
@@ -80,14 +80,14 @@ public class ProData {
         
         this.custa = new Player("Custa", "Custa-1679", TeamName.Fnatic);
         this.coolmatt = new Player("Coolmatt69", "coolmatt69-1231", TeamName.Fnatic);
-        this.buds = new Player("Buds", "", TeamName.Fnatic);
+//        this.buds = new Player("Buds", "", TeamName.Fnatic);
         this.vonethil = new Player("Vonethil", "Vonethil-2761", TeamName.Fnatic);
         this.stoop = new Player("Stoop", "Stoop-1718", TeamName.Fnatic);
         this.hafficool = new Player("Hafficool", "Hafficool-21377", TeamName.Fnatic);
 
         this.zebbosai = new Player("Zebbosai", "Zebbosai-2381", TeamName.Misfits);
         this.nevix = new Player("Nevix", "Nevix-2877", TeamName.Misfits);
-        this.tviq = new Player("TviQ", "TviQ#1503", TeamName.Misfits);
+        this.tviq = new Player("TviQ", "TviQ-1503", TeamName.Misfits);
         this.reinforce = new Player("Reinforce", "Reinforce-2978", TeamName.Misfits);
         this.manneten = new Player("Manneten", "Manneten-2445", TeamName.Misfits);
         this.zave = new Player("Zave", "Zave-2150", TeamName.Misfits);
@@ -110,7 +110,7 @@ public class ProData {
         players.add(surefour);
         players.add(mendo);
         players.add(roolf);
-        players.add(adam);
+//        players.add(adam);
         players.add(ryb);
         players.add(gods);
         players.add(seagull);
@@ -121,7 +121,7 @@ public class ProData {
         players.add(harbleu);
         players.add(custa);
         players.add(coolmatt);
-        players.add(buds);
+//        players.add(buds);
         players.add(vonethil);
         players.add(stoop);
         players.add(hafficool);
