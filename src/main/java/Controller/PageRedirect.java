@@ -1,6 +1,9 @@
 package Controller;
 
+import Util.HibernateStuff;
 import java.util.Map;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -13,6 +16,7 @@ public class PageRedirect {
     // inject RequestParam(value = "id", defaultValue = "1") String idvia application.properties
 //    @Value("${welcome.message:test}")
     //private String message = "Hello World";
+    private SessionFactory sessionFactory;
 
     @RequestMapping("/")
     public String welcome(Map<String, Object> model) {
@@ -21,8 +25,13 @@ public class PageRedirect {
     }
 
     @RequestMapping("/ladderstats")
-    public String ladder(Map<String, Object> model) {
-        model.put("message", "lul");
+    public String ladder(@RequestParam(value = "user", defaultValue = "Taimou") String user) {
+        //model.put("message", "lul");
+        this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
+
+        Session session
+                = sessionFactory.openSession();
+        session.beginTransaction();
         return "Ladderstats";
     }
 

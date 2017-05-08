@@ -64,39 +64,39 @@ public class ProData {
         this.hulk = new Player("INTERNETHULK", "INTERNETHULK-2984", TeamName.Team_EnVyUs);
         this.harry = new Player("HarryHook", "HarryHook-2309", TeamName.Team_EnVyUs);
         
-        this.surefour = new Player("Surefour", "Surefour#2559", TeamName.Cloud9);
-        this.mendo = new Player("Mendokusaii", "Mendokusaii#2955", TeamName.Cloud9);
-        this.roolf = new Player("Roolf", "Roolf#1732", TeamName.Cloud9);
+        this.surefour = new Player("Surefour", "Surefour-2559", TeamName.Cloud9);
+        this.mendo = new Player("Mendokusaii", "Mendokusaii-2955", TeamName.Cloud9);
+        this.roolf = new Player("Roolf", "Roolf-1732", TeamName.Cloud9);
         this.adam = new Player("Adam", "", TeamName.Cloud9);
-        this.ryb = new Player("Ryb", "ryb#2520", TeamName.Cloud9);
-        this.gods = new Player("Gods", "Gods#11104", TeamName.Cloud9);
+        this.ryb = new Player("Ryb", "ryb-2520", TeamName.Cloud9);
+        this.gods = new Player("Gods", "Gods-11104", TeamName.Cloud9);
         
-        this.seagull = new Player("Seagull", "Seagull#1894", TeamName.NRG_Esports);
-        this.iddqd = new Player("Iddqd", "IDDQD#11988", TeamName.NRG_Esports);
-        this.ajax = new Player("Ajax", "AJax#12136", TeamName.NRG_Esports);
-        this.numlocked = new Player("Numlocked", "numlocked#21330", TeamName.NRG_Esports);
-        this.dummy = new Player("Dummy", "dummy#1173", TeamName.NRG_Esports);
-        this.harbleu = new Player("Harbleu", "harbleu#1515", TeamName.NRG_Esports);
+        this.seagull = new Player("Seagull", "Seagull-1894", TeamName.NRG_Esports);
+        this.iddqd = new Player("Iddqd", "IDDQD-11988", TeamName.NRG_Esports);
+        this.ajax = new Player("Ajax", "AJax-12136", TeamName.NRG_Esports);
+        this.numlocked = new Player("Numlocked", "numlocked-21330", TeamName.NRG_Esports);
+        this.dummy = new Player("Dummy", "dummy-1173", TeamName.NRG_Esports);
+        this.harbleu = new Player("Harbleu", "harbleu-1515", TeamName.NRG_Esports);
         
-        this.custa = new Player("Custa", "Custa#1679", TeamName.Fnatic);
-        this.coolmatt = new Player("Coolmatt69", "coolmatt69#1231", TeamName.Fnatic);
+        this.custa = new Player("Custa", "Custa-1679", TeamName.Fnatic);
+        this.coolmatt = new Player("Coolmatt69", "coolmatt69-1231", TeamName.Fnatic);
         this.buds = new Player("Buds", "", TeamName.Fnatic);
-        this.vonethil = new Player("Vonethil", "Vonethil#2761", TeamName.Fnatic);
-        this.stoop = new Player("Stoop", "Stoop#1718", TeamName.Fnatic);
-        this.hafficool = new Player("Hafficool", "Hafficool#21377", TeamName.Fnatic);
+        this.vonethil = new Player("Vonethil", "Vonethil-2761", TeamName.Fnatic);
+        this.stoop = new Player("Stoop", "Stoop-1718", TeamName.Fnatic);
+        this.hafficool = new Player("Hafficool", "Hafficool-21377", TeamName.Fnatic);
 
-        this.zebbosai = new Player("Zebbosai", "Zebbosai#2381", TeamName.Misfits);
-        this.nevix = new Player("Nevix", "Nevix#2877", TeamName.Misfits);
+        this.zebbosai = new Player("Zebbosai", "Zebbosai-2381", TeamName.Misfits);
+        this.nevix = new Player("Nevix", "Nevix-2877", TeamName.Misfits);
         this.tviq = new Player("TviQ", "TviQ#1503", TeamName.Misfits);
-        this.reinforce = new Player("Reinforce", "Reinforce#2978", TeamName.Misfits);
-        this.manneten = new Player("Manneten", "Manneten#2445", TeamName.Misfits);
-        this.zave = new Player("Zave", "Zave#2150", TeamName.Misfits);
+        this.reinforce = new Player("Reinforce", "Reinforce-2978", TeamName.Misfits);
+        this.manneten = new Player("Manneten", "Manneten-2445", TeamName.Misfits);
+        this.zave = new Player("Zave", "Zave-2150", TeamName.Misfits);
         
-        this.unkoe = new Player("uNKOE", "uNKOE#2828", TeamName.Rogue);
-        this.winz = new Player("winz", "winz#2621", TeamName.Rogue);
-        this.soon = new Player("SoOn", "winz#2621", TeamName.Rogue);
-        this.akm = new Player("aKm", "winz#2621", TeamName.Rogue);
-        this.knoxxx = new Player("KnOxXx", "KnOxXx#21951", TeamName.Rogue);
+        this.unkoe = new Player("uNKOE", "uNKOE-2828", TeamName.Rogue);
+        this.winz = new Player("winz", "winz-2621", TeamName.Rogue);
+        this.soon = new Player("SoOn", "winz-2621", TeamName.Rogue);
+        this.akm = new Player("aKm", "winz-2621", TeamName.Rogue);
+        this.knoxxx = new Player("KnOxXx", "KnOxXx-21951", TeamName.Rogue);
 
     }
 
