@@ -25,14 +25,15 @@ public class PageRedirect {
     }
 
     @RequestMapping("/ladderstats")
-    public String ladder(@RequestParam(value = "user", defaultValue = "Taimou") String user) {
+    public String ladder() {
+        //@RequestParam(value = "user", defaultValue = "Taimou") String user
         //model.put("message", "lul");
-        this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
-
-        Session session
-                = sessionFactory.openSession();
-        session.beginTransaction();
-        return "Ladderstats";
+//        this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
+//
+//        Session session
+//                = sessionFactory.openSession();
+//        session.beginTransaction();
+        return "Usersearch";
     }
 
 }
