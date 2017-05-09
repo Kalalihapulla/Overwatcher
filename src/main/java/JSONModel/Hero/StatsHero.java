@@ -17,37 +17,34 @@ import javax.persistence.OneToOne;
  *
  * @author Himel
  */
-@Entity
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class StatsHero implements Serializable {
 
-    private HeroGameType competitive;
-    private Long id;
+    private HeroGameType quickplay;
+
 
     public StatsHero() {
-        this.competitive = new HeroGameType();
-        this.id = 0L;
+//        this.competitive = new HeroGameType();
+      
+        this.quickplay = new HeroGameType();
 
     }
 
-    @Id
-    @GeneratedValue
-    public Long getId() {
-        return id;
+//    @OneToOne(targetEntity = HeroGameType.class,
+//            cascade = CascadeType.ALL)
+//    public HeroGameType getCompetitive() {
+//        return competitive;
+//    }
+//
+//    public void setCompetitive(HeroGameType competitive) {
+//        this.competitive = competitive;
+//    }
+    public HeroGameType getQuickplay() {
+        return quickplay;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    @OneToOne(targetEntity = HeroGameType.class,
-            cascade = CascadeType.ALL)
-    public HeroGameType getCompetitive() {
-        return competitive;
-    }
-
-    public void setCompetitive(HeroGameType competitive) {
-        this.competitive = competitive;
+    public void setQuickplay(HeroGameType quickplay) {
+        this.quickplay = quickplay;
     }
 
 }

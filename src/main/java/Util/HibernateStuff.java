@@ -27,7 +27,8 @@ public class HibernateStuff {
      */
     public HibernateStuff() {
         Configuration config = new Configuration();
-//        config.addAnnotatedClass(UserAccount.class);
+        config.addAnnotatedClass(UserAccount.class);
+
         config.addAnnotatedClass(Model.Player.class);
         config.addAnnotatedClass(RatingPlayer.class);
         config.addAnnotatedClass(Team.class);
@@ -36,15 +37,16 @@ public class HibernateStuff {
         config.addAnnotatedClass(PlayerGameType.class);
         config.addAnnotatedClass(OverallStats.class);
         config.addAnnotatedClass(AverageStats.class);
-        config.addAnnotatedClass(RatingHeroes.class);
-        config.addAnnotatedClass(StatsHero.class);
-        config.addAnnotatedClass(RegionHero.class);
-        config.addAnnotatedClass(HeroType.class);
-        config.addAnnotatedClass(HeroGameType.class);
-        config.addAnnotatedClass(Hero.class);
-        config.addAnnotatedClass(AverageHero.class);
+//        config.addAnnotatedClass(RatingHeroes.class);
+//        config.addAnnotatedClass(StatsHero.class);
+//        config.addAnnotatedClass(RegionHero.class);
+//        config.addAnnotatedClass(HeroType.class);
+//        config.addAnnotatedClass(HeroGameType.class);
+//        config.addAnnotatedClass(Hero.class);
+//        config.addAnnotatedClass(AverageHero.class);
+//        config.addAnnotatedClass(GeneralHero.class);
         config = config.configure();
-        //new SchemaExport(config).create(true, true);
+//        new SchemaExport(config).create(true, true);
 
         StandardServiceRegistryBuilder serviceRegistryBuilder
                 = new StandardServiceRegistryBuilder();

@@ -5,8 +5,10 @@
  */
 package JSONModel.Hero;
 
+import Model.Calculatable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
+import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -15,18 +17,18 @@ import javax.persistence.Id;
  *
  * @author Himel
  */
-@Entity
+
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class AverageHero implements Serializable {
+public class AverageHero implements Serializable, Calculatable {
 
     private double damage_done_average;
     private double eliminations_average;
-    private long id;
+ 
 
     public AverageHero() {
-        this.id = 0L;
+     
     }
-
+   
     public double getDamage_done_average() {
         return damage_done_average;
     }
@@ -34,7 +36,7 @@ public class AverageHero implements Serializable {
     public void setDamage_done_average(double damage_done_average) {
         this.damage_done_average = damage_done_average;
     }
-
+   
     public double getEliminations_average() {
         return eliminations_average;
     }
@@ -43,14 +45,11 @@ public class AverageHero implements Serializable {
         this.eliminations_average = eliminations_average;
     }
 
-    @Id
-    @GeneratedValue
-    public long getId() {
-        return id;
-    }
 
-    public void setId(long id) {
-        this.id = id;
+
+    @Override
+    public int calculate() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
