@@ -1,5 +1,5 @@
 
-import Controller.UpdateData;
+import Controller.UpdatePlayers;
 import Controller.UpdateHeroes;
 import JSONModel.Player.RegionPlayer;
 import Model.Player;
@@ -150,7 +150,7 @@ public class Apitests {
 //    }
     @Test
     public void insertData() {
-//        UpdateData data = new UpdateData();
+//        UpdatePlayers data = new UpdatePlayers();
 //        data.insertData();
 //        this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
 //

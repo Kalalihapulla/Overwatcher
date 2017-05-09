@@ -7,7 +7,7 @@ package Model;
 
 /**
  *
- * @author Izymi
+ * @author Himel
  */
 public interface Calculatable {
    

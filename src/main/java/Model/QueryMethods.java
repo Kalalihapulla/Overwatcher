@@ -19,7 +19,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  *
- * @author Izymi
+ * @author Himel
  */
 public abstract class QueryMethods implements Serializable {
 

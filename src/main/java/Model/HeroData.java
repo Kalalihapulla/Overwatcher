@@ -12,7 +12,7 @@ import java.util.Queue;
 
 /**
  *
- * @author Izymi
+ * @author Himel
  */
 public class HeroData {
 
@@ -68,7 +68,7 @@ public class HeroData {
         zenyatta = new HeroModel("Zenyatta");
     }
 
-    public Iterator getPlayers() {
+    public Iterator getHeroes() {
         heroes.add(pharah);
         heroes.add(mccree);
         heroes.add(sombra);

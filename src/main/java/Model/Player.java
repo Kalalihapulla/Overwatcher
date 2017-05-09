@@ -19,7 +19,7 @@ import javax.persistence.OneToOne;
 
 /**
  *
- * @author Izymi
+ * @author Himel
  */
 @Entity
 public class Player implements Serializable, Observer, Comparable<Player>, ValueRank {

@@ -26,7 +26,7 @@ import org.springframework.web.client.RestTemplate;
  *
  * @author Himel
  */
-public class UpdateData {
+public class UpdatePlayers {
 
     private SessionFactory sessionFactory;
     private final Stack<Team> teams = new Stack();
@@ -36,9 +36,9 @@ public class UpdateData {
     private final Team nrg;
     private final Team fnatic;
     private final Team rogue;
-    private static final Logger log = LoggerFactory.getLogger(UpdateData.class);
+    private static final Logger log = LoggerFactory.getLogger(UpdatePlayers.class);
 
-    public UpdateData() {
+    public UpdatePlayers() {
 
         this.envyus = new Team(TeamName.Team_EnVyUs);
         this.c9 = new Team(TeamName.Cloud9);
