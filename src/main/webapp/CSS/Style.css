@@ -278,3 +278,25 @@ tr {
     font-family: Overwatch;
     font-size: 1.7em;
 }
+
+#aboutbox {
+    width: 90%;
+    height: 75%;
+    background-color: rgba(30,30,30,0.9);
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding-left: 1em;
+    padding-top:1em;
+    border: solid;
+    border-color: #262626;
+    font-size: 1em;
+    color: slategrey;
+    border-radius: 5px;
+    z-index: -2;
+    overflow: auto;
+
+}

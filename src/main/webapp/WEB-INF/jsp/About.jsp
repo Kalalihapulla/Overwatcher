@@ -40,7 +40,6 @@
                     <ul class="nav navbar-nav">
                         <li><a href="/about">About</a></li>
                         <li><a href="/ladderstats">Ladder statistics</a></li>
-
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
@@ -83,46 +82,15 @@
             </div>
         </nav>
 
-    <body>
-        
-        
-
-        <div class="container" id="tablebg">
-            <div class="col-md-4" id="statSelector">   
-             <h3 id=statHeader>Select statistics to display: </h3> 
-             <select id="statsId">
-                <option  value="defStats">Default statistics</option>
-                <option  value="offStats">Offensive statistics</option>
-                <option  value="matStats">Match statistics</option>       
-            </select>
-            </div>
+        <div id="aboutbox">
+            <p style="font-size: 1.5em">Welcome to the TeamLUL Overwatch site!</p>
             
-            <table class="table" id="playerList">
-                <thead id="ladderHead">
-<!--                  <tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Value rating</th>
-                        <th>Ladder ranking</th>
-                        <th>Team name</th>
-                        <th>Player avatar</th>
-                    </tr>-->
-                </thead>
-                <tbody id="ladderBody">
-
-                </tbody>
-            </table>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis feugiat vulputate diam, et molestie ex dignissim pretium. Nunc sed sapien diam. Praesent imperdiet ut eros in hendrerit. Vivamus pellentesque mi lacinia turpis elementum interdum. Nam quis accumsan lacus. Aliquam vitae sem maximus, porttitor urna id, hendrerit arcu. Cras vehicula nulla in viverra dictum. Vivamus lectus mauris, venenatis quis ultrices et, accumsan id nunc. Fusce mollis at odio id imperdiet. Nam ac metus vitae nisl euismod vulputate nec sed mi. Duis sed ultricies ante. Sed et augue vel est volutpat mattis. Aliquam placerat massa non rhoncus tristique. Sed sit amet elit nisl. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc aliquam vehicula ipsum, sit amet dignissim neque eleifend vel.
+            </p>
         </div>
-
-      
-
+        
         
         
     </body>
-
-
-
-
-
-</body>
 </html>

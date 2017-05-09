@@ -129,23 +129,7 @@ $(document).ready(function () {
 
 
 
-        var Stage = 0;
-        setInterval(function () {
-            var bg = "url(contents/owbg" + (Stage + 1) + ".png) no-repeat center center fixed";
-            document.body.style.background = bg;
-            Stage = ++Stage % 9;
-            $("body").css({"-webkit-background-size": "cover", "-moz-background-size:": "cover",
-                "-o-background-size": "cover", "background-size": "cover"});
-
-        }, 10000);
-
-
-
-        $("#searchboxtext2").hide();
-        $("#searchboxtext1").on('input', function () {
-            $("#searchboxtext2").show();
-        });
-
+    
 
 
 
@@ -251,5 +235,23 @@ $(document).ready(function () {
 
 
     });
+    
+        var Stage = 0;
+        setInterval(function () {
+            var bg = "url(contents/owbg" + (Stage + 1) + ".png) no-repeat center center fixed";
+            document.body.style.background = bg;
+            Stage = ++Stage % 9;
+            $("body").css({"-webkit-background-size": "cover", "-moz-background-size:": "cover",
+                "-o-background-size": "cover", "background-size": "cover"});
+
+        }, 10000);
+
+
+
+        $("#searchboxtext2").hide();
+        $("#searchboxtext1").on('input', function () {
+            $("#searchboxtext2").show();
+        });
+
 
 });
