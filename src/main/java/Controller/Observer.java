@@ -10,6 +10,7 @@ package Controller;
  * @author Himel
  */
 public interface Observer {
+      
 
     public abstract void update();
 
