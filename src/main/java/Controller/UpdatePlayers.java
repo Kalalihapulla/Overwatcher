@@ -6,7 +6,7 @@
 package Controller;
 
 import Model.Player;
-import Model.ProData;
+import Model.Data.ProData;
 import Model.RatingPlayer;
 import Model.Team;
 import Model.TeamName;

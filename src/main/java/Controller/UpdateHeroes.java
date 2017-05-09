@@ -6,9 +6,9 @@
 package Controller;
 
 import JSONModel.Hero.HeroModel;
-import Model.HeroData;
+import Model.Data.HeroData;
 import Model.Player;
-import Model.ProData;
+import Model.Data.ProData;
 import Model.RatingHeroes;
 import Util.HibernateStuff;
 import java.util.Iterator;
