@@ -1,4 +1,5 @@
 
+import Controller.UpdateHeroes;
 import Model.Player;
 import Model.QueryMethods;
 import Model.Team;
@@ -207,5 +208,6 @@ public class QueryTests extends QueryMethods {
 
         assertTrue(team1.compareTo(team2) <= 1);
     }
+ 
 
 }

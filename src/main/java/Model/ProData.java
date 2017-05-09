@@ -69,7 +69,7 @@ public class ProData {
         this.roolf = new Player("Roolf", "Roolf-1732", TeamName.Cloud9);
 //        this.adam = new Player("Adam", "", TeamName.Cloud9);
         this.ryb = new Player("Ryb", "ryb-2520", TeamName.Cloud9);
-        this.gods = new Player("Gods", "Gods-11104", TeamName.Cloud9);
+        this.gods = new Player("Gods", "Tisumi-11362", TeamName.Cloud9);
         
         this.seagull = new Player("Seagull", "Seagull-1894", TeamName.NRG_Esports);
 //        this.iddqd = new Player("Iddqd", "IDDQD-11988", TeamName.NRG_Esports);

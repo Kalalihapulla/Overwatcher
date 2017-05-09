@@ -24,11 +24,11 @@ public class RatingHeroes implements Serializable {
 
     private long id;
     private RegionHero us;
-    private RegionHero kr;
+//    private RegionHero kr;
 
     public RatingHeroes() {
         this.id = 0L;
-        this.kr = new RegionHero();
+//        this.kr = new RegionHero();
         this.us = new RegionHero();
     }
 
@@ -51,15 +51,15 @@ public class RatingHeroes implements Serializable {
     public void setUs(RegionHero us) {
         this.us = us;
     }
-
-    @OneToOne(targetEntity = RegionHero.class,
-            cascade = CascadeType.ALL)
-    public RegionHero getKr() {
-        return kr;
-    }
-
-    public void setKr(RegionHero kr) {
-        this.kr = kr;
-    }
+//
+//    @OneToOne(targetEntity = RegionHero.class,
+//            cascade = CascadeType.ALL)
+//    public RegionHero getKr() {
+//        return kr;
+//    }
+//
+//    public void setKr(RegionHero kr) {
+//        this.kr = kr;
+//    }
 
 }
