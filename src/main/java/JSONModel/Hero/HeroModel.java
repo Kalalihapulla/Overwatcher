@@ -20,7 +20,8 @@ public class HeroModel {
     private double damage_done_average;
     private double eliminations_average;
 
-    public HeroModel() {
+    public HeroModel(String name) {
+        this.name = name;
         this.id = 0;
     }
 
