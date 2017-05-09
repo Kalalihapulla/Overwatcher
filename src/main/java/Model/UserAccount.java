@@ -67,7 +67,7 @@ public class UserAccount implements Serializable {
         return username;
     }
 
-    public void setUserid(String username) {
+    public void setUsername(String username) {
         this.username = username;
     }
 
