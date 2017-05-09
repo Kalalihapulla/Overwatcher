@@ -15,7 +15,7 @@ import javax.persistence.OneToOne;
 
 /**
  *
- * @author Izymi
+ * @author Himel
  */
 @Entity
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -42,11 +42,11 @@ public class StatsHero implements Serializable {
 
     @OneToOne(targetEntity = HeroGameType.class,
             cascade = CascadeType.ALL)
-    public HeroGameType getHeroGameType() {
+    public HeroGameType getCompetitive() {
         return competitive;
     }
 
-    public void setHeroGameType(HeroGameType competitive) {
+    public void setCompetitive(HeroGameType competitive) {
         this.competitive = competitive;
     }
 

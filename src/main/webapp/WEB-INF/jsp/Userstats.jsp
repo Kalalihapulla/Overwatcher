@@ -1,13 +1,12 @@
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <!--CSS-->
+
+
+
         <!--Javascript-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="script/jquery.min.js"></script>
@@ -20,11 +19,11 @@
         <link rel="stylesheet" type="text/css" href="CSS/Style.css">
 
 
-        <!--Fix scaling!!!-->
 
-        <title>User search</title>
+        <title>Ladder statistics</title>
     </head>
-    <body>
+    <body id="statsbody">
+
 
         <nav class="navbar navbar-default navbar-inverse" role="navigation">
             <div class="container-fluid">
@@ -44,6 +43,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="#">About</a></li>
                         <li><a href="/ladderstats">Ladder statistics</a></li>
+                        <li><a href="/usersearch">User statistics</a></li>
 
                     </ul>
 
@@ -87,30 +87,41 @@
             </div>
         </nav>
 
+        
+       
+        
+        <div class="container">
+   
+            <div class="row">
+                <div class="col-md-12" id="playerinfo" >
+                    
+                </div>
+            </div>
+       
+        <div class="row">
+            <div class="col-md-3" id="statsboardnav">
+                <div class="statscontent">
+                    Main content
+                </div>
+            </div>
+            <div class="col-md-9" id="statsboard">
+                <div class="statscontent">
+                    <p>?Secondary</p>
+                    <p>?Secondary</p>
+                    <p>?Secondary</p>
+                    <p>?Secondary</p>
+                    <p>?Secondary</p>
+                    <p>?Secondary</p>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+          
+          <div id="test">
 
-
-
-
-
-        <div id="searchbox">         
-            <input id="searchboxtext1"type="text" name="search" placeholder="Search for Battle.net user">
-            <input id="searchboxtext2" type="text" name="search" placeholder="Type in the Battle.net ID associated with the user">
-
-            <select id="serverid">
-                <option  value="eu">Europe</option>
-                <option  value="na">North America</option>
-                <option  value="kr">Korea</option>       
-            </select>
-
-            <button id="searchbutton" type="button">Search</button>
-            
-            <img id="owlogo" src="contents/owlogo.png">
         </div>
 
-        
 
-
-
-    </body>
+</body>
 </html>
-s

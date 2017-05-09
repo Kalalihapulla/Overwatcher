@@ -1,4 +1,5 @@
-
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -6,22 +7,21 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <!--CSS-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="CSS/Style.css">
-
-
-        <!--Javascript-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="script/jquery.min.js"></script>
         <script src="script/javascript.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-     
+        <!--CSS-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="CSS/Style.css">
+
+
 
         <title>Ladder statistics</title>
     </head>
     <body>
-        
+
         <nav class="navbar navbar-default navbar-inverse" role="navigation">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -32,17 +32,17 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="Usersearch.jsp">Hanzonator 2.0w</a>
+                    <a class="navbar-brand" href="/usersearch">Hanzonator 2.0</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li><a href="#">About</a></li>
-                        <li><a href="#">Ladder statistics</a></li>
-                       
+                        <li><a href="/ladderstats">Ladder statistics</a></li>
+
                     </ul>
-                   
+
                     <ul class="nav navbar-nav navbar-right">
                         <li><p class="navbar-text">Already have an account?</p></li>
                         <li class="dropdown">
@@ -59,7 +59,7 @@
                                                 <div class="form-group">
                                                     <label class="sr-only" for="exampleInputPassword2">Password</label>
                                                     <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
-                                                    
+
                                                 </div>
                                                 <div class="form-group">
                                                     <button type="submit" class="btn btn-primary btn-block">Sign in</button>
@@ -72,7 +72,7 @@
                                             </form>
                                         </div>
                                         <div class="bottom text-center" id="logincolor">
-                                              New here ? <a href="#"><b>Join Us</b></a>
+                                            New here ? <a href="#"><b>Join Us</b></a>
                                         </div>
                                     </div>
                                 </li>
@@ -82,12 +82,36 @@
                 </div>
             </div>
         </nav>
-        
-        <div id="harakkatesti">
-            
-            
+
+    <body>
+
+        <div class="container" id="tablebg">
+            <table class="table" id="playerList">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Value rating</th>
+                        <th>Ladder ranking</th>
+                        <th>Team name</th>
+                        <th>Player avatar</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
         </div>
 
-   
+      
+
+        
+        
     </body>
+
+
+
+
+
+</body>
 </html>

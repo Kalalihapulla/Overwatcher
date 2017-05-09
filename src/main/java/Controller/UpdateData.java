@@ -26,36 +26,39 @@ import org.springframework.web.client.RestTemplate;
  *
  * @author Himel
  */
-
 public class UpdateData {
-     private SessionFactory sessionFactory;
+
+    private SessionFactory sessionFactory;
     private final Stack<Team> teams = new Stack();
     private final Team envyus;
     private final Team c9;
     private final Team misfits;
+    private final Team nrg;
+    private final Team fnatic;
+    private final Team rogue;
     private static final Logger log = LoggerFactory.getLogger(UpdateData.class);
 
     public UpdateData() {
-        
-        this.envyus =  new Team(TeamName.Team_EnVyUs);
-        this.c9  = new Team(TeamName.Cloud9);
-        this.misfits = new Team(TeamName.Misfits);
-    }
-    
 
-    
-   
-    public  void insertData() {
+        this.envyus = new Team(TeamName.Team_EnVyUs);
+        this.c9 = new Team(TeamName.Cloud9);
+        this.misfits = new Team(TeamName.Misfits);
+        this.nrg = new Team(TeamName.NRG_Esports);
+        this.fnatic = new Team(TeamName.Fnatic);
+        this.rogue = new Team(TeamName.Rogue);
+    }
+
+    public void insertData() {
         addTeams();
         this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
-        
+
         Session session
                 = sessionFactory.openSession();
         session.beginTransaction();
         ProData proData = new ProData();
         Iterator<Player> players = proData.getPlayers();
         RestTemplate restTemplate = new RestTemplate();
-        
+
         while (players.hasNext()) {
             Player player = players.next();
             RatingPlayer us = restTemplate.getForObject("http://ec2-176-34-130-81.eu-west-1.compute.amazonaws.com:4444/api/v3/u/" + player.getAccountName() + "/stats", RatingPlayer.class);
@@ -65,14 +68,16 @@ public class UpdateData {
             session.saveOrUpdate(player);
         }
         while (!teams.isEmpty()) {
-            session.saveOrUpdate(teams.pop());
+            Team team = teams.pop();
+            team.valueRank();
+            session.saveOrUpdate(team);
         }
         session.getTransaction().commit();
         System.exit(0);
     }
-    
+
     public void addToTeam(Player p) {
-        
+
         switch (p.getTeamName()) {
             case Team_EnVyUs:
                 envyus.add(p);
@@ -83,16 +88,28 @@ public class UpdateData {
             case Misfits:
                 misfits.add(p);
                 break;
+            case NRG_Esports:
+                nrg.add(p);
+                break;
+            case Fnatic:
+                fnatic.add(p);
+                break;
+            case Rogue:
+                rogue.add(p);
+                break;
         }
-        
+
     }
-    
+
     public void addTeams() {
         if (teams.empty()) {
             teams.push(envyus);
             teams.push(c9);
             teams.push(misfits);
-            
+            teams.push(nrg);
+            teams.push(rogue);
+            teams.push(fnatic);
+
         }
     }
 }

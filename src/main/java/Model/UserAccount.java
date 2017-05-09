@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
-@XmlRootElement
+
 //@Table(name = "userbase") 
 /**
  * Contains methods and parameters for the UserAccount object.
@@ -34,21 +34,23 @@ public class UserAccount implements Serializable {
     private Long id;
     private String username;
     private String password;
+    private String bnet;
 
     public UserAccount() {
-        this("unknown", "unknown");
+        this("unknown", "unknown","unknown");
 
     }
 
-    public UserAccount(String username, String password) {
+    public UserAccount(String username, String bnet, String password) {
 
         this.id = 0L;
         this.username = username;
         this.password = password;
+        this.bnet = bnet;
 
     }
 
-    @XmlElement
+  
     @GeneratedValue
     @Id
     public Long getId() {
@@ -59,17 +61,17 @@ public class UserAccount implements Serializable {
         this.id = id;
     }
 
-    @XmlElement
+    
     @Basic
     public String getUsername() {
         return username;
     }
 
-    public void setUserid(String username) {
+    public void setUsername(String username) {
         this.username = username;
     }
 
-    @XmlElement
+    
     @Basic
     public String getPassword() {
         return password;
@@ -82,6 +84,14 @@ public class UserAccount implements Serializable {
     @Override
     public String toString() {
         return this.username;
+    }
+
+    public String getBnet() {
+        return bnet;
+    }
+
+    public void setBnet(String bnet) {
+        this.bnet = bnet;
     }
 
 }

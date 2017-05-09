@@ -7,7 +7,6 @@ package Controller;
 
 import Model.Player;
 import Model.QueryMethods;
-import Model.Team;
 import java.util.List;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,23 +14,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
- * @author Himel
+ * @author Izymi
  */
 @RestController
-public class PlayerController extends QueryMethods {
+public class UserController extends QueryMethods {
 
-    @RequestMapping("/getPlayer")
-    public Player getPlayer(@RequestParam(value = "id", defaultValue = "1") String id) {
-        Long idN = Long.parseLong(id);
-        return getPlayer(idN);
+    @RequestMapping("/createuser")
+    public boolean getPlayer(@RequestParam(value = "userId", defaultValue = "unknown") String userId, @RequestParam(value = "bnetId", defaultValue = "unknown") String bnetId, @RequestParam(value = "password", defaultValue = "unknown") String password) {
 
-    }
-
-    @RequestMapping("/allPlayers")
-    public List<Player> allPlayers() {
-
-        return getAllPlayers();
+        return true;
 
     }
+
 
 }
