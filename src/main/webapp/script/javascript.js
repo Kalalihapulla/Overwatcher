@@ -20,134 +20,205 @@ $(document).ready(function () {
         sessionStorage.searchurl = searchurl;
         sessionStorage.serverid = serverid;
         window.location = "/userstats";
-        
+
         alert("data saved");
 
     });
 
 
 
-$(window).load(function () {
-    alert("Window loaded");
+    $(window).load(function () {
+        alert("Window loaded");
 
-if (location.pathname === "/userstats") {
-    
-    alert("loaded userstats");
-    
-    loadPlayer();
-    
-}
+        if (location.pathname === "/userstats") {
 
-else if (location.pathname === "/ladderstats") {
-    
-    alert("loaded ladderstats");
-    
-    loadLadder();
-    
-}
-    
- function loadLadder() {   
+            alert("loaded userstats");
 
-    $.ajax({
-        url: "/allPlayers",
-        async: false,
-        error: function () {
-            alert('User not found, try again');
+            loadPlayer();
+
+        } else if (location.pathname === "/ladderstats") {
+
+            alert("loaded ladderstats");
+
+            loadLadder();
+
+            appendLadder();
+
+            $("#statsId").change(function () {
+                sessionStorage.statsId = $("#statsId option:selected").val();
+                appendLadder();
+            });
+
         }
 
+        function loadLadder() {
 
-    }).then(function (data) {
-        alert("ladder data success");
+            $.ajax({
+                url: "/allPlayers",
+                async: false,
+                error: function () {
+                    alert('User not found, try again');
+                }
 
-        var playerCount = 0;
 
-        while (currentPlayer !== null) {
+            }).then(function (data) {
+                alert("ladder data success");
+                sessionStorage.ladderdata = data;
 
-
-            var currentPlayer = data[playerCount];
-
-            var playerName = currentPlayer.playerName;
-            var valueRating = currentPlayer.valueRating;
-            var ladderRanking = currentPlayer.rating.us.stats.competitive.overall_stats.comprank;
-            var teamName = currentPlayer.teamName;
-            var rowId = 1;
-            var playerAvatar = currentPlayer.rating.us.stats.competitive.overall_stats.avatar;
-            var avatarUrl = document.createElement("img");
-            var oImage = new Image();
-
-            avatarUrl.setAttribute("src", playerAvatar);
-            var playerNumber = playerCount + 1;
-
-            $('#playerList').append("<tr><th scope='row'>" + playerNumber + " <td>" + playerName + "</td><td> " + valueRating + "</td><td>" + ladderRanking + "</td><td>" + teamName + "</td><td><img id='avatarResize' src=" + playerAvatar + "></td></th></tr>");
-
-            playerCount++;
+            });
         }
-    });
- }
 
+        function appendLadder() {
 
-function loadPlayer() {
+            var data = sessionStorage.ladderdata;
 
-    $.ajax({
-      
-      
-        url: sessionStorage.searchurl,
-        error: function () {
-            alert('User not found, try again');
-            window.location = "/usersearch";
-//            FIXXXXXXXXXXXXXXX!!!!
-        }
-        
-
-    }).then(function (data) {
-        alert("Player data success");
-        var serverid = sessionStorage.serverid;
-
-        if (serverid === "eu") {
-            userdata = data.eu;
-            if (userdata === null) {
-                alert("No data found on this server");
-                 window.location = "/usersearch";
-            }
+            var playerCount = 0;
             
+            $( "#playerList" ).empty();
+
+
+            if (sessionStorage.statsId === "defStats") {
                 
-            
-        } else if (serverid === "na") {
-            userdata = data.us;
+               $('#ladderHead').append("<tr><th>#</th><th></th><th>Player name</th><th>Value rating</th><th>Ladder ranking</th><th>Team name</th></tr>");
+                while (currentPlayer !== null) {
+                    
 
-            if (userdata === null) {
-                alert("No data found on this server");
-                 window.location = "/usersearch";
+                    var currentPlayer = data[playerCount];
+                    var playerName = currentPlayer.playerName;
+                    var teamName = currentPlayer.teamName;
+                    var playerAvatar = currentPlayer.rating.us.stats.competitive.overall_stats.avatar;
+                    var avatarUrl = document.createElement("img");
+                    avatarUrl.setAttribute("src", playerAvatar);
+                    var playerNumber = playerCount + 1;
+                    var ladderRanking = currentPlayer.rating.us.stats.competitive.overall_stats.comprank;
+                    var valueRating = currentPlayer.valueRating;
+                    
+                    
+                    $('#playerList').append("<tr><th scope='row'>" + playerNumber + " <td><img id='avatarResize' src=" + playerAvatar + "></td><td>" + playerName + "</td><td> " + valueRating + "</td><td>" + ladderRanking + "</td><td>" + teamName + "</td></th></tr>");
+                      playerCount++;
+                
+                }
+
+              
             }
-          
 
-        } else if (serverid === "kr") {
-            userdata = data.kr;
 
-          
-            if (userdata === null) {
-                alert("No data found on this server");
-                window.location = "/usersearch";
-//                FIXXXXXXXXXXXXXXXXXXXXXXXXXX!!!!!!!!!!
+
+            else if (sessionStorage.statsId === "offStats") {
+                
+               $('#ladderHead').append("<tr><th>#</th><th></th><th>Player name</th><th>Eliminations Avg.</th><th>Deaths Avg.</th><th>K/D ratio</th><th>Team name</th></tr>");
+                while (currentPlayer !== null) {
+                    
+
+                    var currentPlayer = data[playerCount];
+                    var playerName = currentPlayer.playerName;
+                    var teamName = currentPlayer.teamName;
+                    var playerAvatar = currentPlayer.rating.us.stats.competitive.overall_stats.avatar;
+                    var avatarUrl = document.createElement("img");
+                    avatarUrl.setAttribute("src", playerAvatar);
+                    var playerNumber = playerCount + 1;
+                    var elimsAvg = currentPlayer.rating.us.stats.competitive.average_stats.eliminations_avg;
+                    var deathsAvg = currentPlayer.rating.us.stats.competitive.average_stats.deaths_avg;
+                    var kDa = elimsAvg / deathsAvg;
+    
+                    $('#playerList').append("<tr><th scope='row'>" + playerNumber + " <td><img id='avatarResize' src=" + playerAvatar + "></td><td>" + playerName + "</td><td> " + elimsAvg + "</td><td>" + deathsAvg + "</td><td>" + kDa + "</td><td>" + teamName + "</td></th></tr>");
+                    
+                      playerCount++;
+                
+                }
+
+              
             }
-           
+          else if (sessionStorage.statsId === "matStats") {
+                
+               $('#ladderHead').append("<tr><th>#</th><th></th><th>Player name</th><th>Winrate</th><th>Wins</th><th>Losses</th><th>Games</th><th>Team name</th></tr>");
+                while (currentPlayer !== null) {
+                    
+
+                    var currentPlayer = data[playerCount];
+                    var playerName = currentPlayer.playerName;
+                    var teamName = currentPlayer.teamName;
+                    var playerAvatar = currentPlayer.rating.us.stats.competitive.overall_stats.avatar;
+                    var avatarUrl = document.createElement("img");
+                    avatarUrl.setAttribute("src", playerAvatar);
+                    var playerNumber = playerCount + 1;
+                    var winrate = currentPlayer.rating.us.stats.competitive.overall_stats.winrate;
+                    var wins = currentPlayer.rating.us.stats.competitive.overall_stats.wins;
+                    var losses = currentPlayer.rating.us.stats.competitive.overall_stats.losses;
+                    var games = currentPlayer.rating.us.stats.competitive.overall_stats.games;
+                  
+                   $('#playerList').append("<tr><th scope='row'>" + playerNumber + " <td><img id='avatarResize' src=" + playerAvatar + "></td><td>" + playerName + "</td><td> " + winrate + "</td><td>" + wins + "</td><td>" + losses + "</td><td>" + games + "</td><td>" + teamName + "</td></th></tr>");
+                    
+                      playerCount++;
+                
+                }
+
+              
+            }
+
         }
-        
-         
+
+        function loadPlayer() {
+
+            $.ajax({
+
+                url: sessionStorage.searchurl,
+                error: function () {
+                    alert('User not found, try again');
+                    window.location = "/usersearch";
+//            FIXXXXXXXXXXXXXXX!!!!
+                }
+
+
+            }).then(function (data) {
+                alert("Player data success");
+                var serverid = sessionStorage.serverid;
+
+                if (serverid === "eu") {
+                    userdata = data.eu;
+                    if (userdata === null) {
+                        alert("No data found on this server");
+                        window.location = "/usersearch";
+                    }
+
+
+
+                } else if (serverid === "na") {
+                    userdata = data.us;
+
+                    if (userdata === null) {
+                        alert("No data found on this server");
+                        window.location = "/usersearch";
+                    }
+
+
+                } else if (serverid === "kr") {
+                    userdata = data.kr;
+
+
+                    if (userdata === null) {
+                        alert("No data found on this server");
+                        window.location = "/usersearch";
+//                FIXXXXXXXXXXXXXXXXXXXXXXXXXX!!!!!!!!!!
+                    }
+
+                }
+
+
                 alert("server selected" + serverid);
                 alert("current server id: " + sessionStorage.searchurl);
-                      
-                
-              var playerAvatar = userdata.stats.competitive.overall_stats.avatar;
-              
-               $('#playerinfo').append(userdata.stats.competitive.overall_stats.tier);
-               
-               $("#playerinfo").append("<img id='avatarResize' src=" + playerAvatar + ">");
+
+
+                var playerAvatar = userdata.stats.competitive.overall_stats.avatar;
+
+                $('#playerinfo').append(userdata.stats.competitive.overall_stats.tier);
+
+                $("#playerinfo").append("<img id='avatarResize' src=" + playerAvatar + ">");
                 //  document.location.href = "Userstats.jsp";  
 
-   });
-     }
-     
+            });
+        }
+
 
 
         var Stage = 0;
@@ -168,9 +239,9 @@ function loadPlayer() {
         });
 
 
-  
 
+
+
+    });
 
 });
-
-  });
