@@ -203,10 +203,9 @@ public class QueryTests extends QueryMethods {
 
         Team team2
                 = (Team) session.get(Team.class, 1L);
-        System.out.println(team1.valueRank() + "dddddddddddddddddddddd");
-        System.out.println(team2.valueRank() + "dddddddddddddddddddddd");
+       
 
-        assertTrue(team1.compareTo(team2) < 1);
+        assertTrue(team1.compareTo(team2) <= 1);
     }
 
 }
