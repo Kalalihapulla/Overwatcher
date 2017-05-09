@@ -32,7 +32,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/usersearch">Hanzonator 2.0</a>
+                    <a class="navbar-brand" href="/usersearch">OverWatcher</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -84,20 +84,31 @@
         </nav>
 
     <body>
+        
+        
 
         <div class="container" id="tablebg">
+            <div class="col-md-4" id="statSelector">   
+             <h3 id=statHeader>Select statistics to display: </h3> 
+             <select id="statsId">
+                <option  value="defStats">Default statistics</option>
+                <option  value="offStats">Offensive statistics</option>
+                <option  value="matStats">Match statistics</option>       
+            </select>
+            </div>
+            
             <table class="table" id="playerList">
-                <thead>
-                    <tr>
+                <thead id="ladderHead">
+<!--                  <tr>
                         <th>#</th>
                         <th>Name</th>
                         <th>Value rating</th>
                         <th>Ladder ranking</th>
                         <th>Team name</th>
                         <th>Player avatar</th>
-                    </tr>
+                    </tr>-->
                 </thead>
-                <tbody>
+                <tbody id="ladderBody">
 
                 </tbody>
             </table>

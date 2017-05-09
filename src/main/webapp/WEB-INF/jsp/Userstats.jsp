@@ -35,7 +35,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/usersearch">Hanzonator 2.0</a>
+                    <a class="navbar-brand" href="/usersearch">OverWatcher</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
