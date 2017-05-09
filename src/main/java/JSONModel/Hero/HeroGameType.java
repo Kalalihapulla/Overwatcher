@@ -17,7 +17,7 @@ import javax.persistence.OneToOne;
  *
  * @author Himel
  */
-@Entity
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class HeroGameType implements Serializable {
 
@@ -45,10 +45,10 @@ public class HeroGameType implements Serializable {
     private Hero mei;
     private Hero zenyatta;
 
-    private long id;
+  
 
     public HeroGameType() {
-        id = 0L;
+      
         pharah = new Hero();
         mccree = new Hero();
         sombra = new Hero();
@@ -76,18 +76,8 @@ public class HeroGameType implements Serializable {
 
     }
 
-    @Id
-    @GeneratedValue
-    public long getId() {
-        return id;
-    }
 
-    public void setId(long id) {
-        this.id = id;
-    }
 
-    @OneToOne(targetEntity = Hero.class,
-            cascade = CascadeType.ALL)
     public Hero getPharah() {
         return pharah;
     }
@@ -96,8 +86,7 @@ public class HeroGameType implements Serializable {
         this.pharah = pharah;
     }
 
-    @OneToOne(targetEntity = Hero.class,
-            cascade = CascadeType.ALL)
+ 
     public Hero getMccree() {
         return mccree;
     }
@@ -106,8 +95,7 @@ public class HeroGameType implements Serializable {
         this.mccree = mccree;
     }
 
-    @OneToOne(targetEntity = Hero.class,
-            cascade = CascadeType.ALL)
+
     public Hero getSombra() {
         return sombra;
     }
@@ -116,8 +104,7 @@ public class HeroGameType implements Serializable {
         this.sombra = sombra;
     }
 
-    @OneToOne(targetEntity = Hero.class,
-            cascade = CascadeType.ALL)
+  
     public Hero getTracer() {
         return tracer;
     }
@@ -126,8 +113,6 @@ public class HeroGameType implements Serializable {
         this.tracer = tracer;
     }
 
-    @OneToOne(targetEntity = Hero.class,
-            cascade = CascadeType.ALL)
     public Hero getAna() {
         return ana;
     }
@@ -136,8 +121,7 @@ public class HeroGameType implements Serializable {
         this.ana = ana;
     }
 
-    @OneToOne(targetEntity = Hero.class,
-            cascade = CascadeType.ALL)
+    
     public Hero getSoldier76() {
         return soldier76;
     }
@@ -146,8 +130,7 @@ public class HeroGameType implements Serializable {
         this.soldier76 = soldier76;
     }
 
-    @OneToOne(targetEntity = Hero.class,
-            cascade = CascadeType.ALL)
+ 
     public Hero getGenji() {
         return genji;
     }
@@ -156,8 +139,7 @@ public class HeroGameType implements Serializable {
         this.genji = genji;
     }
 
-    @OneToOne(targetEntity = Hero.class,
-            cascade = CascadeType.ALL)
+
     public Hero getRoadhog() {
         return roadhog;
     }
@@ -166,8 +148,7 @@ public class HeroGameType implements Serializable {
         this.roadhog = roadhog;
     }
 
-    @OneToOne(targetEntity = Hero.class,
-            cascade = CascadeType.ALL)
+
     public Hero getLucio() {
         return lucio;
     }
@@ -176,8 +157,6 @@ public class HeroGameType implements Serializable {
         this.lucio = lucio;
     }
 
-    @OneToOne(targetEntity = Hero.class,
-            cascade = CascadeType.ALL)
     public Hero getWinston() {
         return winston;
     }
@@ -186,8 +165,7 @@ public class HeroGameType implements Serializable {
         this.winston = winston;
     }
 
-    @OneToOne(targetEntity = Hero.class,
-            cascade = CascadeType.ALL)
+
     public Hero getMercy() {
         return mercy;
     }
@@ -196,8 +174,7 @@ public class HeroGameType implements Serializable {
         this.mercy = mercy;
     }
 
-    @OneToOne(targetEntity = Hero.class,
-            cascade = CascadeType.ALL)
+
     public Hero getReaper() {
         return reaper;
     }
@@ -206,8 +183,7 @@ public class HeroGameType implements Serializable {
         this.reaper = reaper;
     }
 
-    @OneToOne(targetEntity = Hero.class,
-            cascade = CascadeType.ALL)
+
     public Hero getWidowmaker() {
         return widowmaker;
     }
@@ -216,8 +192,6 @@ public class HeroGameType implements Serializable {
         this.widowmaker = widowmaker;
     }
 
-    @OneToOne(targetEntity = Hero.class,
-            cascade = CascadeType.ALL)
     public Hero getBastion() {
         return bastion;
     }
@@ -226,8 +200,7 @@ public class HeroGameType implements Serializable {
         this.bastion = bastion;
     }
 
-    @OneToOne(targetEntity = Hero.class,
-            cascade = CascadeType.ALL)
+
     public Hero getSymmetra() {
         return symmetra;
     }
@@ -236,8 +209,6 @@ public class HeroGameType implements Serializable {
         this.symmetra = symmetra;
     }
 
-    @OneToOne(targetEntity = Hero.class,
-            cascade = CascadeType.ALL)
     public Hero getTorbjorn() {
         return torbjorn;
     }
@@ -246,8 +217,7 @@ public class HeroGameType implements Serializable {
         this.torbjorn = torbjorn;
     }
 
-    @OneToOne(targetEntity = Hero.class,
-            cascade = CascadeType.ALL)
+
     public Hero getDva() {
         return dva;
     }
@@ -256,8 +226,7 @@ public class HeroGameType implements Serializable {
         this.dva = dva;
     }
 
-    @OneToOne(targetEntity = Hero.class,
-            cascade = CascadeType.ALL)
+
     public Hero getJunkrat() {
         return junkrat;
     }
@@ -266,8 +235,7 @@ public class HeroGameType implements Serializable {
         this.junkrat = junkrat;
     }
 
-    @OneToOne(targetEntity = Hero.class,
-            cascade = CascadeType.ALL)
+  
     public Hero getHanzo() {
         return hanzo;
     }
@@ -276,8 +244,6 @@ public class HeroGameType implements Serializable {
         this.hanzo = hanzo;
     }
 
-    @OneToOne(targetEntity = Hero.class,
-            cascade = CascadeType.ALL)
     public Hero getZarya() {
         return zarya;
     }
@@ -286,8 +252,7 @@ public class HeroGameType implements Serializable {
         this.zarya = zarya;
     }
 
-    @OneToOne(targetEntity = Hero.class,
-            cascade = CascadeType.ALL)
+
     public Hero getReinhardt() {
         return reinhardt;
     }
@@ -296,8 +261,6 @@ public class HeroGameType implements Serializable {
         this.reinhardt = reinhardt;
     }
 
-    @OneToOne(targetEntity = Hero.class,
-            cascade = CascadeType.ALL)
     public Hero getMei() {
         return mei;
     }
@@ -306,8 +269,6 @@ public class HeroGameType implements Serializable {
         this.mei = mei;
     }
 
-    @OneToOne(targetEntity = Hero.class,
-            cascade = CascadeType.ALL)
     public Hero getZenyatta() {
         return zenyatta;
     }

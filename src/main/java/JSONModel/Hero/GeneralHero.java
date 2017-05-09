@@ -16,34 +16,27 @@ import javax.persistence.Id;
  *
  * @author Izymi
  */
-@Entity
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GeneralHero implements Serializable, Calculatable {
 
-    private long id;
+
     private String win_percentage;
     private int games_lost;
     private int games_won;
     private int medals;
 
     public GeneralHero() {
-        this.id = 0L;
+
     }
 
-    @Id
-    @GeneratedValue
-    public long getId() {
-        return id;
-    }
-
+   
+ 
     @Override
     public int calculate() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getWin_percentage() {
         return win_percentage;

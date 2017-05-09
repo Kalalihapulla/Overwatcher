@@ -18,28 +18,16 @@ import javax.persistence.OneToOne;
  *
  * @author Himel
  */
-@Entity
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class RatingHeroes implements Serializable {
 
-    private long id;
     private RegionHero us;
 //    private RegionHero kr;
 
     public RatingHeroes() {
-        this.id = 0L;
+
 //        this.kr = new RegionHero();
         this.us = new RegionHero();
-    }
-
-    @Id
-    @GeneratedValue
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     @OneToOne(targetEntity = RegionHero.class,

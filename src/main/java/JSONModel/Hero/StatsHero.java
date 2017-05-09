@@ -17,28 +17,17 @@ import javax.persistence.OneToOne;
  *
  * @author Himel
  */
-@Entity
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class StatsHero implements Serializable {
 
     private HeroGameType quickplay;
-    private Long id;
+
 
     public StatsHero() {
 //        this.competitive = new HeroGameType();
-        this.id = 0L;
+      
         this.quickplay = new HeroGameType();
 
-    }
-
-    @Id
-    @GeneratedValue
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
 //    @OneToOne(targetEntity = HeroGameType.class,
@@ -50,8 +39,6 @@ public class StatsHero implements Serializable {
 //    public void setCompetitive(HeroGameType competitive) {
 //        this.competitive = competitive;
 //    }
-    @OneToOne(targetEntity = HeroGameType.class,
-            cascade = CascadeType.ALL)
     public HeroGameType getQuickplay() {
         return quickplay;
     }
