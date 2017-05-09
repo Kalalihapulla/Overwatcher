@@ -85,16 +85,21 @@
 
     <body>
         
-         <select id="statsId">
+        
+
+        <div class="container" id="tablebg">
+            <div class="col-md-4" id="statSelector">   
+             <h3 id=statHeader>Select statistics to display: </h3> 
+             <select id="statsId">
                 <option  value="defStats">Default statistics</option>
                 <option  value="offStats">Offensive statistics</option>
                 <option  value="matStats">Match statistics</option>       
             </select>
-
-        <div class="container" id="tablebg">
+            </div>
+            
             <table class="table" id="playerList">
                 <thead id="ladderHead">
-<!--                    <tr>
+<!--                  <tr>
                         <th>#</th>
                         <th>Name</th>
                         <th>Value rating</th>
@@ -103,7 +108,7 @@
                         <th>Player avatar</th>
                     </tr>-->
                 </thead>
-                <tbody>
+                <tbody id="ladderBody">
 
                 </tbody>
             </table>

@@ -30,17 +30,13 @@ $(document).ready(function () {
 
 
     $(window).load(function () {
-        alert("Window loaded");
+
 
         if (location.pathname === "/userstats") {
-
-            alert("loaded userstats");
 
             loadPlayer();
 
         } else if (location.pathname === "/ladderstats") {
-
-            alert("loaded ladderstats");
 
             sessionStorage.statsId = "defStats";
 
@@ -53,6 +49,7 @@ $(document).ready(function () {
         }
 
         function loadLadder() {
+            alert("Loading player statistics. Please wait...");
 
             $.ajax({
                 url: "/allPlayers",
@@ -63,9 +60,10 @@ $(document).ready(function () {
 
 
             }).then(function (data) {
-                alert("ladder data success");
-                sessionStorage.ladderdata = data;
-                alert(sessionStorage.ladderdata);
+                alert("Player statistics loaded!");
+
+                sessionStorage.ladderdata = JSON.stringify(data);
+
 
             });
         }
@@ -84,7 +82,7 @@ $(document).ready(function () {
 
 
             }).then(function (data) {
-                alert("Player data success");
+
                 var serverid = sessionStorage.serverid;
 
                 if (serverid === "eu") {
@@ -117,10 +115,7 @@ $(document).ready(function () {
 
                 }
 
-
-                alert("server selected" + serverid);
-                alert("current server id: " + sessionStorage.searchurl);
-
+                alert("server selected " + serverid);
 
                 var playerAvatar = userdata.stats.competitive.overall_stats.avatar;
 
@@ -160,26 +155,20 @@ $(document).ready(function () {
 
     function appendLadder() {
 
-        var data = sessionStorage.ladderdata;
-        console.log(sessionStorage.ladderdata);
-        alert(data[1].teamName);
+        var data = JSON.parse(sessionStorage.ladderdata);
+
+        $("#playerList").empty();
 
         var playerCount = 0;
 
         var currentPlayer = 0;
 
-        $("#playerList").empty();
-
 
         if (sessionStorage.statsId === "defStats") {
-            alert("defstats loaded");
-            $('#playerlist').append("<tr><th>#</th><th></th><th>Player name</th><th>Value rating</th><th>Ladder ranking</th><th>Team name</th></tr>");
+            //FIX table header...
+            $('#playerList').append("<tr id='tableHead'><th>#</th><th></th><th>Player name</th><th>Value rating</th><th>Ladder ranking</th><th>Team name</th></tr>");
 
             while (currentPlayer !== null) {
-
-                alert("in while clause");
-
-                alert(data[8].playerName);
 
                 currentPlayer = data[playerCount];
                 var playerName = currentPlayer.playerName;
@@ -192,15 +181,15 @@ $(document).ready(function () {
                 var valueRating = currentPlayer.valueRating;
 
 
-                $('#playerList').append("<tr><th scope='row'>" + playerNumber + " <td><img id='avatarResize' src=" + playerAvatar + "></td><td>" + playerName + "</td><td> " + valueRating + "</td><td>" + ladderRanking + "</td><td>" + teamName + "</td></th></tr>");
+                $("#playerList").append("<tr><th scope='row'>" + playerNumber + " <td><img id='avatarResize' src=" + playerAvatar + "></td><td>" + playerName + "</td><td> " + valueRating + "</td><td>" + ladderRanking + "</td><td>" + teamName + "</td></th></tr>");
                 playerCount++;
 
             }
 
 
         } else if (sessionStorage.statsId === "offStats") {
-            alert("offstats loaded");
-            $('#ladderHead').append("<tr><th>#</th><th></th><th>Player name</th><th>Eliminations Avg.</th><th>Deaths Avg.</th><th>K/D ratio</th><th>Team name</th></tr>");
+
+            $('#playerList').append("<tr id='tableHead'><th>#</th><th></th><th>Player name</th><th>Eliminations Avg.</th><th>Deaths Avg.</th><th>K/D ratio</th><th>Team name</th></tr>");
             while (currentPlayer !== null) {
 
 
@@ -214,6 +203,8 @@ $(document).ready(function () {
                 var elimsAvg = currentPlayer.rating.us.stats.competitive.average_stats.eliminations_avg;
                 var deathsAvg = currentPlayer.rating.us.stats.competitive.average_stats.deaths_avg;
                 var kDa = elimsAvg / deathsAvg;
+                kDa = kDa.toFixed(3);
+
 
                 $('#playerList').append("<tr><th scope='row'>" + playerNumber + " <td><img id='avatarResize' src=" + playerAvatar + "></td><td>" + playerName + "</td><td> " + elimsAvg + "</td><td>" + deathsAvg + "</td><td>" + kDa + "</td><td>" + teamName + "</td></th></tr>");
 
@@ -224,8 +215,7 @@ $(document).ready(function () {
 
         } else if (sessionStorage.statsId === "matStats") {
 
-            alert("matstats loaded");
-            $('#ladderHead').append("<tr><th>#</th><th></th><th>Player name</th><th>Winrate</th><th>Wins</th><th>Losses</th><th>Games</th><th>Team name</th></tr>");
+            $('#playerList').append("<tr id='tableHead'><th>#</th><th></th><th>Player name</th><th>Winrate</th><th>Wins</th><th>Losses</th><th>Games</th><th>Team name</th></tr>");
             while (currentPlayer !== null) {
 
 
@@ -255,7 +245,7 @@ $(document).ready(function () {
 
     $("#statsId").change(function () {
 
-        alert("changed");
+
         sessionStorage.statsId = $("#statsId option:selected").val();
         appendLadder();
 

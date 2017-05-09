@@ -2,12 +2,14 @@
 
 
 body {
-  background: url("../contents/owbg1.png") no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  padding: 1.5em;
+    background: url("../contents/owbg1.png") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 1.5em;
+    font-family: Overwatch2;
+    letter-spacing: 1.2px;
 
 }
 
@@ -70,11 +72,14 @@ body {
 
 
 #searchbutton {
-   position: absolute;
+    position: absolute;
     height: 10%;
     width: 20%;
     bottom: 20%;
     left: 7%;
+    border: 2px solid #111;
+    border-color: #262626;
+    border-radius: 4px;
 }
 
 #serverid {
@@ -83,11 +88,14 @@ body {
     width: 20%;
     bottom: 20%;
     right: 40%;
+    border: 2px solid #111;
+    border-color: #262626;
+    border-radius: 4px;
 }
 
 #owlogo {
     width: 18%;
-    height: 32%; 
+    height: 50%; 
     position: absolute;
     top:22%;
     right:4%;
@@ -95,8 +103,8 @@ body {
 }
 
 .navbar {
-/*   background-color: rgba(0,0,0,0.3);*/
-   font-color: green;
+    /*   background-color: rgba(0,0,0,0.3);*/
+    font-color: green;
 }
 
 .nav li{
@@ -160,7 +168,7 @@ body {
 
 .statscontent {
     background-color: rgba(255,250,250,0.7);
-    
+
     margin-bottom: 1em;
     padding-left: 1em;
     padding-top:1em;
@@ -171,12 +179,12 @@ body {
     border-radius: 5px;
     z-index: -2;
     overflow: auto;
-    
+
 }
 
 #playerinfo {
     background-color: rgba(255,250,250,0.7);
-    
+
     margin-bottom: 1em;
     padding-top:1em;
     border: solid;
@@ -185,8 +193,8 @@ body {
     color: slategrey;
     border-radius: 5px;
     z-index: -2;
-     overflow: auto;
-   
+    overflow: auto;
+
 }
 
 .container {
@@ -199,5 +207,74 @@ body {
     border: solid;
     border-color: papayawhip;
     border-radius: 5px;
-    
+
+}
+
+
+
+#statSelector{
+    padding-bottom: 2em;
+    padding-left: 5em;
+
+}
+
+#statsId {
+    display:inline-block;
+    border: 2px solid #111;
+    background-color: #cccccc;;
+    color: #333333;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin-left: 1em;
+    border-color: #262626;
+    width: 8em;
+    height: 2em;
+    font-size: 1.3em;
+}
+
+#statsId::-ms-expand { 
+    display: none; 
+}
+
+
+
+@font-face { 
+    font-family: "Overwatch"; 
+    src: url("http://us.battle.net/forums/static/fonts/bignoodletoo/bignoodletoo.woff") format('woff');
+}
+
+
+@font-face {
+    font-family: "Overwatch2";
+    src: url('../contents/big_noodle_titling.woff2') format('woff2'),
+        url('../contents/big_noodle_titling.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+#statHeader {
+    display:inline-block;
+    font-family: Overwatch;
+    padding-right: 2em;
+
+}
+
+#tableHead{
+    padding-bottom:3em;
+    font-size: 1.5em;
+    font-family: Overwatch;
+}
+
+tr {
+    font-size: 1.2em;
+    color: #cccccc;
+}
+
+.navbar-brand {
+    font-family: Overwatch;
+    font-size: 1.7em;
 }
