@@ -1,29 +1,26 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-
-
-        <!--Javascript-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!--CSS-->
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="script/jquery.min.js"></script>
         <script src="script/javascript.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
         <!--CSS-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="CSS/Style.css">
 
 
 
         <title>Ladder statistics</title>
     </head>
-    <body id="statsbody">
-
+    <body>
 
         <nav class="navbar navbar-default navbar-inverse" role="navigation">
             <div class="container-fluid">
@@ -43,8 +40,6 @@
                     <ul class="nav navbar-nav">
                         <li><a href="/about">About</a></li>
                         <li><a href="/ladderstats">Ladder statistics</a></li>
-                        <li><a href="/usersearch">User statistics</a></li>
-
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
@@ -87,41 +82,15 @@
             </div>
         </nav>
 
-        
-       
-        
-        <div class="container">
-   
-            <div class="row">
-                <div class="col-md-12" id="playerinfo" >
-                    
-                </div>
-            </div>
-       
-        <div class="row">
-            <div class="col-md-3" id="statsboardnav">
-                <div class="statscontent">
-                    Main content
-                </div>
-            </div>
-            <div class="col-md-9" id="statsboard">
-                <div class="statscontent">
-                    <p>?Secondary</p>
-                    <p>?Secondary</p>
-                    <p>?Secondary</p>
-                    <p>?Secondary</p>
-                    <p>?Secondary</p>
-                    <p>?Secondary</p>
-                </div>
-            </div>
+        <div id="aboutbox">
+            <p style="font-size: 1.5em">Welcome to the TeamLUL Overwatch site!</p>
+            
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis feugiat vulputate diam, et molestie ex dignissim pretium. Nunc sed sapien diam. Praesent imperdiet ut eros in hendrerit. Vivamus pellentesque mi lacinia turpis elementum interdum. Nam quis accumsan lacus. Aliquam vitae sem maximus, porttitor urna id, hendrerit arcu. Cras vehicula nulla in viverra dictum. Vivamus lectus mauris, venenatis quis ultrices et, accumsan id nunc. Fusce mollis at odio id imperdiet. Nam ac metus vitae nisl euismod vulputate nec sed mi. Duis sed ultricies ante. Sed et augue vel est volutpat mattis. Aliquam placerat massa non rhoncus tristique. Sed sit amet elit nisl. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc aliquam vehicula ipsum, sit amet dignissim neque eleifend vel.
+            </p>
         </div>
-    </div>
         
-          
-          <div id="test">
-
-        </div>
-
-
-</body>
+        
+        
+    </body>
 </html>
