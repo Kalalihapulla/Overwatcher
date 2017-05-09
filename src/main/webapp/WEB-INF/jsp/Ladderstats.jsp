@@ -93,37 +93,17 @@
                         <th>Name</th>
                         <th>Value rating</th>
                         <th>Ladder ranking</th>
-<!--                        <th>K/D average</th>-->
                         <th>Team name</th>
+                        <th>Player avatar</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Rob</td>
-                        <td>1337</td>
-                        <td>1.3</td>
-                        <td>1.3</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Bob</td>
-                        <td>1234</td>
-                        <td>0.6</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Rub</td>
-                        <td>4200</td>
-                        <td>1.8</td>
-                    </tr>
+
                 </tbody>
             </table>
         </div>
 
-        <div id="test">
-
-        </div>
+      
 
         
         

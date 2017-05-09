@@ -103,7 +103,7 @@
             </select>
 
             <button id="searchbutton" type="button">Search</button>
-            <button id="searchbutton2" type="button">Search</button>
+            
             <img id="owlogo" src="contents/owlogo.png">
         </div>
 

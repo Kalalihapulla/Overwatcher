@@ -10,153 +10,144 @@ $(document).ready(function () {
 
 
 
-//    $("#searchbutton").click(function () {
-//
-//
-//        var bnetname = $('#searchboxtext1').val();
-//        var bnetid = $('#searchboxtext2').val();
-//        var searchurl = "https://owapi.net/api/v3/u/" + bnetname + "-" + bnetid + "/stats";
-//        var serverid = $("#serverid option:selected").val();
-//
-//
-//
-//
-//
-//        $.ajax({
-//            url: searchurl,
-//            error: function () {
-//                alert('User not found, try again');
-//            }
-//
-//
-//        }).then(function (data) {
-//            alert("success");
-//
-//
-//            if (serverid === "eu") {
-//                userdata = data.eu;
-//                if (userdata === null) {
-//                    alert("No data found on this server");
-//                }
-//                if (userdata.stats !== null) {
-//
-//                    window.location = "Userstats.jsp";
-//                    //  document.location.href = "Userstats.jsp";  
-//
-//
-//
-//
-//
-//                }
-//            } else if (serverid === "na") {
-//                userdata = data.us;
-//
-//                if (userdata === null) {
-//                    alert("No data found on this server");
-//                }
-//                if (userdata !== null) {
-//                    document.location.href = "Userstats.jsp";
-//                }
-//
-//            } else if (serverid === "kr") {
-//                userdata = data.kr;
-//
-//                alert(userdata);
-//                if (userdata === null) {
-//                    alert("No data found on this server");
-//                }
-//                if (userdata !== null) {
-//                    document.location.href = "Userstats.jsp";
-//                }
-//
-//            }
-//
-//            alert("hurdur");
-//
-//            //  var userpic = userdata.stats.competitive.overall_stats.tier;
-//            //alert(userpic);     
-//            var avatar = userdata.stats.competitive.overall_stats.avatar;
-//
-//            $("#test").append("<img src='" + avatar + "' alt='my image'>");
-//
-//
-//
-//        });
-//
-//
-//    });
-//    
-//    $( "#statsbody" ).load(function() {
-//         alert("Works");
-//        var searchurl = "https://owapi.net/api/v3/u/Wormps-2555/stats";
-//       
-//
-//        $.ajax({
-//            url: searchurl,
-//            error: function () {
-//                alert('User not found, try again');
-//            }
-//
-//
-//        }).then(function (data) {
-//            alert("success");
-//
-//            
-//             
-//            var avatar = data.eu.stats.competitive.overall_stats.tier;
-//            alert(avatar);
-//            
-//            $("#test").append(avatar);
-//           // $("#test").append("<img src='" + avatar + "' alt='my image'>");
-//
-//
-//
-//        });
-//
-//
-//    });
-//
-//
-//    $("#searchbutton").click(function () {
-//
-//        
-//       
-//    });
-//    
-    $(window).load(function () {
-
-        alert("loaded");
-
-        $.ajax({
-            url: "/allPlayers",
-            async: false,
-            error: function () {
-                alert('User not found, try again');
-            }
+    $("#searchbutton").click(function () {
 
 
-        }).then(function (data) {
-            alert("success");
+        var bnetname = $('#searchboxtext1').val();
+        var bnetid = $('#searchboxtext2').val();
+        var searchurl = "https://owapi.net/api/v3/u/" + bnetname + "-" + bnetid + "/stats";
+        var serverid = $("#serverid option:selected").val();
+        sessionStorage.searchurl = searchurl;
+        sessionStorage.serverid = serverid;
+        window.location = "/userstats";
+        
+        alert("data saved");
 
-            var playerName = data.playerName;
-            var valueRating = data.valueRating;
-            var ladderRanking = data.rating.us.stats.competitive.overall_stats.comprank;
-            var teamName = data.teamName;
+    });
+
+
+
+$(window).load(function () {
+    alert("Window loaded");
+
+if (location.pathname === "/userstats") {
+    
+    alert("loaded userstats");
+    
+    loadPlayer();
+    
+}
+
+else if (location.pathname === "/ladderstats") {
+    
+    alert("loaded ladderstats");
+    
+    loadLadder();
+    
+}
+    
+ function loadLadder() {   
+
+    $.ajax({
+        url: "/allPlayers",
+        async: false,
+        error: function () {
+            alert('User not found, try again');
+        }
+
+
+    }).then(function (data) {
+        alert("ladder data success");
+
+        var playerCount = 0;
+
+        while (currentPlayer !== null) {
+
+
+            var currentPlayer = data[playerCount];
+
+            var playerName = currentPlayer.playerName;
+            var valueRating = currentPlayer.valueRating;
+            var ladderRanking = currentPlayer.rating.us.stats.competitive.overall_stats.comprank;
+            var teamName = currentPlayer.teamName;
             var rowId = 1;
-            var playerAvatar = data.rating.us.stats.competitive.overall_stats.avatar;
+            var playerAvatar = currentPlayer.rating.us.stats.competitive.overall_stats.avatar;
             var avatarUrl = document.createElement("img");
             var oImage = new Image();
 
             avatarUrl.setAttribute("src", playerAvatar);
-            $('#playerList').append("<tr><th><td>" + playerName + "</td><td> " + valueRating + "</td><td>" + ladderRanking + "</td><td>" + teamName + "</td><td><img src="+playerAvatar+"></td></th></tr>");
+            var playerNumber = playerCount + 1;
+
+            $('#playerList').append("<tr><th scope='row'>" + playerNumber + " <td>" + playerName + "</td><td> " + valueRating + "</td><td>" + ladderRanking + "</td><td>" + teamName + "</td><td><img id='avatarResize' src=" + playerAvatar + "></td></th></tr>");
+
+            playerCount++;
+        }
+    });
+ }
 
 
-            //$('#playerList').append("<tr><th scope="row"> + rowId + "<td>" + playerName + "</td><td> " + valueRating + "</td><td>" + ladderRanking + "</td><td>" + teamName + "</td></th></tr>");
-            //$('#playerList').append('<tr><th scope="row">2<td>pname</td><td>vrating</td><td>ladrating</td><td>teamname</td><td><img src="https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg%22%3E</td></th></tr>');
-            $('#playerList').append("<tr><th><td>" + playerName + "</td><td> " + valueRating + "</td><td>" + ladderRanking + "</td><td>" + teamName + "</td><td>" + avatarUrl + "</td></th></tr>");
-        });
+function loadPlayer() {
 
+    $.ajax({
+      
+      
+        url: sessionStorage.searchurl,
+        error: function () {
+            alert('User not found, try again');
+            window.location = "/usersearch";
+//            FIXXXXXXXXXXXXXXX!!!!
+        }
+        
 
+    }).then(function (data) {
+        alert("Player data success");
+        var serverid = sessionStorage.serverid;
+
+        if (serverid === "eu") {
+            userdata = data.eu;
+            if (userdata === null) {
+                alert("No data found on this server");
+                 window.location = "/usersearch";
+            }
+            
+                
+            
+        } else if (serverid === "na") {
+            userdata = data.us;
+
+            if (userdata === null) {
+                alert("No data found on this server");
+                 window.location = "/usersearch";
+            }
+          
+
+        } else if (serverid === "kr") {
+            userdata = data.kr;
+
+          
+            if (userdata === null) {
+                alert("No data found on this server");
+                window.location = "/usersearch";
+//                FIXXXXXXXXXXXXXXXXXXXXXXXXXX!!!!!!!!!!
+            }
+           
+        }
+        
+         
+                alert("server selected" + serverid);
+                alert("current server id: " + sessionStorage.searchurl);
+                      
+                
+              var playerAvatar = userdata.stats.competitive.overall_stats.avatar;
+              
+               $('#playerinfo').append(userdata.stats.competitive.overall_stats.tier);
+               
+               $("#playerinfo").append("<img id='avatarResize' src=" + playerAvatar + ">");
+                //  document.location.href = "Userstats.jsp";  
+
+   });
+     }
+     
 
 
         var Stage = 0;
@@ -177,8 +168,9 @@ $(document).ready(function () {
         });
 
 
+  
 
 
-    });
 });
 
+  });

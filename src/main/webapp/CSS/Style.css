@@ -193,10 +193,11 @@ body {
     width: 100%;
 }
 
-#test {
-    width: 100px;
-    height: 100px;
-    background-color: #ddd;
-    color: black;
-     z-index: -100;
+#avatarResize {
+    width: 3em;
+    height: 3em;
+    border: solid;
+    border-color: papayawhip;
+    border-radius: 5px;
+    
 }
