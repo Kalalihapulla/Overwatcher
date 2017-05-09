@@ -210,7 +210,7 @@ $(document).ready(function () {
                 var avatarUrl = document.createElement("img");
                 avatarUrl.setAttribute("src", playerAvatar);
                 var playerNumber = playerCount + 1;
-                var winrate = currentPlayer.rating.us.stats.competitive.overall_stats.winrate;
+                var winrate = currentPlayer.rating.us.stats.competitive.overall_stats.win_rate;
                 var wins = currentPlayer.rating.us.stats.competitive.overall_stats.wins;
                 var losses = currentPlayer.rating.us.stats.competitive.overall_stats.losses;
                 var games = currentPlayer.rating.us.stats.competitive.overall_stats.games;
