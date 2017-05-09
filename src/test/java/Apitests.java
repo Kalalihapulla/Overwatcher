@@ -3,6 +3,7 @@ import Controller.UpdateData;
 import JSONModel.Player.RegionPlayer;
 import Model.Player;
 import Model.ProData;
+import Model.RatingHeroes;
 import Model.RatingPlayer;
 import Model.Team;
 import Model.TeamName;
@@ -148,8 +149,8 @@ public class Apitests {
 //    }
     @Test
     public void insertData() {
-        UpdateData data = new UpdateData();
-        data.insertData();
+//        UpdateData data = new UpdateData();
+//        data.insertData();
 //        this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
 //
 //        Session session
@@ -171,7 +172,23 @@ public class Apitests {
 
     @Test
     public void insertHero() {
-        
+
+//        this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
+//
+//        Session session
+//                = sessionFactory.openSession();
+//        session.beginTransaction(); 
+//       ProData proData = new ProData();
+//        Iterator<Player> players = proData.getPlayers();
+//        RestTemplate restTemplate = new RestTemplate();
+//        while (players.hasNext()) {
+//            Player player = players.next();
+//            RatingHeroes rh = restTemplate.getForObject("http://ec2-176-34-130-81.eu-west-1.compute.amazonaws.com:4444/api/v3/u/" + player.getAccountName() + "/heroes", RatingHeroes.class);
+//            System.out.println(rh.getUs().getHeroes().getStats().getCompetitive().getPharah().getAverage_stats().getDamage_done_average() + "ddddddddddddddddddddddddd");
+//            session.saveOrUpdate(rh);
+//        }
+//        session.getTransaction().commit();
+        assertTrue(true);
 
     }
 

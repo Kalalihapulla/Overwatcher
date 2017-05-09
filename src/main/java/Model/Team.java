@@ -85,7 +85,7 @@ public class Team implements Serializable, Comparable<Team>, ValueRank {
 
             return 0;
         }
-        if (value1 > 1) {
+        if (value1 < value2) {
             return 1;
         } else {
             return -1;
@@ -103,6 +103,7 @@ public class Team implements Serializable, Comparable<Team>, ValueRank {
             size++;
 
         }
+        this.valueRating = value1 / size;
         return value1 / size;
     }
 

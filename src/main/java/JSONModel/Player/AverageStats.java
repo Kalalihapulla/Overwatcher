@@ -16,7 +16,7 @@ import javax.persistence.Id;
 
 /**
  *
- * @author Izymi
+ * @author Himel
  */
 @Entity
 @JsonIgnoreProperties(ignoreUnknown = true)
