@@ -1,4 +1,5 @@
 
+import JSONModel.Hero.HeroModel;
 import Model.Update.UpdateHeroes;
 import Model.Player;
 import Model.QueryMethods;
@@ -204,10 +205,17 @@ public class QueryTests extends QueryMethods {
 
         Team team2
                 = (Team) session.get(Team.class, 1L);
-       
 
         assertTrue(team1.compareTo(team2) <= 1);
     }
- 
+
+    @Test
+    public void heroes() {
+       
+//        for (HeroModel heroModel : heroes)) {
+//            System.out.println(heroModel);
+//        }
+        assertTrue(true);
+    }
 
 }

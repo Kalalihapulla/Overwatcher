@@ -5,13 +5,19 @@
  */
 package JSONModel.Hero;
 
+import java.io.Serializable;
 import static java.lang.Math.round;
+import javax.persistence.Basic;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 /**
  *
  * @author Izymi
  */
-public class HeroModel {
+@Entity
+public class HeroModel implements Serializable {
 
     private long id;
     private String name;
@@ -25,7 +31,11 @@ public class HeroModel {
 
     public HeroModel(String name) {
         this.name = name;
-        this.id = 0;
+        this.id = 0L;
+    }
+
+    public HeroModel() {
+        super();
     }
 
     @Override
@@ -34,6 +44,8 @@ public class HeroModel {
                 + damage_done_average + " Eliavr " + eliminations_average + "medlperten " + medalsPerTen;
     }
 
+    @Id
+    @GeneratedValue
     public long getId() {
         return id;
     }
@@ -42,6 +54,7 @@ public class HeroModel {
         this.id = id;
     }
 
+    @Basic
     public String getName() {
         return name;
     }
@@ -50,6 +63,7 @@ public class HeroModel {
         this.name = name;
     }
 
+    @Basic
     public double getWinRate() {
         return winRate;
     }
@@ -58,6 +72,7 @@ public class HeroModel {
         this.winRate = winRate;
     }
 
+    @Basic
     public int getGames_lost() {
         return games_lost;
     }
@@ -66,6 +81,7 @@ public class HeroModel {
         this.games_lost = games_lost;
     }
 
+    @Basic
     public int getGames_won() {
         return games_won;
     }
@@ -74,6 +90,7 @@ public class HeroModel {
         this.games_won = games_won;
     }
 
+    @Basic
     public int getMedals() {
         return medals;
     }
@@ -82,7 +99,8 @@ public class HeroModel {
         this.medals = medals;
     }
 
-    public double getDamage_done_average() {
+    @Basic
+    public int getDamage_done_average() {
         return damage_done_average;
     }
 
@@ -90,6 +108,7 @@ public class HeroModel {
         this.damage_done_average = damage_done_average;
     }
 
+    @Basic
     public double getEliminations_average() {
         return eliminations_average;
     }
@@ -156,6 +175,7 @@ public class HeroModel {
     /**
      * @return the medalsPerTen
      */
+    @Basic
     public double getMedalsPerTen() {
         return medalsPerTen;
     }
