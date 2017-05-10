@@ -6,6 +6,10 @@
 
 
 
+
+
+/* global c3, d3 */
+
 $(document).ready(function () {
 
 
@@ -161,7 +165,9 @@ $(document).ready(function () {
                  <img id='rankIcon' src=" + rankIcon + "><span id='rankText'> " + ladderRank + "</span><span id='compGamesText'> " + compGames + " </span>\n\
                 <span class='wltText'>Wins: &nbsp;</span><span id='compWinsText'> " + compWins + "</span><span class='wltText'> &nbsp;- &nbsp;Losses: &nbsp;</span><span id='compLossesText'> " + compLosses + " </span>\n\
                 <span class='wltText'>&nbsp; - &nbsp;Ties: &nbsp;</span><span id='compTiesText'> " + compTies + "</span>");
-                        //  getWinrateGauge(compWinrate);
+                        
+                 getWinrateChart(compWinrate);
+                 
 
 
             });
@@ -261,6 +267,43 @@ $(document).ready(function () {
         }
 
     }
+    
+    function getWinrateChart(winRate) {
+        
+        var winRate = winRate;
+        var counterRate = 100 - winRate;
+        alert(counterRate);
+//        var data1 = 'Win %';
+//        var data2 = 'Loss %';
+        
+    var wrChart = c3.generate({
+        
+        bindto: '#graphBoard',
+    data: {
+        columns: [
+            ['data1', winRate],
+            ['data2', counterRate]
+        ],
+        type : 'donut',
+        onclick: function (d, i) { console.log("onclick", d, i); },
+        onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+        onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+    },
+     colors: {
+            data1: '#4fb70e',
+            data2: '#b70e1f'
+            
+        },       
+    donut: {
+        title: "Competitive winrate"
+    }
+});
+
+   } 
+
+
+
+   
 
 
 

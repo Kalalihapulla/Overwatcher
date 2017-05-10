@@ -6,12 +6,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 
-        <!-- Load c3.css -->
-        <link href="CSS/c3.css" rel="stylesheet" type="text/css">
+        <!--         Load c3.css 
+                <link href="CSS/c3.css" rel="stylesheet" type="text/css">
+        
+                 Load d3.js and c3.js 
+                <script src="https://d3js.org/d3.v4.min.js"></script>
+                <script src="script/c3.min.js"></script>-->
 
-        <!-- Load d3.js and c3.js -->
-        <script src="https://d3js.org/d3.v4.min.js"></script>
-        <script src="script/c3.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.css">  
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.js"></script>
 
         <!--Javascript-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -93,7 +97,7 @@
             </div>
         </nav>
 
-
+  
 
 
         <div class="container">
@@ -103,16 +107,20 @@
                 </div>
 
             </div>
+            
+            <div id="test">
+                
+            </div>
 
             <div class="row">
-                <div class="col-md-3" id="statsboardnav">
-                    <div class="statscontent">
-                        Main content
+                <div class="col-md-3 statsboarddetails">
+                    <div id="graphBoard">
+                       
                     </div>
                 </div>
-                <div class="col-md-9" id="statsboard">
-                    <div class="statscontent">
-                        
+                <div class="col-md-9 statsboarddetails">
+                    <div id="statsboard">
+
                     </div>
                 </div>
             </div>
