@@ -123,23 +123,20 @@ $(document).ready(function () {
                 var userName = sessionStorage.bnetName;
                 var rankImg = userdata.stats.competitive.overall_stats.rank_image;
                 var prestigeLvl = userdata.stats.competitive.overall_stats.prestige;
-                var playerLvl = userdata.stats.competitive.overall_stats.level;
-                alert(prestigeLvl);
-                alert(playerLvl);
+                var playerLvl = userdata.stats.competitive.overall_stats.level;  
+                var ladderRank = userdata.stats.competitive.overall_stats.comprank;
                 
                 if (playerLvl === 100) {
                     playerLvl = "00";
                     prestigeLvl = prestigeLvl + 1;
                     $("#playerLevel").css("margin-left", "-4em");
                 }
-                alert(prestigeLvl);
-                alert(playerLvl);
-                //$('#playerinfo').append(userdata.stats.competitive.overall_stats.tier);
+ 
 
                 $("#playerinfo").append("<img id='avatarResize2' src=" + playerAvatar + "><span id='playerName'> " + userName + "</span><img id='rankImgResize' src=" 
-                        + rankImg + "><span id='playerLevel'> " + prestigeLvl + "" + playerLvl + "</span>");
-                //  document.location.href = "Userstats.jsp";  
-
+                        + rankImg + "><span id='playerLevel'> " + prestigeLvl + "" + playerLvl + "</span>                <span id='rankText'> " + ladderRank + "</span>");
+               
+                
             });
         }
 

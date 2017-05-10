@@ -119,7 +119,7 @@ body {
     color: grey;
 }
 #login-dp .bottom{
-    background-color:rgba(255,255,255,.8);
+    background-color:rgba(255,255,255,0.8);
     border-top:1px solid #ddd;
     clear:both;
     padding:14px;
@@ -145,7 +145,7 @@ body {
 }
 
 #tablebg {
-    background-color: rgba(30,30,30,0.7);
+    background-color: rgba(30,30,30,0.75);
     top:0;
     bottom: 0;
     left: 0;
@@ -164,7 +164,7 @@ body {
 
 
 .statscontent {
-    background-color: rgba(255,250,250,0.7);
+    background-color: rgba(255,250,250,0.75);
 
     margin-bottom: 1em;
     padding-left: 1em;
@@ -180,10 +180,10 @@ body {
 }
 
 #playerinfo {
-    background-color: rgba(30,30,30,0.7);
+    background-color: rgba(30,30,30,0.75);
     margin-bottom: 1em;
-/*    padding-bottom:0.7em;
-    padding-top:0.7em;*/
+    /*    padding-bottom:0.7em;
+        padding-top:0.7em;*/
     border: solid;
     border-color: #262626;
     font-size: 1em;
@@ -191,7 +191,7 @@ body {
     border-radius: 5px;
     z-index: -2;
     overflow: auto;
-    
+
 
 }
 
@@ -202,6 +202,12 @@ body {
     color: #cccccc;
     font-size: 2.5em;
     border-bottom: 3.5px solid #666666;
+    text-shadow: -2px 0 black, 0 1px black, 2px 0 black, 0 -1px black;
+    -webkit-box-shadow: 0 4px 6px -6px #222;
+    -moz-box-shadow: 0 4px 6px -6px #222;
+    box-shadow: 0 10px 9px -9px black;
+
+
 }
 
 #playerLevel {
@@ -210,7 +216,15 @@ body {
     margin-top: 2em;
     color: #cccccc;
     font-size: 2em;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-shadow: -2px 0 black, 0 1px black, 2px 0 black, 0 -1px black;
+}
+
+#rankText {
+    color: #cccccc;
+    font-size: 2em;
+    text-shadow: -2px 0 black, 0 1px black, 2px 0 black, 0 -1px black;
+    display:inline-block;
+    margin-left: 10em;
 }
 
 .container {
@@ -234,7 +248,7 @@ body {
     border-radius: 5px;
     display:inline-block;
     margin-left: 2em;
-    
+
 }
 
 #rankImgResize {
