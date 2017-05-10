@@ -5,6 +5,7 @@
  */
 
 
+
 $(document).ready(function () {
 
 
@@ -20,7 +21,7 @@ $(document).ready(function () {
         sessionStorage.searchurl = searchurl;
         sessionStorage.serverid = serverid;
         sessionStorage.bnetName = bnetname + "#" + bnetid;
-       
+
         window.location = "/userstats";
 
         alert("data saved");
@@ -123,59 +124,51 @@ $(document).ready(function () {
                 var userName = sessionStorage.bnetName;
                 var rankImg = userdata.stats.competitive.overall_stats.rank_image;
                 var prestigeLvl = userdata.stats.competitive.overall_stats.prestige;
-                var playerLvl = userdata.stats.competitive.overall_stats.level;  
-                var ladderRank = userdata.stats.competitive.overall_stats.comprank;              
+                var playerLvl = userdata.stats.competitive.overall_stats.level;
+                var ladderRank = userdata.stats.competitive.overall_stats.comprank;
                 var compWins = userdata.stats.competitive.overall_stats.wins;
                 var compLosses = userdata.stats.competitive.overall_stats.losses;
                 var compTies = userdata.stats.competitive.overall_stats.ties;
                 var compGames = "Games: " + userdata.stats.competitive.overall_stats.games;
-                var compWlt = "Wins: " + compWins + " - Losses: " +  compLosses + " - Ties: " + compTies;
-                
+                var compWlt = "Wins: " + compWins + " - Losses: " + compLosses + " - Ties: " + compTies;
+                var compWinrate = userdata.stats.competitive.overall_stats.win_rate;
+
                 if (ladderRank >= 4000) {
                     rankIcon = "../contents/gmicon.png";
-                }
-                else if (ladderRank >= 3500 && ladderRank < 4000) {
+                } else if (ladderRank >= 3500 && ladderRank < 4000) {
                     rankIcon = "../contents/mastericon.png";
-                }
-                 else if (ladderRank >= 3000 && ladderRank < 3500) {
+                } else if (ladderRank >= 3000 && ladderRank < 3500) {
                     rankIcon = "../contents/diamondicon.png";
-                }
-                 else if (ladderRank >= 2500 && ladderRank < 3000) {
+                } else if (ladderRank >= 2500 && ladderRank < 3000) {
                     rankIcon = "../contents/platicon.png";
-                }
-                 else if (ladderRank >= 2000 && ladderRank < 2500) {
+                } else if (ladderRank >= 2000 && ladderRank < 2500) {
                     rankIcon = "../contents/goldicon.png";
-                }
-                 else if (ladderRank >= 1500 && ladderRank < 2000) {
+                } else if (ladderRank >= 1500 && ladderRank < 2000) {
                     rankIcon = "../contents/silvericon.png";
-                }
-                else if (ladderRank < 1500) {
+                } else if (ladderRank < 1500) {
                     rankIcon = "../contents/bronzeicon.png";
-                }                           
+                }
                 
                 if (playerLvl === 100) {
                     playerLvl = "00";
                     prestigeLvl = prestigeLvl + 1;
                     $("#playerLevel").css("margin-left", "-4em");
                 }
-                
-                
- 
 
-                $("#playerinfo").append("<img id='avatarResize2' src=" + playerAvatar + "><span id='playerName'> " + userName + "</span><img id='rankImgResize' src=" 
+
+
+
+
+                $("#playerinfo").append("<img id='avatarResize2' src=" + playerAvatar + "><span id='playerName'> " + userName + "</span><img id='rankImgResize' src="
                         + rankImg + "><span id='playerLevel'> " + prestigeLvl + "" + playerLvl + "</span> \n\
                  <img id='rankIcon' src=" + rankIcon + "><span id='rankText'> " + ladderRank + "</span><span id='compGamesText'> " + compGames + "</span>\n\
-                <span id='wltText'> " + compWlt + "</span>");
-               
-                
+                <span class='wltText'>Wins: </span><span id='compWinsText'> " + compWins + "</span><span class='wltText'> - Losses: </span><span id='compLossesText'> " + compLosses + " </span>\n\
+                <span class='wltText'> - Ties: </span><span id='compTiesText'> " + compTies "</span>");
+                        //  getWinrateGauge(compWinrate);
+
+
             });
         }
-
-
-
-    
-
-
 
 
     });
@@ -270,6 +263,53 @@ $(document).ready(function () {
 
     }
 
+//    function getWinrateGauge(winRate) {
+//
+//        var winRate = winRate;
+//        var winRateOpposite = 100 - winRate;
+//
+//        var chart = c3.generate({
+//            bindto: '#statsboard',
+//            data: {
+//                columns: [
+//                    ['data', winRate],
+//                    ['data2', winRateOpposite]
+//                ],
+//                type: 'gauge',
+//                onclick: function (d, i) {
+//                    console.log("onclick", d, i);
+//                },
+//                onmouseover: function (d, i) {
+//                    console.log("onmouseover", d, i);
+//                },
+//                onmouseout: function (d, i) {
+//                    console.log("onmouseout", d, i);
+//                }
+//            },
+//            gauge: {
+//                min: 0, // 0 is default, //can handle negative min e.g. vacuum / voltage / current flow / rate of change
+//                max: 100, // 100 is default
+//                units: ' %',
+//                width: 39 // for adjusting arc thickness
+//            },
+//            color: {
+//                pattern: ['#FF0000', '#F97600'], // the three color levels for the percentage values.
+//                threshold: {
+////            unit: 'value', // percentage is default
+////            max: 200, // 100 is default
+//                    values: [50, 100]
+//                }
+//            },
+//            size: {
+//                height: 180
+//            }
+//        });
+//
+//        return chart;
+//    }
+//
+
+
 
     $("#statsId").change(function () {
 
@@ -279,23 +319,23 @@ $(document).ready(function () {
 
 
     });
-    
-        var Stage = 0;
-        setInterval(function () {
-            var bg = "url(contents/owbg" + (Stage + 1) + ".png) no-repeat center center fixed";
-            document.body.style.background = bg;
-            Stage = ++Stage % 9;
-            $("body").css({"-webkit-background-size": "cover", "-moz-background-size:": "cover",
-                "-o-background-size": "cover", "background-size": "cover"});
 
-        }, 10000);
+    var Stage = 0;
+    setInterval(function () {
+        var bg = "url(contents/owbg" + (Stage + 1) + ".png) no-repeat center center fixed";
+        document.body.style.background = bg;
+        Stage = ++Stage % 9;
+        $("body").css({"-webkit-background-size": "cover", "-moz-background-size:": "cover",
+            "-o-background-size": "cover", "background-size": "cover"});
+
+    }, 10000);
 
 
 
-        $("#searchboxtext2").hide();
-        $("#searchboxtext1").on('input', function () {
-            $("#searchboxtext2").show();
-        });
+    $("#searchboxtext2").hide();
+    $("#searchboxtext1").on('input', function () {
+        $("#searchboxtext2").show();
+    });
 
 
 });

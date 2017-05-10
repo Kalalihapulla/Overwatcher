@@ -233,14 +233,36 @@ body {
     text-shadow: -2px 0 black, 0 1px black, 2px 0 black, 0 -1px black;
     display:inline-block;
     margin-left: 3em;
+    margin-right: 3em;
 }
 
-#wltText {
+.wltText {
     color: #cccccc;
     font-size: 2em;
     text-shadow: -2px 0 black, 0 1px black, 2px 0 black, 0 -1px black;
     display:inline-block;
-    margin-left: 3em;
+    
+}
+
+#compWinText {
+    color: darkgreen;
+    font-size: 2em;
+    text-shadow: -2px 0 black, 0 1px black, 2px 0 black, 0 -1px black;
+    display:inline-block;
+}
+
+#compLossesText {
+    color: darkred;
+    font-size: 2em;
+    text-shadow: -2px 0 black, 0 1px black, 2px 0 black, 0 -1px black;
+    display:inline-block;
+}
+
+#compTiesText {
+    color: darkorange;
+    font-size: 2em;
+    text-shadow: -2px 0 black, 0 1px black, 2px 0 black, 0 -1px black;
+    display:inline-block;
 }
 
 
