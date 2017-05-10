@@ -14,8 +14,8 @@ body {
 }
 
 #searchbox{
-    width: 50%;
-    height: 30%;
+    width: 60%;
+    height: 50%;
     background-color: rgba(30,30,30,0.7);
     position: absolute;
     top:0;
@@ -37,7 +37,7 @@ body {
 
 #searchboxtext1[type=text] {
     width: 63%;
-    height: 20%;
+    height: 10%;
     background-color: rgba(190,190,190,0.8);
     float: top;
     margin-top: 1.5em;
@@ -55,7 +55,7 @@ body {
 
 #searchboxtext2[type=text] {
     width: 63%;
-    height: 20%;
+    height: 10%;
     background-color: rgba(190,190,190,0.8);
     float: top;
     margin-top: 1.5em;
@@ -94,7 +94,7 @@ body {
 }
 
 #owlogo {
-    width: 18%;
+    width: 25%;
     height: 50%; 
     position: absolute;
     top:22%;

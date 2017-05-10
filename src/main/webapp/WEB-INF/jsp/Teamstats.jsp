@@ -1,34 +1,30 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <!--CSS-->
-        <!--Javascript-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="script/jquery.min.js"></script>
         <script src="script/javascript.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
         <!--CSS-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="CSS/Style.css">
 
 
-        <!--Fix scaling!!!-->
 
-        <title>User search</title>
+        <title>Ladder statistics</title>
     </head>
     <body>
 
         <nav class="navbar navbar-default navbar-inverse" role="navigation">
             <div class="container-fluid">
-              
+                <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span>
@@ -39,13 +35,12 @@
                     <a class="navbar-brand" href="/usersearch">OverWatcher</a>
                 </div>
 
-                
+                <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul id ="navFont" class="nav navbar-nav">
                         <li><a href="/about">About</a></li>
                         <li><a href="/ladderstats">Ladder statistics</a></li>
                         <li><a href="/teamstats">Team statistics</a></li>
-
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
@@ -88,30 +83,56 @@
             </div>
         </nav>
 
-
-
-
-
-
-        <div id="searchbox">
-            <h3 id="statHeader">Write a Battle.net username and ID</h3>
-            <input id="searchboxtext1"type="text" name="search" placeholder="Battle.net username">
-            <input id="searchboxtext2" type="text" name="search" placeholder="User ID">
-
-            <select id="serverid">
-                <option  value="eu">Europe</option>
-                <option  value="na">North America</option>
-                <option  value="kr">Korea</option>
-            </select>
-
-            <button id="searchbutton" type="button">Search</button>
-            
-            <img id="owlogo" src="contents/owlogo.png">
-        </div>
-
+    <body>
+        
         
 
+        <div class="container" id="tablebg">
+            <div class="col-md-4" id="statSelector">
+            <h3 id="statHeader">Select a pro team to display: </h3>
+            <select id="statsId">
+                <option value="fnatic">Fnatic</option>
+                <option value="rogue">Rogue</option>
+                <option value="nrg">NRG Esports</option>
+                <option value="misfits">Misfits</option>
+                <option value="c9">Cloud9</option>
+                <option value="envyus">Team Envyus</option>
+            </select>
+            </div>
+            
+            <table class="table" id="teamList">
+                <thead id="teamHead">
+                </thead>
+                <tbody id="teamBody">
+                </tbody>
+            </table>
+            
+            <table class="table" id="playerList">
+                <thead id="ladderHead">
+<!--                  <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Value rating</th>
+                        <th>Ladder ranking</th>
+                        <th>Team name</th>
+                        <th>Player avatar</th>
+                    </tr>-->
+                </thead>
+                <tbody id="ladderBody">
 
+                </tbody>
+            </table>
+        </div>
 
+      
+
+        
+        
     </body>
+
+
+
+
+
+</body>
 </html>
