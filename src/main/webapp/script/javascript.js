@@ -148,7 +148,7 @@ $(document).ready(function () {
                 } else if (ladderRank < 1500) {
                     rankIcon = "../contents/bronzeicon.png";
                 }
-                
+
                 if (playerLvl === 100) {
                     playerLvl = "00";
                     prestigeLvl = prestigeLvl + 1;
@@ -161,7 +161,7 @@ $(document).ready(function () {
                  <img id='rankIcon' src=" + rankIcon + "><span id='rankText'> " + ladderRank + "</span><span id='compGamesText'> " + compGames + " </span>\n\
                 <span class='wltText'>Wins: &nbsp;</span><span id='compWinsText'> " + compWins + "</span><span class='wltText'> &nbsp;- &nbsp;Losses: &nbsp;</span><span id='compLossesText'> " + compLosses + " </span>\n\
                 <span class='wltText'>&nbsp; - &nbsp;Ties: &nbsp;</span><span id='compTiesText'> " + compTies + "</span>");
-                        //  getWinrateGauge(compWinrate);
+                //  getWinrateGauge(compWinrate);
 
 
             });
@@ -291,6 +291,67 @@ $(document).ready(function () {
     $("#searchboxtext1").on('input', function () {
         $("#searchboxtext2").show();
     });
+    $(window).load(function () {
+        appendHeroes("1");
 
+
+    });
+
+    $("#heroesId").change(function () {
+        var value = $("#heroesId option:selected").val();
+
+
+        appendHeroes(value);
+
+
+    });
+    function appendHeroes(value) {
+        $.ajax({
+            url: "/allHeroes?id=" + value,
+            error: function () {
+                alert('Failed to load');
+
+
+            }
+
+
+        }).then(function (data) {
+            
+
+
+
+            var playerCount = 0;
+            var currentPlayer = data[playerCount];
+            $("#heroes").empty();
+            $('#heroes').append("<tr id='tableHead'><th>#</th><th></th><th>Hero</th><th>Winrate</th><th>Wins</th><th>Losses</th><th>Games</th><th>Damage avr</th><th>Eliminations avr</th><th>Total medals</th><th>Medals per/10</th></tr>");
+            while (currentPlayer != null) {
+
+                var currentPlayer = data[playerCount];
+                var name = currentPlayer.name;
+                var wr = currentPlayer.winRate;
+                var gw = currentPlayer.games_won;
+                var lw = currentPlayer.games_lost;
+                var total = lw + gw;
+                var dmga = currentPlayer.damage_done_average;
+                var elia = currentPlayer.eliminations_average;
+                var m10 = currentPlayer.medalsPerTen;
+                var medals = currentPlayer.medals;
+
+                $('#heroes').append("<tr><th scope='row'>" + playerCount + "td>" + name + "</td><td>" + wr + "</td><td> "
+                        + gw + "</td><td>" + lw + "</td><td>" + total + "</td><td>" + dmga + "</td><td>" + elia + "</td><td>" + medals + "</td><td>" + m10 + "</td></th></tr>");
+                playerCount++;
+                currentPlayer = data[playerCount];
+
+            }
+
+
+
+
+
+
+        });
+
+
+    }
 
 });

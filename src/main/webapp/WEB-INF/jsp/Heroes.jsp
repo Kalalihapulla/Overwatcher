@@ -40,7 +40,7 @@
                     <ul id ="navFont" class="nav navbar-nav">
                         <li><a href="/about">About</a></li>
                         <li><a href="/ladderstats">Ladder statistics</a></li>
-                         <li><a href="/heroes">Hero statistics</a></li>
+                           <li><a href="/heroes">Hero statistics</a></li>
 
                     </ul>
 
@@ -91,14 +91,14 @@
         <div class="container" id="tablebg">
             <div class="col-md-4" id="statSelector">   
              <h3 id=statHeader>Select statistics to display: </h3> 
-             <select id="statsId">
-                <option  value="defStats">Default statistics</option>
-                <option  value="offStats">Offensive statistics</option>
-                <option  value="matStats">Match statistics</option>       
+             <select id="heroesId">
+                <option  value="1">Winrate</option>
+                <option  value="2">Damage done</option>
+                <option  value="3">Eliminations</option>       
             </select>
             </div>
             
-            <table class="table" id="playerList">
+            <table class="table" id="heroes">
                 <thead id="ladderHead">
 <!--                  <tr>
                         <th>#</th>
