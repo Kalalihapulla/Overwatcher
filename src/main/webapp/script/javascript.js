@@ -5,6 +5,7 @@
  */
 
 
+
 $(document).ready(function () {
 
 
@@ -19,6 +20,8 @@ $(document).ready(function () {
         var serverid = $("#serverid option:selected").val();
         sessionStorage.searchurl = searchurl;
         sessionStorage.serverid = serverid;
+        sessionStorage.bnetName = bnetname + "#" + bnetid;
+
         window.location = "/userstats";
 
         alert("data saved");
@@ -116,23 +119,56 @@ $(document).ready(function () {
                 }
 
                 alert("server selected " + serverid);
-
+                var rankIcon;
                 var playerAvatar = userdata.stats.competitive.overall_stats.avatar;
+                var userName = sessionStorage.bnetName;
+                var rankImg = userdata.stats.competitive.overall_stats.rank_image;
+                var prestigeLvl = userdata.stats.competitive.overall_stats.prestige;
+                var playerLvl = userdata.stats.competitive.overall_stats.level;
+                var ladderRank = userdata.stats.competitive.overall_stats.comprank;
+                var compWins = userdata.stats.competitive.overall_stats.wins;
+                var compLosses = userdata.stats.competitive.overall_stats.losses;
+                var compTies = userdata.stats.competitive.overall_stats.ties;
+                var compGames = "Games: " + userdata.stats.competitive.overall_stats.games;
+                var compWlt = "Wins: " + compWins + " - Losses: " + compLosses + " - Ties: " + compTies;
+                var compWinrate = userdata.stats.competitive.overall_stats.win_rate;
 
-                $('#playerinfo').append(userdata.stats.competitive.overall_stats.tier);
+                if (ladderRank >= 4000) {
+                    rankIcon = "../contents/gmicon.png";
+                } else if (ladderRank >= 3500 && ladderRank < 4000) {
+                    rankIcon = "../contents/mastericon.png";
+                } else if (ladderRank >= 3000 && ladderRank < 3500) {
+                    rankIcon = "../contents/diamondicon.png";
+                } else if (ladderRank >= 2500 && ladderRank < 3000) {
+                    rankIcon = "../contents/platicon.png";
+                } else if (ladderRank >= 2000 && ladderRank < 2500) {
+                    rankIcon = "../contents/goldicon.png";
+                } else if (ladderRank >= 1500 && ladderRank < 2000) {
+                    rankIcon = "../contents/silvericon.png";
+                } else if (ladderRank < 1500) {
+                    rankIcon = "../contents/bronzeicon.png";
+                }
+                
+                if (playerLvl === 100) {
+                    playerLvl = "00";
+                    prestigeLvl = prestigeLvl + 1;
+                    $("#playerLevel").css("margin-left", "-4em");
+                }
 
-                $("#playerinfo").append("<img id='avatarResize' src=" + playerAvatar + ">");
-                //  document.location.href = "Userstats.jsp";  
+
+                $("#playerinfo").append("<img id='avatarResize2' src=" + playerAvatar + "><span id='playerName'> " + userName + "</span><img id='rankImgResize' src="
+                        + rankImg + "><span id='playerLevel'> " + prestigeLvl + "" + playerLvl + "</span> \n\
+                 <img id='rankIcon' src=" + rankIcon + "><span id='rankText'> " + ladderRank + "</span><span id='compGamesText'> " + compGames + " </span>\n\
+                <span class='wltText'>Wins: &nbsp;</span><span id='compWinsText'> " + compWins + "</span><span class='wltText'> &nbsp;- &nbsp;Losses: &nbsp;</span><span id='compLossesText'> " + compLosses + " </span>\n\
+                <span class='wltText'>&nbsp; - &nbsp;Ties: &nbsp;</span><span id='compTiesText'> " + compTies + "</span>");
+                        //  getWinrateGauge(compWinrate);
+
 
             });
         }
-
-
-
-    
-
-
-
+//<span class='wltText'>Wins: </span>
+//<span class='wltText'> - Losses: </span>
+//<span class='wltText'> - Ties: </span>
 
     });
 
@@ -227,6 +263,9 @@ $(document).ready(function () {
     }
 
 
+
+
+
     $("#statsId").change(function () {
 
 
@@ -235,23 +274,23 @@ $(document).ready(function () {
 
 
     });
-    
-        var Stage = 0;
-        setInterval(function () {
-            var bg = "url(contents/owbg" + (Stage + 1) + ".png) no-repeat center center fixed";
-            document.body.style.background = bg;
-            Stage = ++Stage % 9;
-            $("body").css({"-webkit-background-size": "cover", "-moz-background-size:": "cover",
-                "-o-background-size": "cover", "background-size": "cover"});
 
-        }, 10000);
+    var Stage = 0;
+    setInterval(function () {
+        var bg = "url(contents/owbg" + (Stage + 1) + ".png) no-repeat center center fixed";
+        document.body.style.background = bg;
+        Stage = ++Stage % 9;
+        $("body").css({"-webkit-background-size": "cover", "-moz-background-size:": "cover",
+            "-o-background-size": "cover", "background-size": "cover"});
+
+    }, 10000);
 
 
 
-        $("#searchboxtext2").hide();
-        $("#searchboxtext1").on('input', function () {
-            $("#searchboxtext2").show();
-        });
+    $("#searchboxtext2").hide();
+    $("#searchboxtext1").on('input', function () {
+        $("#searchboxtext2").show();
+    });
 
 
 });

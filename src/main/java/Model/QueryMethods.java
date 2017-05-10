@@ -5,6 +5,7 @@
  */
 package Model;
 
+import JSONModel.Hero.HeroModel;
 import Util.HibernateStuff;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -83,6 +84,16 @@ public abstract class QueryMethods implements Serializable {
         session.saveOrUpdate(account);
         session.getTransaction().commit();
         return true;
+    }
+
+    public List<HeroModel> allHero() {
+        this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
+        Session session
+                = sessionFactory.openSession();
+        Criteria criteria = session.createCriteria(HeroModel.class);
+        List<HeroModel> heroes = criteria.list();
+        return heroes;
+
     }
 
 }

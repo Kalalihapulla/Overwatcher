@@ -6,6 +6,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 
+        <!-- Load c3.css -->
+        <link href="CSS/c3.css" rel="stylesheet" type="text/css">
+
+        <!-- Load d3.js and c3.js -->
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script src="script/c3.min.js"></script>
 
         <!--Javascript-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -40,7 +46,7 @@
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
+                    <ul id ="navFont" class="nav navbar-nav">
                         <li><a href="/about">About</a></li>
                         <li><a href="/ladderstats">Ladder statistics</a></li>
                         <li><a href="/usersearch">User statistics</a></li>
@@ -50,7 +56,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><p class="navbar-text">Already have an account?</p></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b id="loginText">Login</b> <span class="caret"></span></a>
                             <ul id="login-dp" class="dropdown-menu">
                                 <li>
                                     <div class="row">
@@ -87,41 +93,36 @@
             </div>
         </nav>
 
-        
-       
-        
+
+
+
         <div class="container">
-   
+
             <div class="row">
-                <div class="col-md-12" id="playerinfo" >
-                    
+                <div class="col-md-12" id="playerinfo" >   
                 </div>
+
             </div>
-       
-        <div class="row">
-            <div class="col-md-3" id="statsboardnav">
-                <div class="statscontent">
-                    Main content
+
+            <div class="row">
+                <div class="col-md-3" id="statsboardnav">
+                    <div class="statscontent">
+                        Main content
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-9" id="statsboard">
-                <div class="statscontent">
-                    <p>?Secondary</p>
-                    <p>?Secondary</p>
-                    <p>?Secondary</p>
-                    <p>?Secondary</p>
-                    <p>?Secondary</p>
-                    <p>?Secondary</p>
+                <div class="col-md-9" id="statsboard">
+                    <div class="statscontent">
+                        
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-        
-          
-          <div id="test">
+
+
+        <div id="test">
 
         </div>
 
 
-</body>
+    </body>
 </html>

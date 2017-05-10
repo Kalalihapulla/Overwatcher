@@ -65,24 +65,24 @@ public class ProData {
         this.mickie = new Player("Mickie", "Mickie-11702", TeamName.Team_EnVyUs);
         this.hulk = new Player("INTERNETHULK", "INTERNETHULK-2984", TeamName.Team_EnVyUs);
         this.harry = new Player("HarryHook", "HarryHook-2309", TeamName.Team_EnVyUs);
-        
+
         this.surefour = new Player("Surefour", "Surefour-2559", TeamName.Cloud9);
         this.mendo = new Player("Mendokusaii", "Mendokusaii-2955", TeamName.Cloud9);
         this.roolf = new Player("Roolf", "Roolf-1732", TeamName.Cloud9);
-//        this.adam = new Player("Adam", "", TeamName.Cloud9);
+        this.adam = new Player("Adam", "ShaDowBurn-2301", TeamName.Cloud9);
         this.ryb = new Player("Ryb", "ryb-2520", TeamName.Cloud9);
         this.gods = new Player("Gods", "Tisumi-11362", TeamName.Cloud9);
-        
+
         this.seagull = new Player("Seagull", "Seagull-1894", TeamName.NRG_Esports);
-//        this.iddqd = new Player("Iddqd", "IDDQD-11988", TeamName.NRG_Esports);
+        this.iddqd = new Player("Iddqd", "TwoEasy-2980", TeamName.NRG_Esports);
         this.ajax = new Player("Ajax", "AJax-12136", TeamName.NRG_Esports);
         this.numlocked = new Player("Numlocked", "numlocked-21330", TeamName.NRG_Esports);
         this.dummy = new Player("Dummy", "dummy-1173", TeamName.NRG_Esports);
         this.harbleu = new Player("Harbleu", "harbleu-1515", TeamName.NRG_Esports);
-        
+
         this.custa = new Player("Custa", "Custa-1679", TeamName.Fnatic);
         this.coolmatt = new Player("Coolmatt69", "coolmatt69-1231", TeamName.Fnatic);
-//        this.buds = new Player("Buds", "", TeamName.Fnatic);
+        this.buds = new Player("Buds", "PYYYOUR-1734", TeamName.Fnatic);
         this.vonethil = new Player("Vonethil", "Vonethil-2761", TeamName.Fnatic);
         this.stoop = new Player("Stoop", "Stoop-1718", TeamName.Fnatic);
         this.hafficool = new Player("Hafficool", "Hafficool-21377", TeamName.Fnatic);
@@ -93,7 +93,7 @@ public class ProData {
         this.reinforce = new Player("Reinforce", "Reinforce-2978", TeamName.Misfits);
         this.manneten = new Player("Manneten", "Manneten-2445", TeamName.Misfits);
         this.zave = new Player("Zave", "Zave-2150", TeamName.Misfits);
-        
+
         this.unkoe = new Player("uNKOE", "uNKOE-2828", TeamName.Rogue);
         this.winz = new Player("winz", "winz-2621", TeamName.Rogue);
         this.soon = new Player("SoOn", "SoOn-2543", TeamName.Rogue);
@@ -112,18 +112,18 @@ public class ProData {
         players.add(surefour);
         players.add(mendo);
         players.add(roolf);
-//        players.add(adam);
+        players.add(adam);
         players.add(ryb);
         players.add(gods);
         players.add(seagull);
-//        players.add(iddqd);
+        players.add(iddqd);
         players.add(ajax);
         players.add(numlocked);
         players.add(dummy);
         players.add(harbleu);
         players.add(custa);
         players.add(coolmatt);
-//        players.add(buds);
+        players.add(buds);
         players.add(vonethil);
         players.add(stoop);
         players.add(hafficool);

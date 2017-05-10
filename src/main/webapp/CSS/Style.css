@@ -102,10 +102,7 @@ body {
     z-index: -1;
 }
 
-.navbar {
-    /*   background-color: rgba(0,0,0,0.3);*/
-    font-color: green;
-}
+
 
 .nav li{
     color: whitesmoke;
@@ -122,7 +119,7 @@ body {
     color: grey;
 }
 #login-dp .bottom{
-    background-color:rgba(255,255,255,.8);
+    background-color:rgba(255,255,255,0.8);
     border-top:1px solid #ddd;
     clear:both;
     padding:14px;
@@ -148,7 +145,7 @@ body {
 }
 
 #tablebg {
-    background-color: rgba(30,30,30,0.7);
+    background-color: rgba(30,30,30,0.75);
     top:0;
     bottom: 0;
     left: 0;
@@ -167,7 +164,7 @@ body {
 
 
 .statscontent {
-    background-color: rgba(255,250,250,0.7);
+    background-color: rgba(255,250,250,0.75);
 
     margin-bottom: 1em;
     padding-left: 1em;
@@ -183,10 +180,10 @@ body {
 }
 
 #playerinfo {
-    background-color: rgba(255,250,250,0.7);
-
+    background-color: rgba(30,30,30,0.75);
     margin-bottom: 1em;
-    padding-top:1em;
+    /*    padding-bottom:0.7em;
+        padding-top:0.7em;*/
     border: solid;
     border-color: #262626;
     font-size: 1em;
@@ -195,7 +192,80 @@ body {
     z-index: -2;
     overflow: auto;
 
+
 }
+
+#playerName {
+    font-family: Overwatch;
+    display:inline-block;
+    margin-left: 1.5em;
+    color: #cccccc;
+    font-size: 2.5em;
+    border-bottom: 3.5px solid #666666;
+    text-shadow: -2px 0 black, 0 1px black, 2px 0 black, 0 -1px black;
+    -webkit-box-shadow: 0 4px 6px -6px #222;
+    -moz-box-shadow: 0 4px 6px -6px #222;
+    box-shadow: 0 10px 9px -9px black;
+
+
+}
+
+#playerLevel {
+    font-weight: bold;
+    margin-left: -3.62em;
+    margin-top: 2em;
+    color: #cccccc;
+    font-size: 2em;
+    text-shadow: -2px 0 black, 0 1px black, 2px 0 black, 0 -1px black;
+}
+
+#rankText {
+    color: #cccccc;
+    font-size: 2em;
+    text-shadow: -2px 0 black, 0 1px black, 2px 0 black, 0 -1px black;
+    display:inline-block;
+    margin-left: 1em;
+}
+
+#compGamesText {
+    color: #cccccc;
+    font-size: 2em;
+    text-shadow: -2px 0 black, 0 1px black, 2px 0 black, 0 -1px black;
+    display:inline-block;
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
+.wltText {
+    color: #cccccc;
+    font-size: 2em;
+    text-shadow: -2px 0 black, 0 1px black, 2px 0 black, 0 -1px black;
+    display:inline-block;
+    
+}
+
+#compWinsText {
+    color: darkgreen;
+    font-size: 2em;
+    text-shadow: -2px 0 black, 0 1px black, 2px 0 black, 0 -1px black;
+    display:inline-block;
+}
+
+#compLossesText {
+    color: darkred;
+    font-size: 2em;
+    text-shadow: -2px 0 black, 0 1px black, 2px 0 black, 0 -1px black;
+    display:inline-block;
+}
+
+#compTiesText {
+    color: darkorange;
+    font-size: 2em;
+    text-shadow: -2px 0 black, 0 1px black, 2px 0 black, 0 -1px black;
+    display:inline-block;
+}
+
+
 
 .container {
     width: 100%;
@@ -210,6 +280,30 @@ body {
 
 }
 
+#avatarResize2 {
+    width: 7em;
+    height: 7em;
+    border: solid;
+    border-color: #262626;
+    border-radius: 5px;
+    display:inline-block;
+    margin-left: 2em;
+
+}
+
+#rankIcon {
+    width: 6em;
+    height: 6em;
+    display:inline-block;
+    margin-left: 40em;
+}
+
+#rankImgResize {
+    width: 11.5em;
+    height: 11.5em;
+    display:inline-block;
+    margin-left: 1.5em;
+}
 
 
 #statSelector{
@@ -243,7 +337,7 @@ body {
 
 @font-face { 
     font-family: "Overwatch"; 
-    src: url("http://us.battle.net/forums/static/fonts/bignoodletoo/bignoodletoo.woff") format('woff');
+    src: url("https://us.battle.net/forums/static/fonts/bignoodletoo/bignoodletoo.woff") format('woff');
 }
 
 
@@ -270,7 +364,7 @@ body {
 }
 
 tr {
-    font-size: 1.2em;
+    font-size: 1.3em;
     color: #cccccc;
 }
 
@@ -278,6 +372,16 @@ tr {
     font-family: Overwatch;
     font-size: 1.7em;
 }
+
+#navFont {
+    font-size: 1.3em;
+}
+
+#loginText {
+    font-size: 1.3em;
+}
+
+
 
 #aboutbox {
     width: 90%;
