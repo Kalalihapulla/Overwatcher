@@ -17,7 +17,7 @@ import javax.persistence.Id;
  * @author Izymi
  */
 @Entity
-public class HeroModel implements Serializable {
+public class HeroModel implements Serializable, Comparable<HeroModel> {
 
     private long id;
     private String name;
@@ -192,6 +192,18 @@ public class HeroModel implements Serializable {
 
         setMedalsPerTen(round(value, 1));
 
+    }
+
+    @Override
+    public int compareTo(HeroModel t) {
+        if (winRate == t.winRate) {
+            return 0;
+        }
+        if (winRate < t.winRate) {
+            return 1;
+        } else {
+            return -1;
+        }
     }
 
 }

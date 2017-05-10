@@ -5,12 +5,17 @@
  */
 package Controller;
 
+import JSONModel.Hero.CompareDmg;
+import JSONModel.Hero.CompareElis;
 import JSONModel.Hero.HeroModel;
 import Model.Player;
 import Model.QueryMethods;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,9 +27,22 @@ import org.springframework.web.bind.annotation.RestController;
 public class HeroController extends QueryMethods {
 
     @RequestMapping("/allHeroes")
-    public List<HeroModel> allHeroes() {
+    public List<HeroModel> allHeroes(@RequestParam(value = "id", defaultValue = "1") String id) {
+        List<HeroModel> heroModels = allHero();
+        if (id.equals("2")) {
+            Collections.sort(heroModels, new CompareDmg());
+            return heroModels;
 
-        return allHero();
+        }
+        if (id.equals("3")) {
+            Collections.sort(heroModels, new CompareElis());
+            return heroModels;
+
+        } else {
+            Collections.sort(heroModels);
+            return heroModels;
+
+        }
 
     }
 }
