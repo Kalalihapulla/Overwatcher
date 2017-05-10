@@ -12,8 +12,7 @@
 
 $(document).ready(function () {
 
-
-
+ 
 
     $("#searchbutton").click(function () {
 
@@ -152,7 +151,7 @@ $(document).ready(function () {
                 } else if (ladderRank < 1500) {
                     rankIcon = "../contents/bronzeicon.png";
                 }
-                
+
                 if (playerLvl === 100) {
                     playerLvl = "00";
                     prestigeLvl = prestigeLvl + 1;
@@ -165,16 +164,14 @@ $(document).ready(function () {
                  <img id='rankIcon' src=" + rankIcon + "><span id='rankText'> " + ladderRank + "</span><span id='compGamesText'> " + compGames + " </span>\n\
                 <span class='wltText'>Wins: &nbsp;</span><span id='compWinsText'> " + compWins + "</span><span class='wltText'> &nbsp;- &nbsp;Losses: &nbsp;</span><span id='compLossesText'> " + compLosses + " </span>\n\
                 <span class='wltText'>&nbsp; - &nbsp;Ties: &nbsp;</span><span id='compTiesText'> " + compTies + "</span>");
-                        
-                 getWinrateChart(compWinrate);
-                 
+
+                getWinrateChart(compWinrate);
+
 
 
             });
         }
-//<span class='wltText'>Wins: </span>
-//<span class='wltText'> - Losses: </span>
-//<span class='wltText'> - Ties: </span>
+
 
     });
 
@@ -267,45 +264,45 @@ $(document).ready(function () {
         }
 
     }
-    
+
     function getWinrateChart(winRate) {
-        
+
         var winRate = winRate;
         var counterRate = 100 - winRate;
         alert(counterRate);
 //        var data1 = 'Win %';
 //        var data2 = 'Loss %';
-        
-    var wrChart = c3.generate({
-        
-        bindto: '#graphBoard',
-    data: {
-        columns: [
-            ['data1', winRate],
-            ['data2', counterRate]
-        ],
-        type : 'donut',
-        onclick: function (d, i) { console.log("onclick", d, i); },
-        onmouseover: function (d, i) { console.log("onmouseover", d, i); },
-        onmouseout: function (d, i) { console.log("onmouseout", d, i); }
-    },
-     colors: {
-            data1: '#4fb70e',
-            data2: '#b70e1f'
-            
-        },       
-    donut: {
-        title: "Competitive winrate"
+
+        var wrChart = c3.generate({
+
+            bindto: '#graphBoard',
+            data: {
+                columns: [
+                    ['data1', winRate],
+                    ['data2', counterRate]
+                ],
+                type: 'donut',
+                onclick: function (d, i) {
+                    console.log("onclick", d, i);
+                },
+                onmouseover: function (d, i) {
+                    console.log("onmouseover", d, i);
+                },
+                onmouseout: function (d, i) {
+                    console.log("onmouseout", d, i);
+                }
+            },
+            colors: {
+                data1: '#4fb70e',
+                data2: '#b70e1f'
+
+            },
+            donut: {
+                title: "Competitive winrate"
+            }
+        });
+
     }
-});
-
-   } 
-
-
-
-   
-
-
 
 
 
@@ -335,5 +332,99 @@ $(document).ready(function () {
         $("#searchboxtext2").show();
     });
 
+
+    $(window).load(function () {
+        appendHeroes("1");
+
+
+    });
+
+    $("#heroesId").change(function () {
+        var value = $("#heroesId option:selected").val();
+
+        appendHeroes(value);
+        sessionStorage
+
+    });
+
+    function appendHeroes(value) {
+        $.ajax({
+            url: "/allHeroes?id=" + value,
+            error: function () {
+                alert('Failed to load');
+
+            }
+
+
+        }).then(function (data) {
+
+           
+            var heroImage1 = new Array();
+            heroImage1[0] = "https://blzgdapipro-a.akamaihd.net/hero/symmetra/icon-portrait.png";
+            heroImage1[1] = "https://blzgdapipro-a.akamaihd.net/hero/pharah/icon-portrait.png";
+            heroImage1[2] = "https://blzgdapipro-a.akamaihd.net/hero/mccree/icon-portrait.png";
+            heroImage1[3] = "https://blzgdapipro-a.akamaihd.net/hero/sombra/icon-portrait.png";
+            heroImage1[4] = "https://blzgdapipro-a.akamaihd.net/hero/tracer/icon-portrait.png";
+            heroImage1[5] = "https://blzgdapipro-a.akamaihd.net/hero/ana/icon-portrait.png";
+            heroImage1[6] = "https://blzgdapipro-a.akamaihd.net/hero/bastion/icon-portrait.png";
+            heroImage1[7] = "https://blzgdapipro-a.akamaihd.net/hero/dva/icon-portrait.png";
+            heroImage1[8] = "https://blzgdapipro-a.akamaihd.net/hero/genji/icon-portrait.png";
+            heroImage1[9] = "https://blzgdapipro-a.akamaihd.net/hero/hanzo/icon-portrait.png";
+            heroImage1[10] = "https://blzgdapipro-a.akamaihd.net/hero/junkrat/icon-portrait.png";
+            heroImage1[11] = "https://blzgdapipro-a.akamaihd.net/hero/mei/icon-portrait.png";
+            heroImage1[12] = "https://blzgdapipro-a.akamaihd.net/hero/lucio/icon-portrait.png";
+            heroImage1[13] = "https://blzgdapipro-a.akamaihd.net/hero/mercy/icon-portrait.png";
+            heroImage1[14] = "https://blzgdapipro-a.akamaihd.net/hero/reaper/icon-portrait.png";
+            heroImage1[15] = "https://blzgdapipro-a.akamaihd.net/hero/reinhardt/icon-portrait.png";
+            heroImage1[16] = "https://blzgdapipro-a.akamaihd.net/hero/roadhog/icon-portrait.png";
+            heroImage1[17] = "https://blzgdapipro-a.akamaihd.net/hero/symmetra/icon-portrait.png";
+            heroImage1[18] = "https://blzgdapipro-a.akamaihd.net/hero/soldier-76/icon-portrait.png";
+            heroImage1[19] = "https://blzgdapipro-a.akamaihd.net/hero/torbjorn/icon-portrait.png";
+            heroImage1[20] = "https://blzgdapipro-a.akamaihd.net/hero/widowmaker/icon-portrait.png";
+            heroImage1[21] = "https://blzgdapipro-a.akamaihd.net/hero/winston/icon-portrait.png";
+            heroImage1[22] = "https://blzgdapipro-a.akamaihd.net/hero/zarya/icon-portrait.png";
+            heroImage1[23] = "https://blzgdapipro-a.akamaihd.net/hero/zenyatta/icon-portrait.png";
+         
+
+            var playerCount = 0;
+            var currentPlayer = data[playerCount];
+            $("#heroes").empty();
+            $('#heroes').append("<tr id='tableHead'><th>#</th><th></th><th>Hero</th><th>Winrate</th><th>Wins</th><th>Losses</th><th>Games</th><th>Damage avr</th><th>Eliminations avr</th><th>Total medals</th><th>Medals per/10</th></tr>");
+            while (currentPlayer !== null) {
+
+           
+               
+             
+                
+                var currentPlayer = data[playerCount];
+                var heroId = currentPlayer.id; 
+                var currentPic = heroImage1[heroId];
+                var name = currentPlayer.name;
+                var wr = currentPlayer.winRate;
+                var gw = currentPlayer.games_won;
+                var lw = currentPlayer.games_lost;
+                var total = lw + gw;
+                var dmga = currentPlayer.damage_done_average;
+                var elia = currentPlayer.eliminations_average;
+                var m10 = currentPlayer.medalsPerTen;
+                var medals = currentPlayer.medals;
+                var playerNumber = playerCount + 1;
+
+                $('#heroes').append("<tr><th scope='row'>" + playerNumber + "<td><img id='avatarResize' src=" + currentPic + "></td><td>" + name + "</td><td>" + wr + "</td><td> "
+                        + gw + "</td><td>" + lw + "</td><td>" + total + "</td><td>" + dmga + "</td><td>" + elia + "</td><td>" + medals + "</td><td>" + m10 + "</td></th></tr>");
+                playerCount++;
+                currentPlayer = data[playerCount];
+
+            }
+
+
+
+
+
+
+        });
+
+
+    }
 
 });

@@ -53,6 +53,7 @@
                     <ul id ="navFont" class="nav navbar-nav">
                         <li><a href="/about">About</a></li>
                         <li><a href="/ladderstats">Ladder statistics</a></li>
+                        <li><a href="/heroes">Hero statistics</a></li>
                         <li><a href="/usersearch">User statistics</a></li>
 
                     </ul>
@@ -97,7 +98,7 @@
             </div>
         </nav>
 
-  
+
 
 
         <div class="container">
@@ -107,30 +108,35 @@
                 </div>
 
             </div>
-            
+
             <div id="test">
-                
+
             </div>
 
             <div class="row">
                 <div class="col-md-3 statsboarddetails">
                     <div id="graphBoard">
-                       
+
                     </div>
                 </div>
+
                 <div class="col-md-9 statsboarddetails">
                     <div id="statsboard">
 
+                        <div class="col-md-9" id="statsboard">
+                            <div class="statscontent">
+
+
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
 
-        <div id="test">
+                <div id="test">
 
-        </div>
+                </div>
 
 
-    </body>
-</html>
+                </body>
+                </html>

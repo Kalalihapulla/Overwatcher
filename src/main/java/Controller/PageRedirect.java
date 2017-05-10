@@ -47,11 +47,17 @@ public class PageRedirect {
 
         return "Userstats";
     }
-    
+
     @RequestMapping("/about")
     public String about() {
 
         return "About";
+    }
+
+    @RequestMapping("/heroes")
+    public String heroest() {
+
+        return "Heroes";
     }
 
 }
