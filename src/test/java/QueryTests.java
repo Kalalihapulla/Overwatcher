@@ -1,5 +1,5 @@
 
-import Controller.UpdateHeroes;
+import Model.Update.UpdateHeroes;
 import Model.Player;
 import Model.QueryMethods;
 import Model.Team;

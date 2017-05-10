@@ -19,7 +19,7 @@ import javax.persistence.OneToOne;
  * @author Himel
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class RatingHeroes implements Serializable {
+public class RatingHeroes implements Serializable, Comparable<RatingHeroes> {
 
     private RegionHero us;
 //    private RegionHero kr;
@@ -28,6 +28,11 @@ public class RatingHeroes implements Serializable {
 
 //        this.kr = new RegionHero();
         this.us = new RegionHero();
+    }
+
+    @Override
+    public String toString() {
+        return us.getHeroes().getStats().getCompetitive().getPharah().getAverage_stats().getEliminations_average() + "";
     }
 
     @OneToOne(targetEntity = RegionHero.class,
@@ -49,5 +54,22 @@ public class RatingHeroes implements Serializable {
 //    public void setKr(RegionHero kr) {
 //        this.kr = kr;
 //    }
+
+    @Override
+    public int compareTo(RatingHeroes o) {
+        double value1 = us.getHeroes().getStats().getCompetitive().getDva().getGeneral_stats().getWin_percentage() + us.getHeroes().getStats().getCompetitive().getGenji().getGeneral_stats().getWin_percentage() + us.getHeroes().getStats().getCompetitive().getMccree().getGeneral_stats().getWin_percentage();
+        double value2 = o.getUs().getHeroes().getStats().getCompetitive().getDva().getGeneral_stats().getWin_percentage() + o.getUs().getHeroes().getStats().getCompetitive().getGenji().getGeneral_stats().getWin_percentage() + o.getUs().getHeroes().getStats().getCompetitive().getMccree().getGeneral_stats().getWin_percentage();
+
+        if (value1 == value2) {
+            return 0;
+        }
+        if (value1 < value2) {
+            return 1;
+
+        } else {
+            return -1;
+        }
+
+    }
 
 }

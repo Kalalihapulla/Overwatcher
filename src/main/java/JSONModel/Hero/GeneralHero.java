@@ -21,7 +21,7 @@ import javax.persistence.Id;
 public class GeneralHero implements Serializable, Calculatable {
 
 
-    private String win_percentage;
+    private double win_percentage;
     private int games_lost;
     private int games_won;
     private int medals;
@@ -38,11 +38,11 @@ public class GeneralHero implements Serializable, Calculatable {
     }
 
 
-    public String getWin_percentage() {
+    public double getWin_percentage() {
         return win_percentage;
     }
 
-    public void setWin_percentage(String win_percentage) {
+    public void setWin_percentage(Double win_percentage) {
         this.win_percentage = win_percentage;
     }
 

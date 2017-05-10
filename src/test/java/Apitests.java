@@ -1,6 +1,6 @@
 
-import Controller.UpdatePlayers;
-import Controller.UpdateHeroes;
+import Model.Update.UpdatePlayers;
+import Model.Update.UpdateHeroes;
 import JSONModel.Player.RegionPlayer;
 import Model.Player;
 import Model.Data.ProData;
@@ -192,11 +192,11 @@ public class Apitests {
         assertTrue(true);
 
     }
-//          @Test
-//    public void inserher() {
-//           UpdateHeroes heroes = new UpdateHeroes();
-//           heroes.insert();
-//     
-//    }
+          @Test
+    public void inserher() {
+           UpdateHeroes heroes = new UpdateHeroes();
+           heroes.insert();
+     
+    }
 
 }

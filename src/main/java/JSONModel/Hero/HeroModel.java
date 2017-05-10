@@ -5,6 +5,8 @@
  */
 package JSONModel.Hero;
 
+import static java.lang.Math.round;
+
 /**
  *
  * @author Izymi
@@ -17,12 +19,19 @@ public class HeroModel {
     private int games_lost;
     private int games_won;
     private int medals;
-    private double damage_done_average;
+    private int damage_done_average;
     private double eliminations_average;
+    private double medalsPerTen;
 
     public HeroModel(String name) {
         this.name = name;
         this.id = 0;
+    }
+
+    @Override
+    public String toString() {
+        return "Winrate " + winRate + " Games lost " + games_lost + " Gameswon " + games_won + " Medals " + medals + " Damageavr "
+                + damage_done_average + " Eliavr " + eliminations_average + "medl10" + medalsPerTen;
     }
 
     public long getId() {
@@ -77,7 +86,7 @@ public class HeroModel {
         return damage_done_average;
     }
 
-    public void setDamage_done_average(double damage_done_average) {
+    public void setDamage_done_average(int damage_done_average) {
         this.damage_done_average = damage_done_average;
     }
 
@@ -87,6 +96,81 @@ public class HeroModel {
 
     public void setEliminations_average(double eliminations_average) {
         this.eliminations_average = eliminations_average;
+    }
+
+    public void addElis(double eli) {
+
+        if (eli > 10.0) {
+
+            eliminations_average += eli;
+            eliminations_average = round(eliminations_average / 2, 2);
+        }
+    }
+
+    public void addDmgAvr(double dmg) {
+        if (dmg > 1000.0) {
+            damage_done_average += dmg;
+            damage_done_average /= 2;
+
+        }
+
+    }
+
+    public void addMedals(int medal) {
+        if (medal > 1) {
+            medals += medal;
+
+        }
+
+    }
+
+    public void addWins(int wins) {
+
+        games_won += wins;
+
+    }
+
+    public void addLosses(int losses) {
+
+        games_lost += losses;
+
+    }
+
+    public void addWinRate() {
+
+        setWinRate(round((double) games_won / (double) (games_won + games_lost), 2));
+
+    }
+
+    public static double round(double value, int places) {
+        if (places < 0) {
+            throw new IllegalArgumentException();
+        }
+
+        long factor = (long) Math.pow(10, places);
+        value = value * factor;
+        long tmp = Math.round(value);
+        return (double) tmp / factor;
+    }
+
+    /**
+     * @return the medalsPerTen
+     */
+    public double getMedalsPerTen() {
+        return medalsPerTen;
+    }
+
+    /**
+     * @param medalsPerTen the medalsPerTen to set
+     */
+    public void setMedalsPerTen(double medalsPerTen) {
+        this.medalsPerTen = medalsPerTen;
+    }
+
+    public void addMedalsPerTen() {
+
+        setMedalsPerTen(round(medals / (games_won + games_lost), medals) * 10);
+
     }
 
 }
