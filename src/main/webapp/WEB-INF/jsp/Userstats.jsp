@@ -6,6 +6,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 
+        <!-- Load c3.css -->
+        <link href="CSS/c3.css" rel="stylesheet" type="text/css">
+
+        <!-- Load d3.js and c3.js -->
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script src="script/c3.min.js"></script>
 
         <!--Javascript-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -95,7 +101,7 @@
             <div class="row">
                 <div class="col-md-12" id="playerinfo" >   
                 </div>
-   
+
             </div>
 
             <div class="row">
@@ -106,12 +112,7 @@
                 </div>
                 <div class="col-md-9" id="statsboard">
                     <div class="statscontent">
-                        <p>?Secondary</p>
-                        <p>?Secondary</p>
-                        <p>?Secondary</p>
-                        <p>?Secondary</p>
-                        <p>?Secondary</p>
-                        <p>?Secondary</p>
+                        
                     </div>
                 </div>
             </div>
