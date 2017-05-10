@@ -118,23 +118,54 @@ $(document).ready(function () {
                 }
 
                 alert("server selected " + serverid);
-
+                var rankIcon;
                 var playerAvatar = userdata.stats.competitive.overall_stats.avatar;
                 var userName = sessionStorage.bnetName;
                 var rankImg = userdata.stats.competitive.overall_stats.rank_image;
                 var prestigeLvl = userdata.stats.competitive.overall_stats.prestige;
                 var playerLvl = userdata.stats.competitive.overall_stats.level;  
-                var ladderRank = userdata.stats.competitive.overall_stats.comprank;
+                var ladderRank = userdata.stats.competitive.overall_stats.comprank;              
+                var compWins = userdata.stats.competitive.overall_stats.wins;
+                var compLosses = userdata.stats.competitive.overall_stats.losses;
+                var compTies = userdata.stats.competitive.overall_stats.ties;
+                var compGames = "Games: " + userdata.stats.competitive.overall_stats.games;
+                var compWlt = "Wins: " + compWins + " - Losses: " +  compLosses + " - Ties: " + compTies;
+                
+                if (ladderRank >= 4000) {
+                    rankIcon = "../contents/gmicon.png";
+                }
+                else if (ladderRank >= 3500 && ladderRank < 4000) {
+                    rankIcon = "../contents/mastericon.png";
+                }
+                 else if (ladderRank >= 3000 && ladderRank < 3500) {
+                    rankIcon = "../contents/diamondicon.png";
+                }
+                 else if (ladderRank >= 2500 && ladderRank < 3000) {
+                    rankIcon = "../contents/platicon.png";
+                }
+                 else if (ladderRank >= 2000 && ladderRank < 2500) {
+                    rankIcon = "../contents/goldicon.png";
+                }
+                 else if (ladderRank >= 1500 && ladderRank < 2000) {
+                    rankIcon = "../contents/silvericon.png";
+                }
+                else if (ladderRank < 1500) {
+                    rankIcon = "../contents/bronzeicon.png";
+                }                           
                 
                 if (playerLvl === 100) {
                     playerLvl = "00";
                     prestigeLvl = prestigeLvl + 1;
                     $("#playerLevel").css("margin-left", "-4em");
                 }
+                
+                
  
 
                 $("#playerinfo").append("<img id='avatarResize2' src=" + playerAvatar + "><span id='playerName'> " + userName + "</span><img id='rankImgResize' src=" 
-                        + rankImg + "><span id='playerLevel'> " + prestigeLvl + "" + playerLvl + "</span>                <span id='rankText'> " + ladderRank + "</span>");
+                        + rankImg + "><span id='playerLevel'> " + prestigeLvl + "" + playerLvl + "</span> \n\
+                 <img id='rankIcon' src=" + rankIcon + "><span id='rankText'> " + ladderRank + "</span><span id='compGamesText'> " + compGames + "</span>\n\
+                <span id='wltText'> " + compWlt + "</span>");
                
                 
             });

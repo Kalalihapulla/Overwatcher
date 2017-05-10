@@ -224,8 +224,26 @@ body {
     font-size: 2em;
     text-shadow: -2px 0 black, 0 1px black, 2px 0 black, 0 -1px black;
     display:inline-block;
-    margin-left: 10em;
+    margin-left: 1em;
 }
+
+#compGamesText {
+    color: #cccccc;
+    font-size: 2em;
+    text-shadow: -2px 0 black, 0 1px black, 2px 0 black, 0 -1px black;
+    display:inline-block;
+    margin-left: 3em;
+}
+
+#wltText {
+    color: #cccccc;
+    font-size: 2em;
+    text-shadow: -2px 0 black, 0 1px black, 2px 0 black, 0 -1px black;
+    display:inline-block;
+    margin-left: 3em;
+}
+
+
 
 .container {
     width: 100%;
@@ -249,6 +267,13 @@ body {
     display:inline-block;
     margin-left: 2em;
 
+}
+
+#rankIcon {
+    width: 6em;
+    height: 6em;
+    display:inline-block;
+    margin-left: 40em;
 }
 
 #rankImgResize {
