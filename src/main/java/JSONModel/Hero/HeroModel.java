@@ -30,8 +30,8 @@ public class HeroModel {
 
     @Override
     public String toString() {
-        return "Winrate " + winRate + " Games lost " + games_lost + " Gameswon " + games_won + " Medals " + medals + " Damageavr "
-                + damage_done_average + " Eliavr " + eliminations_average + "medl10" + medalsPerTen;
+        return name + " Winrate " + winRate + " Games lost " + games_lost + " Gameswon " + games_won + " Medals " + medals + " Damageavr "
+                + damage_done_average + " Eliavr " + eliminations_average + "medlperten " + medalsPerTen;
     }
 
     public long getId() {
@@ -168,8 +168,9 @@ public class HeroModel {
     }
 
     public void addMedalsPerTen() {
+        double value = ((double) medals / (double) (games_won + games_lost) * 10.0);
 
-        setMedalsPerTen(round(medals / (games_won + games_lost), medals) * 10);
+        setMedalsPerTen(round(value, 1));
 
     }
 
