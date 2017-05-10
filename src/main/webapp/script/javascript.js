@@ -166,8 +166,10 @@ $(document).ready(function () {
                 <span class='wltText'>&nbsp; - &nbsp;Ties: &nbsp;</span><span id='compTiesText'> " + compTies + "</span>");
 
                 getWinrateChart(compWinrate);
-
-
+                
+                 $('#playerStats').append("<tr id='tableHead'><th></th><th></th><th>Player name</th><th>Eliminations Avg.</th><th>Deaths Avg.</th><th>K/D ratio</th><th>Team name</th></tr>");
+                 $('#playerStats').append("<tr><th scope='row'>Competitive<td><img id='avatarResize' src=" + playerAvatar + "></td><td>" + playerName + "</td><td> " + winrate + "</td><td>" + wins + "</td><td>" + losses + "</td><td>" + games + "</td><td>" + teamName + "</td></th></tr>");
+                 $('#playerStats').append("<tr><th scope='row'>Quickplay<td><img id='avatarResize' src=" + playerAvatar + "></td><td>" + playerName + "</td><td> " + winrate + "</td><td>" + wins + "</td><td>" + losses + "</td><td>" + games + "</td><td>" + teamName + "</td></th></tr>");
 
             });
         }
@@ -414,6 +416,7 @@ $(document).ready(function () {
                         + gw + "</td><td>" + lw + "</td><td>" + total + "</td><td>" + dmga + "</td><td>" + elia + "</td><td>" + medals + "</td><td>" + m10 + "</td></th></tr>");
                 playerCount++;
                 currentPlayer = data[playerCount];
+               
 
             }
 
