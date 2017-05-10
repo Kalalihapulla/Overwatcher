@@ -270,7 +270,7 @@ body {
 }
 
 tr {
-    font-size: 1.2em;
+    font-size: 1.3em;
     color: #cccccc;
 }
 
@@ -278,6 +278,16 @@ tr {
     font-family: Overwatch;
     font-size: 1.7em;
 }
+
+#navFont {
+    font-size: 1.3em;
+}
+
+#loginText {
+    font-size: 1.3em;
+}
+
+
 
 #aboutbox {
     width: 90%;
