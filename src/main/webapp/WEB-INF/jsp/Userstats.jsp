@@ -87,41 +87,44 @@
             </div>
         </nav>
 
-        
-       
-        
+
+
+
         <div class="container">
-   
+
             <div class="row">
                 <div class="col-md-12" id="playerinfo" >
                     
+                         
+
+                    
                 </div>
             </div>
-       
-        <div class="row">
-            <div class="col-md-3" id="statsboardnav">
-                <div class="statscontent">
-                    Main content
+
+            <div class="row">
+                <div class="col-md-3" id="statsboardnav">
+                    <div class="statscontent">
+                        Main content
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-9" id="statsboard">
-                <div class="statscontent">
-                    <p>?Secondary</p>
-                    <p>?Secondary</p>
-                    <p>?Secondary</p>
-                    <p>?Secondary</p>
-                    <p>?Secondary</p>
-                    <p>?Secondary</p>
+                <div class="col-md-9" id="statsboard">
+                    <div class="statscontent">
+                        <p>?Secondary</p>
+                        <p>?Secondary</p>
+                        <p>?Secondary</p>
+                        <p>?Secondary</p>
+                        <p>?Secondary</p>
+                        <p>?Secondary</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-        
-          
-          <div id="test">
+
+
+        <div id="test">
 
         </div>
 
 
-</body>
+    </body>
 </html>

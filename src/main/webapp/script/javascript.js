@@ -19,6 +19,8 @@ $(document).ready(function () {
         var serverid = $("#serverid option:selected").val();
         sessionStorage.searchurl = searchurl;
         sessionStorage.serverid = serverid;
+        sessionStorage.bnetName = bnetname + "#" + bnetid;
+       
         window.location = "/userstats";
 
         alert("data saved");
@@ -118,10 +120,24 @@ $(document).ready(function () {
                 alert("server selected " + serverid);
 
                 var playerAvatar = userdata.stats.competitive.overall_stats.avatar;
+                var userName = sessionStorage.bnetName;
+                var rankImg = userdata.stats.competitive.overall_stats.rank_image;
+                var prestigeLvl = userdata.stats.competitive.overall_stats.prestige;
+                var playerLvl = userdata.stats.competitive.overall_stats.level;
+                alert(prestigeLvl);
+                alert(playerLvl);
+                
+                if (playerLvl === 100) {
+                    playerLvl = "00";
+                    prestigeLvl = prestigeLvl + 1;
+                    $("#playerLevel").css("margin-left", "-4em");
+                }
+                alert(prestigeLvl);
+                alert(playerLvl);
+                //$('#playerinfo').append(userdata.stats.competitive.overall_stats.tier);
 
-                $('#playerinfo').append(userdata.stats.competitive.overall_stats.tier);
-
-                $("#playerinfo").append("<img id='avatarResize' src=" + playerAvatar + ">");
+                $("#playerinfo").append("<img id='avatarResize2' src=" + playerAvatar + "><span id='playerName'> " + userName + "</span><img id='rankImgResize' src=" 
+                        + rankImg + "><span id='playerLevel'> " + prestigeLvl + "" + playerLvl + "</span>");
                 //  document.location.href = "Userstats.jsp";  
 
             });
