@@ -136,8 +136,8 @@ public class UpdateHeroes {
                         hm.addMedalsPerTen();
                     });
                     break;
-            
-                    case "Genji":
+
+                case "Genji":
                     list.forEach((rh) -> {
                         hm.addElis(rh.getUs().getHeroes().getStats().getCompetitive().getGenji().getAverage_stats().getEliminations_average());
                         hm.addDmgAvr(rh.getUs().getHeroes().getStats().getCompetitive().getGenji().getAverage_stats().getDamage_done_average());
@@ -148,7 +148,7 @@ public class UpdateHeroes {
                         hm.addMedalsPerTen();
                     });
                     break;
-            
+
                 case "Hanzo":
                     list.forEach((rh) -> {
                         hm.addElis(rh.getUs().getHeroes().getStats().getCompetitive().getHanzo().getAverage_stats().getEliminations_average());
@@ -160,7 +160,7 @@ public class UpdateHeroes {
                         hm.addMedalsPerTen();
                     });
                     break;
-                        case "Junkrat":
+                case "Junkrat":
                     list.forEach((rh) -> {
                         hm.addElis(rh.getUs().getHeroes().getStats().getCompetitive().getJunkrat().getAverage_stats().getEliminations_average());
                         hm.addDmgAvr(rh.getUs().getHeroes().getStats().getCompetitive().getJunkrat().getAverage_stats().getDamage_done_average());
@@ -171,7 +171,7 @@ public class UpdateHeroes {
                         hm.addMedalsPerTen();
                     });
                     break;
-                        case "Mei":
+                case "Mei":
                     list.forEach((rh) -> {
                         hm.addElis(rh.getUs().getHeroes().getStats().getCompetitive().getMei().getAverage_stats().getEliminations_average());
                         hm.addDmgAvr(rh.getUs().getHeroes().getStats().getCompetitive().getMei().getAverage_stats().getDamage_done_average());
@@ -182,7 +182,7 @@ public class UpdateHeroes {
                         hm.addMedalsPerTen();
                     });
                     break;
-                        case "Lucio":
+                case "Lucio":
                     list.forEach((rh) -> {
                         hm.addElis(rh.getUs().getHeroes().getStats().getCompetitive().getLucio().getAverage_stats().getEliminations_average());
                         hm.addDmgAvr(rh.getUs().getHeroes().getStats().getCompetitive().getLucio().getAverage_stats().getDamage_done_average());
@@ -193,7 +193,7 @@ public class UpdateHeroes {
                         hm.addMedalsPerTen();
                     });
                     break;
-                        case "Mercy":
+                case "Mercy":
                     list.forEach((rh) -> {
                         hm.addElis(rh.getUs().getHeroes().getStats().getCompetitive().getMercy().getAverage_stats().getEliminations_average());
                         hm.addDmgAvr(rh.getUs().getHeroes().getStats().getCompetitive().getMercy().getAverage_stats().getDamage_done_average());
@@ -204,13 +204,112 @@ public class UpdateHeroes {
                         hm.addMedalsPerTen();
                     });
                     break;
-                        case "Reaper":
+                case "Reaper":
                     list.forEach((rh) -> {
                         hm.addElis(rh.getUs().getHeroes().getStats().getCompetitive().getReaper().getAverage_stats().getEliminations_average());
                         hm.addDmgAvr(rh.getUs().getHeroes().getStats().getCompetitive().getReaper().getAverage_stats().getDamage_done_average());
                         hm.addMedals(rh.getUs().getHeroes().getStats().getCompetitive().getReaper().getGeneral_stats().getMedals());
                         hm.addWins(rh.getUs().getHeroes().getStats().getCompetitive().getReaper().getGeneral_stats().getGames_won());
                         hm.addLosses(rh.getUs().getHeroes().getStats().getCompetitive().getReaper().getGeneral_stats().getGames_lost());
+                        hm.addWinRate();
+                        hm.addMedalsPerTen();
+                    });
+                    break;
+                case "Roadhog":
+                    list.forEach((rh) -> {
+                        hm.addElis(rh.getUs().getHeroes().getStats().getCompetitive().getRoadhog().getAverage_stats().getEliminations_average());
+                        hm.addDmgAvr(rh.getUs().getHeroes().getStats().getCompetitive().getRoadhog().getAverage_stats().getDamage_done_average());
+                        hm.addMedals(rh.getUs().getHeroes().getStats().getCompetitive().getRoadhog().getGeneral_stats().getMedals());
+                        hm.addWins(rh.getUs().getHeroes().getStats().getCompetitive().getRoadhog().getGeneral_stats().getGames_won());
+                        hm.addLosses(rh.getUs().getHeroes().getStats().getCompetitive().getRoadhog().getGeneral_stats().getGames_lost());
+                        hm.addWinRate();
+                        hm.addMedalsPerTen();
+                    });
+                    break;
+                case "Reinhardt":
+                    list.forEach((rh) -> {
+                        hm.addElis(rh.getUs().getHeroes().getStats().getCompetitive().getReinhardt().getAverage_stats().getEliminations_average());
+                        hm.addDmgAvr(rh.getUs().getHeroes().getStats().getCompetitive().getReinhardt().getAverage_stats().getDamage_done_average());
+                        hm.addMedals(rh.getUs().getHeroes().getStats().getCompetitive().getReinhardt().getGeneral_stats().getMedals());
+                        hm.addWins(rh.getUs().getHeroes().getStats().getCompetitive().getReinhardt().getGeneral_stats().getGames_won());
+                        hm.addLosses(rh.getUs().getHeroes().getStats().getCompetitive().getReinhardt().getGeneral_stats().getGames_lost());
+                        hm.addWinRate();
+                        hm.addMedalsPerTen();
+                    });
+                    break;
+                case "Symmetra":
+                    list.forEach((rh) -> {
+                        hm.addElis(rh.getUs().getHeroes().getStats().getCompetitive().getSymmetra().getAverage_stats().getEliminations_average());
+                        hm.addDmgAvr(rh.getUs().getHeroes().getStats().getCompetitive().getSymmetra().getAverage_stats().getDamage_done_average());
+                        hm.addMedals(rh.getUs().getHeroes().getStats().getCompetitive().getSymmetra().getGeneral_stats().getMedals());
+                        hm.addWins(rh.getUs().getHeroes().getStats().getCompetitive().getSymmetra().getGeneral_stats().getGames_won());
+                        hm.addLosses(rh.getUs().getHeroes().getStats().getCompetitive().getSymmetra().getGeneral_stats().getGames_lost());
+                        hm.addWinRate();
+                        hm.addMedalsPerTen();
+                    });
+                    break;
+                case "Soldier76":
+                    list.forEach((rh) -> {
+                        hm.addElis(rh.getUs().getHeroes().getStats().getCompetitive().getSoldier76().getAverage_stats().getEliminations_average());
+                        hm.addDmgAvr(rh.getUs().getHeroes().getStats().getCompetitive().getSoldier76().getAverage_stats().getDamage_done_average());
+                        hm.addMedals(rh.getUs().getHeroes().getStats().getCompetitive().getSoldier76().getGeneral_stats().getMedals());
+                        hm.addWins(rh.getUs().getHeroes().getStats().getCompetitive().getSoldier76().getGeneral_stats().getGames_won());
+                        hm.addLosses(rh.getUs().getHeroes().getStats().getCompetitive().getSoldier76().getGeneral_stats().getGames_lost());
+                        hm.addWinRate();
+                        hm.addMedalsPerTen();
+                    });
+                    break;
+                case "Torbjorn":
+                    list.forEach((rh) -> {
+                        hm.addElis(rh.getUs().getHeroes().getStats().getCompetitive().getTorbjorn().getAverage_stats().getEliminations_average());
+                        hm.addDmgAvr(rh.getUs().getHeroes().getStats().getCompetitive().getTorbjorn().getAverage_stats().getDamage_done_average());
+                        hm.addMedals(rh.getUs().getHeroes().getStats().getCompetitive().getTorbjorn().getGeneral_stats().getMedals());
+                        hm.addWins(rh.getUs().getHeroes().getStats().getCompetitive().getTorbjorn().getGeneral_stats().getGames_won());
+                        hm.addLosses(rh.getUs().getHeroes().getStats().getCompetitive().getTorbjorn().getGeneral_stats().getGames_lost());
+                        hm.addWinRate();
+                        hm.addMedalsPerTen();
+                    });
+                    break;
+                case "Widowmaker":
+                    list.forEach((rh) -> {
+                        hm.addElis(rh.getUs().getHeroes().getStats().getCompetitive().getWidowmaker().getAverage_stats().getEliminations_average());
+                        hm.addDmgAvr(rh.getUs().getHeroes().getStats().getCompetitive().getWidowmaker().getAverage_stats().getDamage_done_average());
+                        hm.addMedals(rh.getUs().getHeroes().getStats().getCompetitive().getWidowmaker().getGeneral_stats().getMedals());
+                        hm.addWins(rh.getUs().getHeroes().getStats().getCompetitive().getWidowmaker().getGeneral_stats().getGames_won());
+                        hm.addLosses(rh.getUs().getHeroes().getStats().getCompetitive().getWidowmaker().getGeneral_stats().getGames_lost());
+                        hm.addWinRate();
+                        hm.addMedalsPerTen();
+                    });
+                    break;
+                case "Winston":
+                    list.forEach((rh) -> {
+                        hm.addElis(rh.getUs().getHeroes().getStats().getCompetitive().getWinston().getAverage_stats().getEliminations_average());
+                        hm.addDmgAvr(rh.getUs().getHeroes().getStats().getCompetitive().getWinston().getAverage_stats().getDamage_done_average());
+                        hm.addMedals(rh.getUs().getHeroes().getStats().getCompetitive().getWinston().getGeneral_stats().getMedals());
+                        hm.addWins(rh.getUs().getHeroes().getStats().getCompetitive().getWinston().getGeneral_stats().getGames_won());
+                        hm.addLosses(rh.getUs().getHeroes().getStats().getCompetitive().getWidowmaker().getGeneral_stats().getGames_lost());
+                        hm.addWinRate();
+                        hm.addMedalsPerTen();
+                    });
+                    break;
+                case "Zarya":
+                    list.forEach((rh) -> {
+                        hm.addElis(rh.getUs().getHeroes().getStats().getCompetitive().getZarya().getAverage_stats().getEliminations_average());
+                        hm.addDmgAvr(rh.getUs().getHeroes().getStats().getCompetitive().getZarya().getAverage_stats().getDamage_done_average());
+                        hm.addMedals(rh.getUs().getHeroes().getStats().getCompetitive().getZarya().getGeneral_stats().getMedals());
+                        hm.addWins(rh.getUs().getHeroes().getStats().getCompetitive().getZarya().getGeneral_stats().getGames_won());
+                        hm.addLosses(rh.getUs().getHeroes().getStats().getCompetitive().getZarya().getGeneral_stats().getGames_lost());
+                        hm.addWinRate();
+                        hm.addMedalsPerTen();
+                    });
+                    break;
+                case "Zenyatta":
+                    list.forEach((rh) -> {
+                        hm.addElis(rh.getUs().getHeroes().getStats().getCompetitive().getZenyatta().getAverage_stats().getEliminations_average());
+                        hm.addDmgAvr(rh.getUs().getHeroes().getStats().getCompetitive().getZenyatta().getAverage_stats().getDamage_done_average());
+                        hm.addMedals(rh.getUs().getHeroes().getStats().getCompetitive().getZenyatta().getGeneral_stats().getMedals());
+                        hm.addWins(rh.getUs().getHeroes().getStats().getCompetitive().getZenyatta().getGeneral_stats().getGames_won());
+                        hm.addLosses(rh.getUs().getHeroes().getStats().getCompetitive().getZenyatta().getGeneral_stats().getGames_lost());
                         hm.addWinRate();
                         hm.addMedalsPerTen();
                     });
