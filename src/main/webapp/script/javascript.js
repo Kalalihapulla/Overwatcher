@@ -156,20 +156,19 @@ $(document).ready(function () {
                 }
 
 
-
-
-
                 $("#playerinfo").append("<img id='avatarResize2' src=" + playerAvatar + "><span id='playerName'> " + userName + "</span><img id='rankImgResize' src="
                         + rankImg + "><span id='playerLevel'> " + prestigeLvl + "" + playerLvl + "</span> \n\
-                 <img id='rankIcon' src=" + rankIcon + "><span id='rankText'> " + ladderRank + "</span><span id='compGamesText'> " + compGames + "</span>\n\
-                <span class='wltText'>Wins: </span><span id='compWinsText'> " + compWins + "</span><span class='wltText'> - Losses: </span><span id='compLossesText'> " + compLosses + " </span>\n\
-                <span class='wltText'> - Ties: </span><span id='compTiesText'> " + compTies "</span>");
+                 <img id='rankIcon' src=" + rankIcon + "><span id='rankText'> " + ladderRank + "</span><span id='compGamesText'> " + compGames + " </span>\n\
+                <span class='wltText'>Wins: &nbsp;</span><span id='compWinsText'> " + compWins + "</span><span class='wltText'> &nbsp;- &nbsp;Losses: &nbsp;</span><span id='compLossesText'> " + compLosses + " </span>\n\
+                <span class='wltText'>&nbsp; - &nbsp;Ties: &nbsp;</span><span id='compTiesText'> " + compTies + "</span>");
                         //  getWinrateGauge(compWinrate);
 
 
             });
         }
-
+//<span class='wltText'>Wins: </span>
+//<span class='wltText'> - Losses: </span>
+//<span class='wltText'> - Ties: </span>
 
     });
 
