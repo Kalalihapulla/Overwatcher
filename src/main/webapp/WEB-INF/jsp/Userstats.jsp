@@ -51,6 +51,7 @@
                         <li><a href="/ladderstats">Ladder statistics</a></li>
                         <li><a href="/heroes">Hero statistics</a></li>
                         <li><a href="/usersearch">User statistics</a></li>
+                        <li><a href="/teamstats">Team statistics</a></li>
 
                     </ul>
 

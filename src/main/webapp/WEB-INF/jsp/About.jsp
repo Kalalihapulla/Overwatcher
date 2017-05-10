@@ -41,6 +41,7 @@
                         <li><a href="/about">About</a></li>
                         <li><a href="/ladderstats">Ladder statistics</a></li>
                            <li><a href="/heroes">Hero statistics</a></li>
+                        <li><a href="/teamstats">Team statistics</a></li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
@@ -87,7 +88,14 @@
             <p style="font-size: 1.5em">Welcome to the TeamLUL Overwatch site!</p>
             
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis feugiat vulputate diam, et molestie ex dignissim pretium. Nunc sed sapien diam. Praesent imperdiet ut eros in hendrerit. Vivamus pellentesque mi lacinia turpis elementum interdum. Nam quis accumsan lacus. Aliquam vitae sem maximus, porttitor urna id, hendrerit arcu. Cras vehicula nulla in viverra dictum. Vivamus lectus mauris, venenatis quis ultrices et, accumsan id nunc. Fusce mollis at odio id imperdiet. Nam ac metus vitae nisl euismod vulputate nec sed mi. Duis sed ultricies ante. Sed et augue vel est volutpat mattis. Aliquam placerat massa non rhoncus tristique. Sed sit amet elit nisl. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc aliquam vehicula ipsum, sit amet dignissim neque eleifend vel.
+                This is the amazing data representing site for Overwatch fans around the world! The good people at TeamLul&trade; Incorporated provide you with an easy-to-use way of checking out your favourite players' as well as your own Overwatch stats. No more wondering about rankings and kill/death ratios since it all can be displayed on this site!
+            </p>
+            <br>
+            <p>
+                Use the navigation bar to wonder around the site and prepare to be amazed.
+            </p>
+            <p style="position: absolute; bottom: 0px;">
+                By Himel Rahman, Jere Raassina and Markus Makkonen
             </p>
         </div>
         

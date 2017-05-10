@@ -40,6 +40,7 @@
                     <ul id ="navFont" class="nav navbar-nav">
                         <li><a href="/about">About</a></li>
                         <li><a href="/ladderstats">Ladder statistics</a></li>
+                        <li><a href="/teamstats">Team statistics</a></li>
                          <li><a href="/heroes">Hero statistics</a></li>
 
                     </ul>
