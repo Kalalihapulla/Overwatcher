@@ -6,7 +6,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 
-  
+
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.css">  
         <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.js"></script>
@@ -45,15 +45,15 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul id ="navFont" class="nav navbar-nav">     
-                        <li id="aboutTextScale"><a href="/about">About</a></li>                        
+                        <li id="aboutTextScale"><a href="/about">About</a></li>                      
+                        <li><a href="/usersearch">User statistics</a></li>
                         <li><a href="/ladderstats">Ladder statistics</a></li>
                         <li><a href="/heroes">Hero statistics</a></li>
-                        <li><a href="/usersearch">User statistics</a></li>
-                        <li><a href="/teamstats">Team statistics</a></li>
+
 
                     </ul>
 
-                
+
                 </div>
             </div>
         </nav>

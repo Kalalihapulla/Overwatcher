@@ -46,9 +46,11 @@
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul id ="navFont" class="nav navbar-nav">
-                        <li id="aboutTextScale"><a href="/about">About</a></li>
+                            <li id="aboutTextScale"><a href="/about">About</a></li>
+                        <li><a href="/usersearch">User statistics</a></li>
                         <li><a href="/ladderstats">Ladder statistics</a></li>
-                        <li><a href="/teamstats">Team statistics</a></li>
+                        <li><a href="/heroes">Hero statistics</a></li>
+
 
                     </ul>
 
@@ -64,8 +66,8 @@
 
         <div id="searchbox">
             <h3 id="statHeader">Write a Battle.net username and ID</h3>
-            <input id="searchboxtext1"type="text" name="search" placeholder="Battle.net username">
-            <input id="searchboxtext2" type="text" name="search" placeholder="User ID">
+            <input id="searchboxtext1"type="text" name="search"  value = "Taimou">
+            <input id="searchboxtext2" type="text" name="search" value ="2526" >
 
             <select id="serverid">
                 <option  value="eu">Europe</option>

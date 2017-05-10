@@ -27,7 +27,7 @@ $(document).ready(function () {
 
         window.location = "/userstats";
 
-        alert("data saved");
+      
 
     });
 
@@ -52,7 +52,7 @@ $(document).ready(function () {
 
 
 
-      }
+        }
 //      else if (location.pathname === "/teamstats") {
 //            sessionStorage.statsId = "fnatic";
 //
@@ -63,7 +63,7 @@ $(document).ready(function () {
 //        }
 
         function loadLadder() {
-            alert("Loading player statistics. Please wait...");
+        
 
             $.ajax({
                 url: "/allPlayers",
@@ -74,7 +74,7 @@ $(document).ready(function () {
 
 
             }).then(function (data) {
-                alert("Player statistics loaded!");
+             
 
                 sessionStorage.ladderdata = JSON.stringify(data);
 
@@ -147,7 +147,7 @@ $(document).ready(function () {
 
                 }
 
-                alert("server selected " + serverid);
+            
                 var rankIcon;
                 var playerAvatar = userdata.stats.competitive.overall_stats.avatar;
                 var userName = sessionStorage.bnetName;
@@ -202,144 +202,159 @@ $(document).ready(function () {
 
 
     });
-    function appendTeams(data1,value) {
-        var data = data1;
-        alert(data + value);
-        $("#playerList").empty();
-
-        var playerCount = 0;
-
-        var currentPlayer = 0;
-
-        if (value === "envyus") {
-            $('#playerList').append("<tr id='tableHead'><th>#</th><th></th><th>Player name</th><th>Value rating</th><th>Ladder ranking</th><th>Team ranking</th></tr>");
-
-            while (currentPlayer !== null) {
-
-                currentPlayer = data[playerCount];
-                alert("Current player: " + currentPlayer);
-                var playerName = currentPlayer.playerName;
-                alert("Player name: " + playerName);
-                var teamName = currentPlayer.teamName;
-                var playerAvatar = currentPlayer.rating.us.stats.competitive.overall_stats.avatar;
-                var avatarUrl = document.createElement("img");
-                avatarUrl.setAttribute("src", playerAvatar);
-                var playerNumber = playerCount + 1;
-                var ladderRanking = currentPlayer.rating.us.stats.competitive.overall_stats.comprank;
-                var valueRating = currentPlayer.valueRating;
-
-                if (currentPlayer.teamName === "Team_EnVyUs") {
-                $("#playerList").append("<tr><th scope='row'>" + playerNumber + " <td><img id='avatarResize' src=" + playerAvatar + "></td><td>" + playerName + "</td><td> " + valueRating + "</td><td>" + ladderRanking + "</td><td>" + teamName + "</td></th></tr>");
-                playerCount++;
-                }
+    function appendTeams(value) {
+        $.ajax({
+            url: "/getTeam?id=" + value,
+            async: false,
+            error: function () {
+                alert('Failed to load');
 
             }
-        } else if (value === "nrg") {
-            $('#playerList').append("<tr id='tableHead'><th>#</th><th></th><th>Player name</th><th>Value rating</th><th>Ladder ranking</th><th>Team ranking</th></tr>");
 
-            while (currentPlayer !== null) {
 
-                currentPlayer = data[playerCount];
-                var playerName = currentPlayer.playerName;
-                var teamName = currentPlayer.teamName;
-                var playerAvatar = currentPlayer.rating.us.stats.competitive.overall_stats.avatar;
-                var avatarUrl = document.createElement("img");
-                avatarUrl.setAttribute("src", playerAvatar);
-                var playerNumber = playerCount + 1;
-                var ladderRanking = currentPlayer.rating.us.stats.competitive.overall_stats.comprank;
-                var valueRating = currentPlayer.valueRating;
+        }).then(function (data1) {
+            var data = data1;
+         
+            $("#listTeam").empty();
 
-                if (currentPlayer.teamName === "NRG_Esports") {
-                    $("#playerList").append("<tr><th scope='row'>" + playerNumber + " <td><img id='avatarResize' src=" + playerAvatar + "></td><td>" + playerName + "</td><td> " + valueRating + "</td><td>" + ladderRanking + "</td><td>" + teamName + "</td></th></tr>");
-                    playerCount++;
-                }
+            var playerCount = 0;
 
-            }
-        } else if (value === "c9") {
-            $('#playerList').append("<tr id='tableHead'><th>#</th><th></th><th>Player name</th><th>Value rating</th><th>Ladder ranking</th><th>Team ranking</th></tr>");
+            var currentPlayer = 0;
+            $('#listTeam').append("<tr id='tableHead'><th>#</th><th></th><th>Player name</th><th>Value rating</th><th>Ladder ranking</th><th>Team ranking</th></tr>");
+//            if (value === "6") {
+//                $('#playerList').append("<tr id='tableHead'><th>#</th><th></th><th>Player name</th><th>Value rating</th><th>Ladder ranking</th><th>Team ranking</th></tr>");
+//
+//                while (currentPlayer !== null) {
+//
+//                    currentPlayer = data[playerCount];
+//                    alert("Current player: " + currentPlayer);
+//                    var playerName = currentPlayer.playerName;
+//                    alert("Player name: " + playerName);
+//                    var teamName = currentPlayer.teamName;
+//                    var playerAvatar = currentPlayer.rating.us.stats.competitive.overall_stats.avatar;
+//                    var avatarUrl = document.createElement("img");
+//                    avatarUrl.setAttribute("src", playerAvatar);
+//                    var playerNumber = playerCount + 1;
+//                    var ladderRanking = currentPlayer.rating.us.stats.competitive.overall_stats.comprank;
+//                    var valueRating = currentPlayer.valueRating;
+//
+//            if (value === "6") {
+//                $("#listTeam").append("<tr><th scope='row'>" + playerNumber + " <td><img id='avatarResize' src=" + playerAvatar + "></td><td>" + playerName + "</td><td> " + valueRating + "</td><td>" + ladderRanking + "</td><td>" + teamName + "</td></th></tr>");
+//                playerCount++;
+//            }
+//
+//                }
+//            } else if (value === "3") {
+//                $('#playerList').append("<tr id='tableHead'><th>#</th><th></th><th>Player name</th><th>Value rating</th><th>Ladder ranking</th><th>Team ranking</th></tr>");
+//
+//                while (currentPlayer !== null) {
+//
+//                    currentPlayer = data[playerCount];
+//                    var playerName = currentPlayer.playerName;
+//                    var teamName = currentPlayer.teamName;
+//                    var playerAvatar = currentPlayer.rating.us.stats.competitive.overall_stats.avatar;
+//                    var avatarUrl = document.createElement("img");
+//                    avatarUrl.setAttribute("src", playerAvatar);
+//                    var playerNumber = playerCount + 1;
+//                    var ladderRanking = currentPlayer.rating.us.stats.competitive.overall_stats.comprank;
+//                    var valueRating = currentPlayer.valueRating;
+//
+//                    if (currentPlayer.teamName === "NRG_Esports") {
+//                        $("#playerList").append("<tr><th scope='row'>" + playerNumber + " <td><img id='avatarResize' src=" + playerAvatar + "></td><td>" + playerName + "</td><td> " + valueRating + "</td><td>" + ladderRanking + "</td><td>" + teamName + "</td></th></tr>");
+//                        playerCount++;
+//                    }
+//
+//                }
+//            } else if (value === "5") {
+//                $('#playerList').append("<tr id='tableHead'><th>#</th><th></th><th>Player name</th><th>Value rating</th><th>Ladder ranking</th><th>Team ranking</th></tr>");
+//
+//                while (currentPlayer !== null) {
+//
+//                    currentPlayer = data[playerCount];
+//                    var playerName = currentPlayer.playerName;
+//                    var teamName = currentPlayer.teamName;
+//                    var playerAvatar = currentPlayer.rating.us.stats.competitive.overall_stats.avatar;
+//                    var avatarUrl = document.createElement("img");
+//                    avatarUrl.setAttribute("src", playerAvatar);
+//                    var playerNumber = playerCount + 1;
+//                    var ladderRanking = currentPlayer.rating.us.stats.competitive.overall_stats.comprank;
+//                    var valueRating = currentPlayer.valueRating;
+//
+//                    if (currentPlayer.teamName === "Cloud9") {
+//                        $("#playerList").append("<tr><th scope='row'>" + playerNumber + " <td><img id='avatarResize' src=" + playerAvatar + "></td><td>" + playerName + "</td><td> " + valueRating + "</td><td>" + ladderRanking + "</td><td>" + teamName + "</td></th></tr>");
+//                        playerCount++;
+//                    }
+//
+//                }
+//            } else if (value === "1") {
+//                $('#playerList').append("<tr id='tableHead'><th>#</th><th></th><th>Player name</th><th>Value rating</th><th>Ladder ranking</th><th>Team ranking</th></tr>");
+//
+//                while (currentPlayer !== null) {
+//
+//                    currentPlayer = data[playerCount];
+//                    var playerName = currentPlayer.playerName;
+//                    var teamName = currentPlayer.teamName;
+//                    var playerAvatar = currentPlayer.rating.us.stats.competitive.overall_stats.avatar;
+//                    var avatarUrl = document.createElement("img");
+//                    avatarUrl.setAttribute("src", playerAvatar);
+//                    var playerNumber = playerCount + 1;
+//                    var ladderRanking = currentPlayer.rating.us.stats.competitive.overall_stats.comprank;
+//                    var valueRating = currentPlayer.valueRating;
+//
+//                    if (currentPlayer.teamName === "Fnatic") {
+//                        $("#playerList").append("<tr><th scope='row'>" + playerNumber + " <td><img id='avatarResize' src=" + playerAvatar + "></td><td>" + playerName + "</td><td> " + valueRating + "</td><td>" + ladderRanking + "</td><td>" + teamName + "</td></th></tr>");
+//                        playerCount++;
+//                    }
+//
+//                }
+//            } else if (value === "4") {
+//                $('#playerList').append("<tr id='tableHead'><th>#</th><th></th><th>Player name</th><th>Value rating</th><th>Ladder ranking</th><th>Team ranking</th></tr>");
+//
+//                while (currentPlayer !== null) {
+//
+//                    currentPlayer = data[playerCount];
+//                    var playerName = currentPlayer.playerName;
+//                    var teamName = currentPlayer.teamName;
+//                    var playerAvatar = currentPlayer.rating.us.stats.competitive.overall_stats.avatar;
+//                    var avatarUrl = document.createElement("img");
+//                    avatarUrl.setAttribute("src", playerAvatar);
+//                    var playerNumber = playerCount + 1;
+//                    var ladderRanking = currentPlayer.rating.us.stats.competitive.overall_stats.comprank;
+//                    var valueRating = currentPlayer.valueRating;
+//
+//                    if (currentPlayer.teamName === "Misfits") {
+//                        $("#playerList").append("<tr><th scope='row'>" + playerNumber + " <td><img id='avatarResize' src=" + playerAvatar + "></td><td>" + playerName + "</td><td> " + valueRating + "</td><td>" + ladderRanking + "</td><td>" + teamName + "</td></th></tr>");
+//                        playerCount++;
+//                    }
+//
+//                }
+//            } else if (value === "2") {
+//                $('#playerList').append("<tr id='tableHead'><th>#</th><th></th><th>Player name</th><th>Value rating</th><th>Ladder ranking</th><th>Team ranking</th></tr>");
+//
+//                while (currentPlayer !== null) {
+//
+//                    currentPlayer = data[playerCount];
+//                    var playerName = currentPlayer.playerName;
+//                    var teamName = currentPlayer.teamName;
+//                    var playerAvatar = currentPlayer.rating.us.stats.competitive.overall_stats.avatar;
+//                    var avatarUrl = document.createElement("img");
+//                    avatarUrl.setAttribute("src", playerAvatar);
+//                    var playerNumber = playerCount + 1;
+//                    var ladderRanking = currentPlayer.rating.us.stats.competitive.overall_stats.comprank;
+//                    var valueRating = currentPlayer.valueRating;
+//
+//                    if (currentPlayer.teamName === "Rogue") {
+//                        $("#playerList").append("<tr><th scope='row'>" + playerNumber + " <td><img id='avatarResize' src=" + playerAvatar + "></td><td>" + playerName + "</td><td> " + valueRating + "</td><td>" + ladderRanking + "</td><td>" + teamName + "</td></th></tr>");
+//                        playerCount++;
+//                    }
+//
+//                }
+//            }
 
-            while (currentPlayer !== null) {
 
-                currentPlayer = data[playerCount];
-                var playerName = currentPlayer.playerName;
-                var teamName = currentPlayer.teamName;
-                var playerAvatar = currentPlayer.rating.us.stats.competitive.overall_stats.avatar;
-                var avatarUrl = document.createElement("img");
-                avatarUrl.setAttribute("src", playerAvatar);
-                var playerNumber = playerCount + 1;
-                var ladderRanking = currentPlayer.rating.us.stats.competitive.overall_stats.comprank;
-                var valueRating = currentPlayer.valueRating;
 
-                if (currentPlayer.teamName === "Cloud9") {
-                    $("#playerList").append("<tr><th scope='row'>" + playerNumber + " <td><img id='avatarResize' src=" + playerAvatar + "></td><td>" + playerName + "</td><td> " + valueRating + "</td><td>" + ladderRanking + "</td><td>" + teamName + "</td></th></tr>");
-                    playerCount++;
-                }
+        });
 
-            }
-        } else if (value === "fnatic") {
-            $('#playerList').append("<tr id='tableHead'><th>#</th><th></th><th>Player name</th><th>Value rating</th><th>Ladder ranking</th><th>Team ranking</th></tr>");
-
-            while (currentPlayer !== null) {
-
-                currentPlayer = data[playerCount];
-                var playerName = currentPlayer.playerName;
-                var teamName = currentPlayer.teamName;
-                var playerAvatar = currentPlayer.rating.us.stats.competitive.overall_stats.avatar;
-                var avatarUrl = document.createElement("img");
-                avatarUrl.setAttribute("src", playerAvatar);
-                var playerNumber = playerCount + 1;
-                var ladderRanking = currentPlayer.rating.us.stats.competitive.overall_stats.comprank;
-                var valueRating = currentPlayer.valueRating;
-
-                if (currentPlayer.teamName === "Fnatic") {
-                    $("#playerList").append("<tr><th scope='row'>" + playerNumber + " <td><img id='avatarResize' src=" + playerAvatar + "></td><td>" + playerName + "</td><td> " + valueRating + "</td><td>" + ladderRanking + "</td><td>" + teamName + "</td></th></tr>");
-                    playerCount++;
-                }
-
-            }
-        } else if (value === "misfits") {
-            $('#playerList').append("<tr id='tableHead'><th>#</th><th></th><th>Player name</th><th>Value rating</th><th>Ladder ranking</th><th>Team ranking</th></tr>");
-
-            while (currentPlayer !== null) {
-
-                currentPlayer = data[playerCount];
-                var playerName = currentPlayer.playerName;
-                var teamName = currentPlayer.teamName;
-                var playerAvatar = currentPlayer.rating.us.stats.competitive.overall_stats.avatar;
-                var avatarUrl = document.createElement("img");
-                avatarUrl.setAttribute("src", playerAvatar);
-                var playerNumber = playerCount + 1;
-                var ladderRanking = currentPlayer.rating.us.stats.competitive.overall_stats.comprank;
-                var valueRating = currentPlayer.valueRating;
-
-                if (currentPlayer.teamName === "Misfits") {
-                    $("#playerList").append("<tr><th scope='row'>" + playerNumber + " <td><img id='avatarResize' src=" + playerAvatar + "></td><td>" + playerName + "</td><td> " + valueRating + "</td><td>" + ladderRanking + "</td><td>" + teamName + "</td></th></tr>");
-                    playerCount++;
-                }
-
-            }
-        } else if (value === "rogue") {
-            $('#playerList').append("<tr id='tableHead'><th>#</th><th></th><th>Player name</th><th>Value rating</th><th>Ladder ranking</th><th>Team ranking</th></tr>");
-
-            while (currentPlayer !== null) {
-
-                currentPlayer = data[playerCount];
-                var playerName = currentPlayer.playerName;
-                var teamName = currentPlayer.teamName;
-                var playerAvatar = currentPlayer.rating.us.stats.competitive.overall_stats.avatar;
-                var avatarUrl = document.createElement("img");
-                avatarUrl.setAttribute("src", playerAvatar);
-                var playerNumber = playerCount + 1;
-                var ladderRanking = currentPlayer.rating.us.stats.competitive.overall_stats.comprank;
-                var valueRating = currentPlayer.valueRating;
-
-                if (currentPlayer.teamName === "Rogue") {
-                    $("#playerList").append("<tr><th scope='row'>" + playerNumber + " <td><img id='avatarResize' src=" + playerAvatar + "></td><td>" + playerName + "</td><td> " + valueRating + "</td><td>" + ladderRanking + "</td><td>" + teamName + "</td></th></tr>");
-                    playerCount++;
-                }
-
-            }
-        }
     }
 
     function appendLadder() {
@@ -435,7 +450,7 @@ $(document).ready(function () {
 
         var winRate = winRate;
         var counterRate = 100 - winRate;
-        alert(counterRate);
+       
 //        var data1 = 'Win %';
 //        var data2 = 'Loss %';
 
@@ -514,23 +529,11 @@ $(document).ready(function () {
     });
     $("#teamsid").change(function () {
         var value = $("#teamsid option:selected").val();
-        
-        $.ajax({
-            url: "/allTeams",
-            async: false,
-            error: function () {
-                alert('Failed to load');
-
-            }
+        appendTeams(value);
 
 
-        }).then(function (data) {
-              appendTeams(data,value);
-            
-            
-        });
 
-      
+
 
 
     });

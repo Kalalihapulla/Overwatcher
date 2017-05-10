@@ -38,9 +38,11 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul id ="navFont" class="nav navbar-nav">
-                        <li><a href="/about">About</a></li>
+                        <li id="aboutTextScale"><a href="/about">About</a></li>
+                        <li><a href="/usersearch">User statistics</a></li>
                         <li><a href="/ladderstats">Ladder statistics</a></li>
-                        <li><a href="/teamstats">Team statistics</a></li>
+                        <li><a href="/heroes">Hero statistics</a></li>
+
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
@@ -91,12 +93,12 @@
             <div class="col-md-4" id="statSelector">
                 <h3 id="statHeader">Select a pro team to display: </h3>
                 <select id="teamsid">
-                    <option value="fnatic">Fnatic</option>
-                    <option value="rogue">Rogue</option>
-                    <option value="nrg">NRG Esports</option>
-                    <option value="misfits">Misfits</option>
-                    <option value="c9">Cloud9</option>
-                    <option value="envyus">Team Envyus</option>
+                    <option value="1">Fnatic</option>
+                    <option value="2">Rogue</option>
+                    <option value="3">NRG Esports</option>
+                    <option value="4">Misfits</option>
+                    <option value="5">Cloud9</option>
+                    <option value="6">Team Envyus</option>
                 </select>
             </div>
 
@@ -107,7 +109,7 @@
                 </tbody>
             </table>
 
-            <table class="table" id="playerList">
+            <table class="table" id="listTeam">
                 <thead id="ladderHead">
                     <!--                  <tr>
                                             <th>#</th>
