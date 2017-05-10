@@ -192,11 +192,11 @@ public class Apitests {
         assertTrue(true);
 
     }
-          @Test
-    public void inserher() {
-           UpdateHeroes heroes = new UpdateHeroes();
-           heroes.insert();
-     
-    }
+//          @Test
+//    public void inserher() {
+//           UpdateHeroes heroes = new UpdateHeroes();
+//           heroes.insert();
+//     
+//    }
 
 }
