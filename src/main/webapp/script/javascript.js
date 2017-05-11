@@ -435,7 +435,7 @@ $(document).ready(function () {
                 },
                 width: {
 
-                    width: 150
+                    width: 2000
                 }    
 
             },
