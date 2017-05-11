@@ -145,7 +145,7 @@ body {
 }
 
 #tablebg {
-    background-color: rgba(30,30,30,0.75);
+    background-color: rgba(30,30,30,0.8);
     top:0;
     bottom: 0;
     left: 0;
@@ -163,7 +163,7 @@ body {
 
 
 
-.statsboarddetails {
+#statsboarddetails {
     background-color: rgba(255,250,250,0.75);
 
     margin-bottom: 1em;
@@ -172,15 +172,57 @@ body {
     border: solid;
     border-color: #262626;
     font-size: 1em;
-    color: slategrey;
+    color: black;
     border-radius: 5px;
     z-index: 10;
-    overflow: auto;
+/*    overflow: auto;*/
 
 }
 
-#aboutTextScale {
+#statsboarddetails4 {
+    background-color: rgba(255,250,250,0.75);
+
+/*    margin-bottom: 1em;*/
+    padding-left: 1em;
+    padding-top:1em;
+    border: solid;
+    border-color: #262626;
     font-size: 1em;
+    color: black;
+    border-radius: 5px;
+    z-index: 10;
+/*    overflow: auto;*/
+
+}
+
+#statsboarddetails2 {
+    background-color: rgba(255,250,250,0.75);
+
+    margin-bottom: 1em;
+    margin-top: -5em;
+    padding-left: 1em;
+    padding-top:1em;
+    border: solid;
+    border-color: #262626;
+    font-size: 1em;
+    color: black;
+    border-radius: 5px;
+    z-index: 10;
+/*    overflow: auto;*/
+
+}
+
+#playerStats {
+    color: black;
+}
+
+#tRow {
+    font-size: 1.2em;
+    color: #333333;
+}
+
+#aboutTextScale {
+    font-size: 0.8em;
 }
 
 #playerinfo {
@@ -382,10 +424,18 @@ body {
     padding-bottom:3em;
     font-size: 1.5em;
     font-family: Overwatch;
+    color: #333333;
+}
+
+#tableHead2{
+    padding-bottom:3em;
+    font-size: 1.5em;
+    font-family: Overwatch;
+    color: #cccccc;
 }
 
 tr {
-    font-size: 1.3em;
+    font-size: 1.5em;
     color: #cccccc;
 }
 
@@ -427,5 +477,28 @@ tr {
 }
 
 #graphBoard {
-    display: inline-table;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    
+}
+
+#graphBoard2 { 
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    
+}
+
+#graphBoard3 { 
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}
+
+#toRight {
+    float: right;
+    margin-top: 1em;
+    color: #a0a39f;
+    font-family: Overwatch;
 }

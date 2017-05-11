@@ -48,6 +48,7 @@
                         <li><a href="/ladderstats">Ladder statistics</a></li>
                         <li><a href="/heroes">Hero statistics</a></li>
                     </ul>
+                    <p id="toRight">TeamLUL. tm</p>
 
                 </div>
             </div>

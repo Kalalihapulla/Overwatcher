@@ -6,7 +6,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 
-  
+
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.css">  
         <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.js"></script>
@@ -49,11 +49,13 @@
                         <li><a href="/ladderstats">Ladder statistics</a></li>
                         <li><a href="/heroes">Hero statistics</a></li>
                         <li><a href="/usersearch">User statistics</a></li>
-                        
+                      
+
 
                     </ul>
+                    <p id="toRight">TeamLUL. tm</p>
 
-                
+
                 </div>
             </div>
         </nav>
@@ -69,49 +71,60 @@
 
             </div>
 
-            <div id="test">
 
-            </div>
 
             <div class="row">
-                <div class="col-md-3 statsboarddetails">
+                <div class="col-md-3" id="statsboarddetails">
                     <div id="graphBoard">
 
                     </div>
                 </div>
 
-                <div class="col-md-9 statsboarddetails">
+                <div class="col-md-9" id="statsboarddetails4">
                     <div id="statsboard">
 
-                        <div class="col-md-9" id="statsboard">
-                            <div class="statscontent">
-                                <table class="table" id="playerStats">
-                                    <thead id="ladderHead">
-                                        <!--                  <tr>
-                                                                <th>#</th>
-                                                                <th>Name</th>
-                                                                <th>Value rating</th>
-                                                                <th>Ladder ranking</th>
-                                                                <th>Team name</th>
-                                                                <th>Player avatar</th>
-                                                            </tr>-->
-                                    </thead>
-                                    <tbody id="ladderBody">
 
-                                    </tbody>
-                                </table>
+                        <div class="statscontent">
+                            <table class="table" id="playerStats">
+                                <thead id="ladderHead">
+                                    <!--                  <tr>
+                                                            <th>#</th>
+                                                            <th>Name</th>
+                                                            <th>Value rating</th>
+                                                            <th>Ladder ranking</th>
+                                                            <th>Team name</th>
+                                                            <th>Player avatar</th>
+                                                        </tr>-->
+                                </thead>
+                                <tbody id="ladderBody">
+
+                                </tbody>
+                            </table>
 
 
-                            </div>
                         </div>
+
                     </div>
                 </div>
 
+                <div class="col-md-3" id="statsboarddetails2">
+                    <div id="graphBoard2">
 
-                <div id="test">
+                    </div>
+
 
                 </div>
 
+                <div class="col-md-9" id="statsboarddetails">
+                    <div id="graphBoard3">
 
-                </body>
-                </html>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </body>
+</html>

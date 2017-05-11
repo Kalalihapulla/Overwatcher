@@ -46,8 +46,10 @@
                         <li id="aboutTextScale"><a href="/about">About</a></li>
                         <li><a href="/ladderstats">Ladder statistics</a></li>
                         <li><a href="/heroes">Hero statistics</a></li>
+                        
 
                     </ul>
+                    <p id="toRight">TeamLUL. tm</p>
 
                   
                 </div>
