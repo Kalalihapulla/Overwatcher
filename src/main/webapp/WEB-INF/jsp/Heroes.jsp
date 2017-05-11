@@ -39,6 +39,7 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul id ="navFont" class="nav navbar-nav">
                         <li id="aboutTextScale"><a href="/about">About</a></li>
+                        <li><a href="/usersearch">User statistics</a></li>
                         <li><a href="/ladderstats">Ladder statistics</a></li>
                         <li><a href="/heroes">Hero statistics</a></li>
                       

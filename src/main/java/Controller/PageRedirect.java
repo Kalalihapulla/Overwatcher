@@ -53,6 +53,11 @@ public class PageRedirect {
 
         return "About";
     }
+    @RequestMapping("/teamstats")
+    public String teamstats() {
+
+        return "Teamstats";
+    }
 
     @RequestMapping("/heroes")
     public String heroest() {

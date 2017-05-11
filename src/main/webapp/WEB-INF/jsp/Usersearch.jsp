@@ -46,10 +46,11 @@
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul id ="navFont" class="nav navbar-nav">
-                        <li id="aboutTextScale"><a href="/about">About</a></li>
+                            <li id="aboutTextScale"><a href="/about">About</a></li>
+                        <li><a href="/usersearch">User statistics</a></li>
                         <li><a href="/ladderstats">Ladder statistics</a></li>
                         <li><a href="/heroes">Hero statistics</a></li>
-                       
+
 
                     </ul>
                     <p id="toRight">TeamLUL. tm</p>
@@ -64,14 +65,15 @@
 
 
 
-        <div id="searchbox">         
-            <input id="searchboxtext1"type="text" name="search" placeholder="Search for Battle.net user">
-            <input id="searchboxtext2" type="text" name="search" placeholder="Type in the Battle.net ID associated with the user">
+        <div id="searchbox">
+<!--            <h3 id="statHeader">Write a Battle.net username and ID</h3>-->
+            <input id="searchboxtext1"type="text" name="search" placeholder="Battle.net Name">
+            <input id="searchboxtext2" type="text" name="search" placeholder="ID">
 
             <select id="serverid">
                 <option  value="eu">Europe</option>
                 <option  value="na">North America</option>
-                <option  value="kr">Korea</option>       
+                <option  value="kr">Korea</option>
             </select>
 
             <button id="searchbutton" type="button">Search</button>
