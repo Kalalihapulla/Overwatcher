@@ -7,7 +7,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <!--CSS-->
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="script/jquery.min.js"></script>
         <script src="script/javascript.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -38,9 +38,11 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul id ="navFont" class="nav navbar-nav">
-                        <li><a href="/about">About</a></li>
+                        <li id="aboutTextScale"><a href="/about">About</a></li>
+                        <li><a href="/usersearch">User statistics</a></li>
                         <li><a href="/ladderstats">Ladder statistics</a></li>
-                        <li><a href="/teamstats">Team statistics</a></li>
+                        <li><a href="/heroes">Hero statistics</a></li>
+
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
@@ -83,40 +85,40 @@
             </div>
         </nav>
 
-    <body>
-        
-        
+
+
+
 
         <div class="container" id="tablebg">
             <div class="col-md-4" id="statSelector">
-            <h3 id="statHeader">Select a pro team to display: </h3>
-            <select id="statsId">
-                <option value="fnatic">Fnatic</option>
-                <option value="rogue">Rogue</option>
-                <option value="nrg">NRG Esports</option>
-                <option value="misfits">Misfits</option>
-                <option value="c9">Cloud9</option>
-                <option value="envyus">Team Envyus</option>
-            </select>
+                <h3 id="statHeader">Select a pro team to display: </h3>
+                <select id="teamsid">
+                    <option value="1">Fnatic</option>
+                    <option value="2">Rogue</option>
+                    <option value="3">NRG Esports</option>
+                    <option value="4">Misfits</option>
+                    <option value="5">Cloud9</option>
+                    <option value="6">Team Envyus</option>
+                </select>
             </div>
-            
+
             <table class="table" id="teamList">
                 <thead id="teamHead">
                 </thead>
                 <tbody id="teamBody">
                 </tbody>
             </table>
-            
-            <table class="table" id="playerList">
+
+            <table class="table" id="listTeam">
                 <thead id="ladderHead">
-<!--                  <tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Value rating</th>
-                        <th>Ladder ranking</th>
-                        <th>Team name</th>
-                        <th>Player avatar</th>
-                    </tr>-->
+                    <!--                  <tr>
+                                            <th>#</th>
+                                            <th>Name</th>
+                                            <th>Value rating</th>
+                                            <th>Ladder ranking</th>
+                                            <th>Team name</th>
+                                            <th>Player avatar</th>
+                                        </tr>-->
                 </thead>
                 <tbody id="ladderBody">
 
@@ -124,10 +126,10 @@
             </table>
         </div>
 
-      
 
-        
-        
+
+
+
     </body>
 
 

@@ -7,7 +7,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <!--CSS-->
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.css" rel="stylesheet"/>
+
         <!--Javascript-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="script/jquery.min.js"></script>
@@ -28,7 +32,7 @@
 
         <nav class="navbar navbar-default navbar-inverse" role="navigation">
             <div class="container-fluid">
-              
+
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span>
@@ -39,51 +43,18 @@
                     <a class="navbar-brand" href="/usersearch">OverWatcher</a>
                 </div>
 
-                
+
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul id ="navFont" class="nav navbar-nav">
-                        <li><a href="/about">About</a></li>
+                            <li id="aboutTextScale"><a href="/about">About</a></li>
+                        <li><a href="/usersearch">User statistics</a></li>
                         <li><a href="/ladderstats">Ladder statistics</a></li>
-                        <li><a href="/teamstats">Team statistics</a></li>
+                        <li><a href="/heroes">Hero statistics</a></li>
+
 
                     </ul>
 
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><p class="navbar-text">Already have an account?</p></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b id="loginText">Login</b> <span class="caret"></span></a>
-                            <ul id="login-dp" class="dropdown-menu">
-                                <li>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
-                                                <div class="form-group">
-                                                    <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                                                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="sr-only" for="exampleInputPassword2">Password</label>
-                                                    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
 
-                                                </div>
-                                                <div class="form-group">
-                                                    <button type="submit" class="btn btn-primary btn-block">Sign in</button>
-                                                </div>
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox"> <b id="logincolor">keep me logged-in</b>
-                                                    </label>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="bottom text-center" id="logincolor">
-                                            New here ? <a href="#"><b>Join Us</b></a>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </nav>
@@ -95,8 +66,8 @@
 
         <div id="searchbox">
             <h3 id="statHeader">Write a Battle.net username and ID</h3>
-            <input id="searchboxtext1"type="text" name="search" placeholder="Battle.net username">
-            <input id="searchboxtext2" type="text" name="search" placeholder="User ID">
+            <input id="searchboxtext1"type="text" name="search"  value = "Taimou">
+            <input id="searchboxtext2" type="text" name="search" value ="2526" >
 
             <select id="serverid">
                 <option  value="eu">Europe</option>
@@ -105,11 +76,11 @@
             </select>
 
             <button id="searchbutton" type="button">Search</button>
-            
+
             <img id="owlogo" src="contents/owlogo.png">
         </div>
 
-        
+
 
 
 

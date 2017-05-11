@@ -6,12 +6,10 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 
-        <!-- Load c3.css -->
-        <link href="CSS/c3.css" rel="stylesheet" type="text/css">
 
-        <!-- Load d3.js and c3.js -->
-        <script src="https://d3js.org/d3.v4.min.js"></script>
-        <script src="script/c3.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.css">  
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.js"></script>
 
         <!--Javascript-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -46,51 +44,16 @@
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul id ="navFont" class="nav navbar-nav">
-                        <li><a href="/about">About</a></li>
+                    <ul id ="navFont" class="nav navbar-nav">     
+                        <li id="aboutTextScale"><a href="/about">About</a></li>                      
+                        <li><a href="/usersearch">User statistics</a></li>
                         <li><a href="/ladderstats">Ladder statistics</a></li>
                         <li><a href="/heroes">Hero statistics</a></li>
-                        <li><a href="/usersearch">User statistics</a></li>
-                        <li><a href="/teamstats">Team statistics</a></li>
+
 
                     </ul>
 
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><p class="navbar-text">Already have an account?</p></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b id="loginText">Login</b> <span class="caret"></span></a>
-                            <ul id="login-dp" class="dropdown-menu">
-                                <li>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
-                                                <div class="form-group">
-                                                    <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                                                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="sr-only" for="exampleInputPassword2">Password</label>
-                                                    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
 
-                                                </div>
-                                                <div class="form-group">
-                                                    <button type="submit" class="btn btn-primary btn-block">Sign in</button>
-                                                </div>
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox"> <b id="logincolor">keep me logged-in</b>
-                                                    </label>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="bottom text-center" id="logincolor">
-                                            New here ? <a href="#"><b>Join Us</b></a>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </nav>
@@ -106,25 +69,49 @@
 
             </div>
 
-            <div class="row">
-                <div class="col-md-3" id="statsboardnav">
-                    <div class="statscontent">
-                        Main content
-                    </div>
-                </div>
-                <div class="col-md-9" id="statsboard">
-                    <div class="statscontent">
+            <div id="test">
 
-                    </div>
-                </div>
             </div>
-        </div>
+
+            <div class="row">
+                <div class="col-md-3 statsboarddetails">
+                    <div id="graphBoard">
+
+                    </div>
+                </div>
+
+                <div class="col-md-9 statsboarddetails">
+                    <div id="statsboard">
+
+                        <div class="col-md-9" id="statsboard">
+                            <div class="statscontent">
+                                <table class="table" id="playerStats">
+                                    <thead id="ladderHead">
+                                        <!--                  <tr>
+                                                                <th>#</th>
+                                                                <th>Name</th>
+                                                                <th>Value rating</th>
+                                                                <th>Ladder ranking</th>
+                                                                <th>Team name</th>
+                                                                <th>Player avatar</th>
+                                                            </tr>-->
+                                    </thead>
+                                    <tbody id="ladderBody">
+
+                                    </tbody>
+                                </table>
 
 
-        <div id="test">
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        </div>
+
+                <div id="test">
+
+                </div>
 
 
-    </body>
-</html>
+                </body>
+                </html>
