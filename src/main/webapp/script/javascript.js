@@ -27,7 +27,7 @@ $(document).ready(function () {
 
         window.location = "/userstats";
 
-      
+
 
     });
 
@@ -63,7 +63,7 @@ $(document).ready(function () {
 //        }
 
         function loadLadder() {
-        
+
 
             $.ajax({
                 url: "/allPlayers",
@@ -74,7 +74,7 @@ $(document).ready(function () {
 
 
             }).then(function (data) {
-             
+
 
                 sessionStorage.ladderdata = JSON.stringify(data);
 
@@ -147,7 +147,7 @@ $(document).ready(function () {
 
                 }
 
-            
+
                 var rankIcon;
                 var playerAvatar = userdata.stats.competitive.overall_stats.avatar;
                 var userName = sessionStorage.bnetName;
@@ -214,7 +214,7 @@ $(document).ready(function () {
 
         }).then(function (data1) {
             var data = data1;
-         
+            alert(data[playerCount].rating.us.stats.competitive.overall_stats.avatar);
             $("#listTeam").empty();
 
             var playerCount = 0;
@@ -223,20 +223,23 @@ $(document).ready(function () {
             $('#listTeam').append("<tr id='tableHead'><th>#</th><th></th><th>Player name</th><th>Value rating</th><th>Ladder ranking</th><th>Team ranking</th></tr>");
 //            if (value === "6") {
 //                $('#playerList').append("<tr id='tableHead'><th>#</th><th></th><th>Player name</th><th>Value rating</th><th>Ladder ranking</th><th>Team ranking</th></tr>");
-//
-//                while (currentPlayer !== null) {
-//
-//                    currentPlayer = data[playerCount];
-//                    alert("Current player: " + currentPlayer);
-//                    var playerName = currentPlayer.playerName;
-//                    alert("Player name: " + playerName);
-//                    var teamName = currentPlayer.teamName;
-//                    var playerAvatar = currentPlayer.rating.us.stats.competitive.overall_stats.avatar;
-//                    var avatarUrl = document.createElement("img");
-//                    avatarUrl.setAttribute("src", playerAvatar);
-//                    var playerNumber = playerCount + 1;
-//                    var ladderRanking = currentPlayer.rating.us.stats.competitive.overall_stats.comprank;
-//                    var valueRating = currentPlayer.valueRating;
+
+            while (currentPlayer !== null) {
+
+                currentPlayer = data[playerCount];
+                alert("Current player: " + currentPlayer);
+                var playerName = currentPlayer.playerName;
+                alert("Player name: " + playerName);
+                var teamName = currentPlayer.teamName;
+                var playerAvatar = currentPlayer.rating.us.stats.competitive.overall_stats.avatar;
+                var avatarUrl = document.createElement("img");
+                avatarUrl.setAttribute("src", playerAvatar);
+                var playerNumber = playerCount + 1;
+                var ladderRanking = currentPlayer.rating.us.stats.competitive.overall_stats.comprank;
+                var valueRating = currentPlayer.valueRating;
+                $("#listTeam").append("<tr><th scope='row'>" + playerNumber + " <td><img id='avatarResize' src=" + playerAvatar + "></td><td>" + playerName + "</td><td> " + valueRating + "</td><td>" + ladderRanking + "</td><td>" + teamName + "</td></th></tr>");
+                playerCount++;
+            }
 //
 //            if (value === "6") {
 //                $("#listTeam").append("<tr><th scope='row'>" + playerNumber + " <td><img id='avatarResize' src=" + playerAvatar + "></td><td>" + playerName + "</td><td> " + valueRating + "</td><td>" + ladderRanking + "</td><td>" + teamName + "</td></th></tr>");
@@ -450,7 +453,7 @@ $(document).ready(function () {
 
         var winRate = winRate;
         var counterRate = 100 - winRate;
-       
+
 //        var data1 = 'Win %';
 //        var data2 = 'Loss %';
 
