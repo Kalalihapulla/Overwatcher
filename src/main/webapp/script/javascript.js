@@ -146,7 +146,7 @@ $(document).ready(function () {
 
         function loadLadder() {
 
-            
+
 
             $.ajax({
                 url: "/allPlayers",
@@ -523,7 +523,7 @@ $(document).ready(function () {
 
 
                 }
-               
+
 
     }
 
@@ -709,7 +709,18 @@ $(document).ready(function () {
             $('#suggestions2').empty();
             $('#suggestions2').append("<option value='2555'>");
         }
+
+        if ($('#searchboxtext1').val() === "Sylphea") {
+            $('#suggestions2').empty();
+            $('#suggestions2').append("<option value='1120'>");
+        }
+        
+        if ($('#searchboxtext1').val() === "omange") {
+            $('#suggestions2').empty();
+            $('#suggestions2').append("<option value='1336'>");
+        }
     });
+
 
 
     $(window).load(function () {
