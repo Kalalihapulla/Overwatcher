@@ -7,7 +7,7 @@ package Model;
 
 /**
  *
- * @author r Himel
+ * @author Himel
  */
 public enum TeamName {
     Team_EnVyUs,
