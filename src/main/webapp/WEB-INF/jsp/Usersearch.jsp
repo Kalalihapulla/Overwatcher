@@ -77,7 +77,6 @@
                 <option value="Sylphea">
                 <option value="omange">  
                 <option value="Wormps">
-
             </datalist>
 
             <datalist id="suggestions2">
