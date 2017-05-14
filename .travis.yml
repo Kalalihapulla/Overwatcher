@@ -11,4 +11,3 @@ deploy:
     testbranch1: projectulu
   on:
     repo: himelr/TeamLUL
-

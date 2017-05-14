@@ -406,6 +406,7 @@ $(document).ready(function () {
 
 
 
+
     function appendLadder() {
 
         var data = JSON.parse(sessionStorage.ladderdata);
