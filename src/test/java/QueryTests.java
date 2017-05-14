@@ -39,62 +39,6 @@ public class QueryTests extends QueryMethods {
     private SessionFactory sessionFactory;
     private static final Logger log = LoggerFactory.getLogger(QueryTests.class);
 
-//    @Test
-//    public void qdsl1() throws InterruptedException {
-//        try {
-//            QUserAccount userAccount = QUserAccount.userAccount;
-//            this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
-//
-//            Session session
-//                    = sessionFactory.openSession();
-//            HQLQuery query = new HibernateQuery(session);
-//            Thread.sleep(2000);
-//            UserAccount bob = query.from(userAccount).where(userAccount.id.eq(1L)).uniqueResult(userAccount);
-//
-//            assertTrue(bob.getUserid().equals("kapap"));
-//
-//        } catch (Exception e) {
-//            assertTrue(false);
-//        }
-//
-//    }
-//
-//    @Test
-//    public void qdsl2() throws RiotApiException {
-//        try {
-//
-//            ArrayList players = new ArrayList<Player>();
-//            RiotApi api = new RiotApi("RGAPI-696ed310-71e7-4f8e-bee1-9b3ee195f98a");
-//            this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
-//
-//            Session session
-//                    = sessionFactory.openSession();
-//            HQLQuery query = new HibernateQuery(session);
-//            QPlayer player = QPlayer.player;
-//
-//            List<String> list = query.from(player).groupBy(player.accountName).list(player.accountName);
-//            StringBuilder builder = new StringBuilder();
-//            for (String name : list) {
-//                builder.append(name + ", ");
-//
-//            }
-//
-//            builder.deleteCharAt(builder.length() - 1);
-//            builder.deleteCharAt(builder.length() - 1);
-//
-//            System.out.println(builder);
-//
-//            Map<String, Summoner> summoners = api.getSummonersByName(Region.KR, builder.toString());
-//            System.out.println(summoners);
-//            Summoner summoner = summoners.get("hideonbush");
-//
-//            long id = summoner.getId();
-//            System.out.println(id);
-//            assertTrue(id == 4460427);
-//        } catch (Exception e) {
-//            System.err.println(e);
-//            assertTrue(false);
-//        }
     @Test
     public void getPlayer1Id() {
         this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
@@ -211,11 +155,30 @@ public class QueryTests extends QueryMethods {
 
     @Test
     public void heroes() {
-       
-//        for (HeroModel heroModel : heroes)) {
-//            System.out.println(heroModel);
-//        }
-        assertTrue(true);
+        List<HeroModel> heroModels = allHero();
+        int i = 0;
+        for (HeroModel heroModel : heroModels) {
+            i++;
+
+        }
+
+        assertTrue(i > 20);
     }
 
+    @Test
+    public void heroesCompare() {
+        List<HeroModel> heroModels = allHero();
+        int i = 0;
+        for (HeroModel heroModel : heroModels) {
+            i++;
+
+        }
+
+        assertTrue(i > 20);
+    }
+    @Test
+    public void useraccount(){
+        assertTrue(createUser(new UserAccount("test", "Izaye-2528", "test2")));
+        
+    }
 }

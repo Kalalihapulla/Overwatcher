@@ -5,7 +5,7 @@
  */
 package Model;
 
-import Controller.Observer;
+
 import JSONModel.Player.RegionPlayer;
 import java.io.Serializable;
 import javax.persistence.Basic;
@@ -22,7 +22,7 @@ import javax.persistence.OneToOne;
  * @author Himel
  */
 @Entity
-public class Player implements Serializable, Observer, Comparable<Player>, ValueRank {
+public class Player implements Serializable, Comparable<Player>, ValueRank {
 
     private Long id;
     private String playerName;
@@ -87,10 +87,6 @@ public class Player implements Serializable, Observer, Comparable<Player>, Value
         this.teamName = teamName;
     }
 
-    @Override
-    public void update() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     @Override
     public int compareTo(Player t) {

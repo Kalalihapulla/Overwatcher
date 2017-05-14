@@ -11,7 +11,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author Izymi
+ * @author Himel
  */
 public abstract class ValueCalculate implements Serializable{
 

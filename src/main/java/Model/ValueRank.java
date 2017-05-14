@@ -7,7 +7,7 @@ package Model;
 
 /**
  *
- * @author Izymi
+ * @author r Himel
  */
 public interface ValueRank {
 

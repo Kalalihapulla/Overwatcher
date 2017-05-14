@@ -21,7 +21,7 @@ import javax.persistence.OneToMany;
 
 /**
  *
- * @author Izymi
+ * @author Himel
  */
 @Entity
 public class Team implements Serializable, Comparable<Team>, ValueRank {

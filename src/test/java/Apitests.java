@@ -33,10 +33,11 @@ import org.springframework.web.client.RestTemplate;
  * @author Izymi
  */
 public class Apitests {
-
+    
     private SessionFactory sessionFactory;
     private static final Logger log = LoggerFactory.getLogger(Apitests.class);
 
+    //
 //    @Test
 //    public void riotJava1() throws RiotApiException {       
 //        RiotApi api = new RiotApi("RGAPI-696ed310-71e7-4f8e-bee1-9b3ee195f98a");
@@ -48,30 +49,31 @@ public class Apitests {
 //
 //        assertTrue(id > 0);
 // 
-//    }
-//    @Test
-//    public void hibernate1() {
-//        try {
-//            this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
+    @Test
+    public void hibernate1() {
+        try {
+            this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
+            
+            Session session
+                    = sessionFactory.openSession();
+            
+            session.beginTransaction();
+            UserAccount user = new UserAccount("kapap", "ulu", "ff");
+            session.saveOrUpdate(user);
+            session.getTransaction().commit();
+            
+            assertTrue(true);
+            
+        } catch (HibernateException e) {
+            assertTrue(false);
+        }
+        
+    }
+
+//    !API server instance is offline. Tests commented.!    
 //
-//            Session session
-//                    = sessionFactory.openSession();
-//
-//            session.beginTransaction();
-//            UserAccount user = new UserAccount("kapap", "ulu");
-//            session.saveOrUpdate(user);
-//            session.getTransaction().commit();
-//
-//            assertTrue(true);
-//
-//        } catch (HibernateException e) {
-//            assertTrue(false);
-//        }
-//
-//    }
-//
-//    @Test
-//    public void teamCreate1() {
+    @Test
+    public void teamCreate1() {
 //        Player p1 = new Player("Bang", "SKT T1 Bang", TeamName.SKT_T1);
 //        Player p2 = new Player("Faker", "Hide on bush", TeamName.SKT_T1);
 //        Player p3 = new Player("Peanut", "SKT T1 Peanut", TeamName.SKT_T1);
@@ -94,9 +96,10 @@ public class Apitests {
 //            assertTrue(false);
 //        }
 //
-//    }
-//    @Test
-//    public void testStat() {
+    }
+
+    @Test
+    public void testStat() {
 //        RestTemplate restTemplate = new RestTemplate();
 //        RatingPlayer r = restTemplate.getForObject("http://ec2-176-34-130-81.eu-west-1.compute.amazonaws.com:4444/api/v3/u/Taimou-2526/stats", RatingPlayer.class);
 //        log.info(r.toString());
@@ -105,10 +108,10 @@ public class Apitests {
 //        System.out.println(hld);
 //        assertTrue(hld > 10000);
 //
-//    }
-//
-//    @Test
-//    public void savePlayer() {
+    }
+    
+    @Test
+    public void savePlayer() {
 //        this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
 //
 //        Session session
@@ -123,9 +126,10 @@ public class Apitests {
 //
 //        log.info(r.toString());
 //        assertTrue(r.getAccountName().equals("Taimou-2526"));
-//    }
-//    @Test
-//    public void saveTeam() {
+    }
+
+    @Test
+    public void saveTeam() {
 //        this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
 //
 //        Session session
@@ -147,7 +151,8 @@ public class Apitests {
 //        log.info(r.toString());
 //        assertTrue(r.getAccountName().equals("Tisumi-11362"));
 //
-//    }
+    }
+
     @Test
     public void insertData() {
 //        UpdatePlayers data = new UpdatePlayers();
@@ -167,11 +172,10 @@ public class Apitests {
 //            session.saveOrUpdate(player);
 //        }
 //        session.getTransaction().commit();
-        assertTrue(true);
+//        assertTrue(true);
 
     }
-
-  
+    
     public void insertHero() {
 
 //        this.sessionFactory = HibernateStuff.getInstance().getSessionFactory();
@@ -189,14 +193,19 @@ public class Apitests {
 //            session.saveOrUpdate(rh);
 //        }
 //        session.getTransaction().commit();
-        assertTrue(true);
-
+//        assertTrue(true);
     }
-//          @Test
-//    public void inserher() {
-//           UpdateHeroes heroes = new UpdateHeroes();
+    
+    @Test
+    public void inserher() {
+//        try {//           UpdateHeroes heroes = new UpdateHeroes();
 //           heroes.insert();
-//     
-//    }
+//            assertTrue(true);
+//        } catch (Exception e) {
+//            assertTrue(false);
+//        }
 
+//     
+    }
+    
 }
