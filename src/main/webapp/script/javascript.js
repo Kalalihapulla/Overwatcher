@@ -11,16 +11,33 @@
 /* global c3, d3 */
 
 
+
+
 $(document).ready(function () {
+    $("#loadingBg").remove();
 
 
 
+    $("a").click(function () {
+
+        showLoading();
+
+    });
+
+
+    function showLoading() {
+        $("#loadingBg").remove();
+
+        $("body").append(" <div id='loadingBg'><div id='loadingScreen'><img src='../contents/spin.gif' style='width:7em;height:7em;display:inline-block;border-right: 4px solid #b72da9;padding-right: 0.5em;z-index: 250;'><span id='loadingText'>SEARCHING FOR DATA</span><span id='loadingText2'>ESTIMATED TIME: UNKNOWN</span>\n\
+<span id='loadingText3'>ELAPSED TIME: <span id='minutes'>00</span>:<span id='seconds'>00</span></span></div><div id='loadingBottom'><span style='font-size: 1.5em;color: #cccccc;display: inline-block;'>CANCEL SEARCH</span></div></div>");
+
+        timerStart();
+
+    }
 
 
     function timerStart() {
 
-
-        $("#loadingBg").show();
 
         var sec = 0;
 
@@ -42,8 +59,7 @@ $(document).ready(function () {
 
     $("#searchbutton").click(function () {
 
-
-        timerStart();
+        showLoading();
 
         var bnetname = $('#searchboxtext1').val();
         var bnetid = $('#searchboxtext2').val();
@@ -59,7 +75,7 @@ $(document).ready(function () {
     });
 
     $(document).on('click', '.teamButton', function () {
-
+        showLoading();
 
         sessionStorage.statsId = "teamStats";
 
@@ -94,6 +110,10 @@ $(document).ready(function () {
 
     $(window).load(function () {
 
+        $("#loadingBottom").click(function () {
+            event.stopImmediatePropagation();
+            return false;
+        });
 
 
 //        if (location.pathname === "/usersearch") {
@@ -107,8 +127,7 @@ $(document).ready(function () {
 
         } else if (location.pathname === "/ladderstats") {
 
-            //  sessionStorage.statsId = "defStats";    
-
+            //  sessionStorage.statsId = "defStats";   
             loadLadder();
 
             appendLadder();
@@ -123,9 +142,11 @@ $(document).ready(function () {
 
         }
 
+
+
         function loadLadder() {
 
-
+            
 
             $.ajax({
                 url: "/allPlayers",
@@ -208,7 +229,7 @@ $(document).ready(function () {
 
         function loadPlayer() {
 
-
+            showLoading();
 
 
             $.ajax({
@@ -222,8 +243,6 @@ $(document).ready(function () {
 
             }).then(function (data) {
 
-
-              
 
                 var serverid = sessionStorage.serverid;
 
@@ -371,8 +390,14 @@ $(document).ready(function () {
                 getWinrateChart(compWinrate);
                 getKdChart(cTelims, cTdeaths);
                 getChart3(cMdamage, cAdamage, cMhealing, cAhealing);
+
+
+                $("#loadingBg").remove();
             });
-              $("#loadingBg").hide();
+
+
+
+
         }
 
 
@@ -498,6 +523,8 @@ $(document).ready(function () {
 
 
                 }
+               
+
     }
 
     function getWinrateChart(winRate) {
@@ -686,9 +713,11 @@ $(document).ready(function () {
 
 
     $(window).load(function () {
-        appendHeroes("1");
 
+        if (location.pathname === "/heroes") {
+            appendHeroes("1");
 
+        }
     });
 
     $("#heroesId").change(function () {
