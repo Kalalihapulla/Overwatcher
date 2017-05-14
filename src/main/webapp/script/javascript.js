@@ -223,7 +223,7 @@ $(document).ready(function () {
             }).then(function (data) {
 
 
-                $("#loadingBg").hide();
+              
 
                 var serverid = sessionStorage.serverid;
 
@@ -372,7 +372,7 @@ $(document).ready(function () {
                 getKdChart(cTelims, cTdeaths);
                 getChart3(cMdamage, cAdamage, cMhealing, cAhealing);
             });
-
+              $("#loadingBg").hide();
         }
 
 
