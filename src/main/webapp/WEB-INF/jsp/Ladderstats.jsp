@@ -6,13 +6,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.js"></script>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.css" rel="stylesheet"/>
-        
+
         <!--CSS-->
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="script/jquery.min.js"></script>
         <script src="script/javascript.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -43,45 +43,53 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul id ="navFont" class="nav navbar-nav">
-                      <li id="aboutTextScale"><a href="/about">About</a></li>
+                        <li id="aboutTextScale"><a href="/about">About</a></li>
                         <li><a href="/usersearch">User statistics</a></li>
                         <li><a href="/ladderstats">Ladder statistics</a></li>
                         <li><a href="/heroes">Hero statistics</a></li>
-                        
+                        <li><a href="/teamstats">Team statistics</a></li>
+
+
 
 
                     </ul>
                     <p id="toRight">TeamLUL. tm</p>
 
-                  
+
                 </div>
             </div>
         </nav>
 
     <body>
-        
-        
+
+
 
         <div class="container" id="tablebg">
             <div class="col-md-4" id="statSelector">   
-             <h3 id=statHeader>Select statistics to display: </h3> 
-             <select id="statsId">
-                <option  value="defStats">Default statistics</option>
-                <option  value="offStats">Offensive statistics</option>
-                <option  value="matStats">Match statistics</option>       
-            </select>
+                <h3 id=statHeader>Select statistics to display: </h3> 
+                <select id="statsId">
+                    <option  value="defStats">Default statistics</option>
+                    <option  value="offStats">Offensive statistics</option>
+                    <option  value="matStats">Match statistics</option>    
+                    <option  value="Rogue">Team Rogue</option>
+                    <option  value="Envy">Team EnVyUs</option>  
+                    <option  value="Cloud9">Team Cloud9</option>  
+                    <option  value="Fnatic">Team Fnatic</option>  
+                    <option  value="NRG">Team NRG_Esports</option>  
+                    <option  value="Misfits">Team Misfits</option>  
+                </select>
             </div>
-            
+
             <table class="table" id="playerList">
                 <thead id="ladderHead">
-<!--                  <tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Value rating</th>
-                        <th>Ladder ranking</th>
-                        <th>Team name</th>
-                        <th>Player avatar</th>
-                    </tr>-->
+                    <!--                  <tr>
+                                            <th>#</th>
+                                            <th>Name</th>
+                                            <th>Value rating</th>
+                                            <th>Ladder ranking</th>
+                                            <th>Team name</th>
+                                            <th>Player avatar</th>
+                                        </tr>-->
                 </thead>
                 <tbody id="ladderBody">
 
@@ -89,15 +97,25 @@
             </table>
         </div>
 
-      
 
-        
-        
+
+        <div id="loadingBg">
+            <div id="loadingScreen">
+                <img src="../contents/spin.gif" style="width:7em;height:7em;display:inline-block;border-right: 4px solid #b72da9;padding-right: 0.5em;z-index: 250;">
+                <span id="loadingText">SEARCHING FOR DATA</span>
+                <span id="loadingText2">ESTIMATED TIME: UNKNOWN</span>
+                <span id="loadingText3">ELAPSED TIME: <span id="minutes">00</span>:<span id="seconds">00</span></span>
+            </div>
+
+            <div id="loadingBottom">             
+                <span style="font-size: 1.5em;color: #cccccc;display: inline-block;">CANCEL SEARCH</span>
+            </div>
+        </div>
+
     </body>
 
 
 
 
 
-</body>
 </html>

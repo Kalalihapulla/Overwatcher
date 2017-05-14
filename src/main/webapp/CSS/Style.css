@@ -31,7 +31,7 @@ body {
     color: slategrey;
     border-radius: 5px;
     z-index: -2;
-    overflow: auto;
+/*    overflow: auto;*/
 }
 
 
@@ -39,16 +39,19 @@ body {
     width: 55%;
     height: 20%;
     background-color: rgba(190,190,190,0.8);
-    float: left;
+    left: 8%;
+    top: 15%;
+/*    float: left;
     margin-top: 1.5em;
     margin-left: 5%; 
-    padding-left: 1em;
+*/  padding-left: 1em;
     border: solid;
     border-color: darkslategray;
     font-size: 2em;
     color: slategrey;
     border-radius: 5px;
     font-family: Overwatch;
+    position: absolute;
 
 }
 
@@ -58,16 +61,19 @@ body {
     width: 55%;
     height: 20%;
     background-color: rgba(190,190,190,0.8);
-    float: top;
-    margin-top: 1.5em;
+    left: 8%;
+    top: 45%;
+/*    float: top;*/
+/*    margin-top: 1.5em;
     margin-left: 5%; 
-    padding-left: 1em;
+*/  padding-left: 1em;
     border: solid;
     border-color: darkslategray;
     font-size: 2em;
     color: slategrey;
     border-radius: 5px;
-    position: relative;
+/*    position: relative;*/
+    position: absolute;
     font-family: Overwatch;
 
 }
@@ -78,10 +84,17 @@ body {
     height: 10%;
     width: 20%;
     bottom: 10%;
-    left: 7%;
+    left: 8%;
     border: 2px solid #111;
     border-color: #262626;
     border-radius: 4px;
+}
+
+.teamButton {
+    border: 2px solid #111;
+    border-color: #262626;
+    border-radius: 4px;
+    color: black;
 }
 
 #serverid {
@@ -339,6 +352,15 @@ body {
 
 }
 
+#avatarResize3 {
+    width: 7em;
+    height: 7em;
+     border: solid;
+    border-color: papayawhip;
+    border-radius: 5px;
+
+}
+
 #rankIcon {
     width: 6em;
     height: 6em;
@@ -371,6 +393,7 @@ body {
     -moz-appearance: none;
     appearance: none;
     margin-left: 1em;
+    padding-left: 0.5em;
     border-color: #262626;
     width: 8em;
     height: 2em;
@@ -388,6 +411,7 @@ body {
     -moz-appearance: none;
     appearance: none;
     margin-left: 1em;
+    padding-left: 0.5em;
     border-color: #262626;
     width: 8em;
     height: 2em;
@@ -503,4 +527,76 @@ tr {
     margin-top: 1em;
     color: #a0a39f;
     font-family: Overwatch;
+}
+
+#loadingScreen {
+   height: 9em;
+   width: 30em;
+    background-color: rgba(30,30,30,0.95);
+    padding: 1em;
+    border-radius: 3px;
+    position: absolute;
+    z-index: 200;
+     border: solid;
+    border-color: #262626;
+    border-radius: 5px;
+    
+}
+
+#loadingText {
+    position: absolute;
+    top: 0.2em;
+    right: 1.9em;
+    font-size: 2.5em;
+    color: #cccccc;
+    z-index: 250;
+}
+
+#loadingText2 {
+    position: absolute;
+    top: 2.6em;
+    right: 5.1em;
+    font-size: 1.5em;
+    color: #cccccc;
+    z-index: 250;
+}
+
+
+#loadingText3 {
+    position: absolute;
+    top: 3.9em;
+    right: 7.2em;
+    font-size: 1.5em;
+    color: #cccccc;
+    z-index: 250;
+}
+
+#loadingBg {
+    height: 12.2em;
+    width: 30em;
+    position: absolute;
+    top: 6em;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+}
+
+#loadingBottom {
+    width: 30em;
+    height: 3em;
+    background-color: #b72da9;
+    border-radius: 3px;
+    position: absolute;
+    bottom: 0em;
+    text-align:center;
+    line-height:3em;
+    border: solid;
+    border-color: #262626;
+    border-radius: 5px;
+   
+    
+    
 }

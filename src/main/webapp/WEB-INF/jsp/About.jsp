@@ -44,10 +44,12 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul id ="navFont" class="nav navbar-nav">
-                   <li id="aboutTextScale"><a href="/about">About</a></li>
+                        <li id="aboutTextScale"><a href="/about">About</a></li>
                         <li><a href="/usersearch">User statistics</a></li>
                         <li><a href="/ladderstats">Ladder statistics</a></li>
                         <li><a href="/heroes">Hero statistics</a></li>
+                        <li><a href="/teamstats">Team statistics</a></li>
+
 
                     </ul>
                     <p id="toRight">TeamLUL. tm</p>
@@ -69,6 +71,19 @@
             <p style="position: absolute; bottom: 0px;">
                 By Himel Rahman, Jere Raassina and Markus Makkonen
             </p>
+        </div>
+        
+         <div id="loadingBg">
+            <div id="loadingScreen">
+                <img src="../contents/spin.gif" style="width:7em;height:7em;display:inline-block;border-right: 4px solid #b72da9;padding-right: 0.5em;z-index: 250;">
+                <span id="loadingText">SEARCHING FOR DATA</span>
+                <span id="loadingText2">ESTIMATED TIME: UNKNOWN</span>
+                <span id="loadingText3">ELAPSED TIME: <span id="minutes">00</span>:<span id="seconds">00</span></span>
+            </div>
+            
+            <div id="loadingBottom">             
+                <span style="font-size: 1.5em;color: #cccccc;display: inline-block;">CANCEL SEARCH</span>
+            </div>
         </div>
 
 

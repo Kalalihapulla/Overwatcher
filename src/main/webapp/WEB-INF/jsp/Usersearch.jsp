@@ -46,10 +46,12 @@
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul id ="navFont" class="nav navbar-nav">
-                            <li id="aboutTextScale"><a href="/about">About</a></li>
+                        <li id="aboutTextScale"><a href="/about">About</a></li>
                         <li><a href="/usersearch">User statistics</a></li>
                         <li><a href="/ladderstats">Ladder statistics</a></li>
                         <li><a href="/heroes">Hero statistics</a></li>
+                        <li><a href="/teamstats">Team statistics</a></li>
+
 
 
                     </ul>
@@ -66,9 +68,23 @@
 
 
         <div id="searchbox">
-<!--            <h3 id="statHeader">Write a Battle.net username and ID</h3>-->
-            <input id="searchboxtext1"type="text" name="search" placeholder="Battle.net Name">
-            <input id="searchboxtext2" type="text" name="search" placeholder="ID">
+            <!--            <h3 id="statHeader">Write a Battle.net username and ID</h3>-->
+            <input id="searchboxtext1"type="text" name="search" placeholder="Battle.net Name" list="suggestions">
+            <input id="searchboxtext2" type="text" name="search" placeholder="ID" list="suggestions2">
+
+            <datalist id="suggestions">
+                <option value="Taimou">
+                <option value="Wormps">
+            </datalist>
+
+            <datalist id="suggestions2">
+<!--                <option value="2526">
+                <option value="2555">              -->
+            </datalist>
+
+
+
+
 
             <select id="serverid">
                 <option  value="eu">Europe</option>
@@ -79,6 +95,19 @@
             <button id="searchbutton" type="button">Search</button>
 
             <img id="owlogo" src="contents/owlogo.png">
+        </div>
+
+        <div id="loadingBg">
+            <div id="loadingScreen">
+                <img src="../contents/spin.gif" style="width:7em;height:7em;display:inline-block;border-right: 4px solid #b72da9;padding-right: 0.5em;z-index: 250;">
+                <span id="loadingText">SEARCHING FOR DATA</span>
+                <span id="loadingText2">ESTIMATED TIME: UNKNOWN</span>
+                <span id="loadingText3">ELAPSED TIME: <span id="minutes">00</span>:<span id="seconds">00</span></span>
+            </div>
+
+            <div id="loadingBottom">             
+                <span style="font-size: 1.5em;color: #cccccc;display: inline-block;">CANCEL SEARCH</span>
+            </div>
         </div>
 
 

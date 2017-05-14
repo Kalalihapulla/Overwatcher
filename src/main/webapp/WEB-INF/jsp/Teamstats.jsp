@@ -42,75 +42,24 @@
                         <li><a href="/usersearch">User statistics</a></li>
                         <li><a href="/ladderstats">Ladder statistics</a></li>
                         <li><a href="/heroes">Hero statistics</a></li>
+                        <li><a href="/teamstats">Team statistics</a></li>
 
-                    </ul>
 
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><p class="navbar-text">Already have an account?</p></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b id="loginText">Login</b> <span class="caret"></span></a>
-                            <ul id="login-dp" class="dropdown-menu">
-                                <li>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
-                                                <div class="form-group">
-                                                    <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                                                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="sr-only" for="exampleInputPassword2">Password</label>
-                                                    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
 
-                                                </div>
-                                                <div class="form-group">
-                                                    <button type="submit" class="btn btn-primary btn-block">Sign in</button>
-                                                </div>
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox"> <b id="logincolor">keep me logged-in</b>
-                                                    </label>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="bottom text-center" id="logincolor">
-                                            New here ? <a href="#"><b>Join Us</b></a>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+                    </ul> 
+                    <p id="toRight">TeamLUL. tm</p>
                 </div>
             </div>
         </nav>
 
+    <body>
 
 
 
-
-        <div class="container" id="tablebg">
-            <div class="col-md-4" id="statSelector">
-                <h3 id="statHeader">Select a pro team to display: </h3>
-                <select id="teamsid">
-                    <option value="1">Fnatic</option>
-                    <option value="2">Rogue</option>
-                    <option value="3">NRG Esports</option>
-                    <option value="4">Misfits</option>
-                    <option value="5">Cloud9</option>
-                    <option value="6">Team Envyus</option>
-                </select>
-            </div>
+        <div class="container" id="tablebg">      
 
             <table class="table" id="teamList">
-                <thead id="teamHead">
-                </thead>
-                <tbody id="teamBody">
-                </tbody>
-            </table>
-
-            <table class="table" id="listTeam">
-                <thead id="ladderHead">
+                <thead id="teamsHead">
                     <!--                  <tr>
                                             <th>#</th>
                                             <th>Name</th>
@@ -120,14 +69,25 @@
                                             <th>Player avatar</th>
                                         </tr>-->
                 </thead>
-                <tbody id="ladderBody">
+                <tbody id="teamsBody">
 
                 </tbody>
             </table>
         </div>
 
 
+        <div id="loadingBg">
+            <div id="loadingScreen">
+                <img src="../contents/spin.gif" style="width:7em;height:7em;display:inline-block;border-right: 4px solid #b72da9;padding-right: 0.5em;z-index: 250;">
+                <span id="loadingText">SEARCHING FOR DATA</span>
+                <span id="loadingText2">ESTIMATED TIME: UNKNOWN</span>
+                <span id="loadingText3">ELAPSED TIME: <span id="minutes">00</span>:<span id="seconds">00</span></span>
+            </div>
 
+            <div id="loadingBottom">             
+                <span style="font-size: 1.5em;color: #cccccc;display: inline-block;">CANCEL SEARCH</span>
+            </div>
+        </div>
 
 
     </body>
@@ -135,6 +95,4 @@
 
 
 
-
-</body>
 </html>
